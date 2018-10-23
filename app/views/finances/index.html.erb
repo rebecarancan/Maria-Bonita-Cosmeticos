@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Finances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Description</th>
+      <th>Value</th>
+      <th>Expense type</th>
+      <th>Record type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finances.each do |finance| %>
+      <tr>
+        <td><%= finance.day %></td>
+        <td><%= finance.description %></td>
+        <td><%= finance.value %></td>
+        <td><%= finance.expense_type %></td>
+        <td><%= finance.record_type %></td>
+        <td><%= link_to 'Show', finance %></td>
+        <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
+        <td><%= link_to 'Destroy', finance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Finance', new_finance_path %>

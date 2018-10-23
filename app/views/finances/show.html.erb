@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @finance.day %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @finance.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @finance.value %>
+</p>
+
+<p>
+  <strong>Expense type:</strong>
+  <%= @finance.expense_type %>
+</p>
+
+<p>
+  <strong>Record type:</strong>
+  <%= @finance.record_type %>
+</p>
+
+<%= link_to 'Edit', edit_finance_path(@finance) %> |
+<%= link_to 'Back', finances_path %>

@@ -1,0 +1,2 @@
+class RecordType < ApplicationRecord
+end

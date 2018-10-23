@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Income Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @income_types.each do |income_type| %>
+      <tr>
+        <td><%= income_type.name %></td>
+        <td><%= link_to 'Show', income_type %></td>
+        <td><%= link_to 'Edit', edit_income_type_path(income_type) %></td>
+        <td><%= link_to 'Destroy', income_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Income Type', new_income_type_path %>

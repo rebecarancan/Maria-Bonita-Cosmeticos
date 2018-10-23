@@ -1,0 +1,2 @@
+module RecordTypesHelper
+end

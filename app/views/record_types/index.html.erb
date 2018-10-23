@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Record Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @record_types.each do |record_type| %>
+      <tr>
+        <td><%= record_type.name %></td>
+        <td><%= link_to 'Show', record_type %></td>
+        <td><%= link_to 'Edit', edit_record_type_path(record_type) %></td>
+        <td><%= link_to 'Destroy', record_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Record Type', new_record_type_path %>
