@@ -2,7 +2,7 @@ class CreateSales < ActiveRecord::Migration[5.2]
   def change
     create_table :sales do |t|
       t.date :day
-      t.monetize :value
+      t.integer :value_cents
       t.references :income_type, foreign_key: true
 
       t.timestamps

@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F96E296E-7D5D-AF47-6AD2-4E0D0479FA71" name="Finance">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 13:55:28 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="5EEC42ED-E41E-7BDE-6BC0-ACEB2FF57001">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 13:56:12 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="B21E46BF-1C23-47B8-3AC7-66C74EBDDC02">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 13:56:27 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type_id" id="11B7C21A-43D1-CF44-80CD-9BD54F33DB4B">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:04:22 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDF44875-EB89-1461-24FC-52702F6C03F8" referredColumn="75A8D97B-4457-DAD9-C767-EEF1D8ABC609"/>
+</associations>
+</Column>
+<Column name="kind_id" id="15D16C77-B96F-A0E9-CEB2-ECFF0B760899">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:09:01 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C4D11334-BD17-7BB1-E16F-68BC79F47840" referredColumn="0716F602-491A-9E5E-2C96-26CD520F4E82"/>
+</associations>
+</Column>
+<Column name="description" id="DADD92EA-61FB-9A88-1C20-6F88BEA27B61">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:01:21 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="value" id="9C6E85EB-503E-CE55-4100-95EF315CC5F1">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:01:52 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FEF13157-15C7-D916-74BE-054B4A162231" name="Finance_PK">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 13:56:12 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EEC42ED-E41E-7BDE-6BC0-ACEB2FF57001"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4BE7AC5E-8D74-9CCE-3493-D592FB2AFF7A" name="Finances_Types_FK">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:04:22 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11B7C21A-43D1-CF44-80CD-9BD54F33DB4B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="01079E71-53D4-8AE9-0B0D-4D96215FDC62" name="Finances_Kinds_FK">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:09:01 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15D16C77-B96F-A0E9-CEB2-ECFF0B760899"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -14,7 +14,6 @@
     <% @expense_types.each do |expense_type| %>
       <tr>
         <td><%= expense_type.name %></td>
-        <td><%= link_to 'Show', expense_type %></td>
         <td><%= link_to 'Edit', edit_expense_type_path(expense_type) %></td>
         <td><%= link_to 'Destroy', expense_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

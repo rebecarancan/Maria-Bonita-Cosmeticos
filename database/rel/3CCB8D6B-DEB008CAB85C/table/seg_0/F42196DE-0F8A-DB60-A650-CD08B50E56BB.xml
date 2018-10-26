@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F42196DE-0F8A-DB60-A650-CD08B50E56BB" name="Payments">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F42196DE-0F8A-DB60-A650-CD08B50E56BB" name="Payment">
 <createdBy>rebecarancan</createdBy>
 <createdTime>2018-10-23 14:28:22 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
@@ -32,7 +32,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="894FFCBA-3499-9735-66F6-D88678258970" name="Payments_PK">
+<ind_PK_UK id="894FFCBA-3499-9735-66F6-D88678258970" name="Payment_PK">
 <createdBy>rebecarancan</createdBy>
 <createdTime>2018-10-23 14:28:46 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>

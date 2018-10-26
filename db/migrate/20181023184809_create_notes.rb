@@ -3,7 +3,7 @@ class CreateNotes < ActiveRecord::Migration[5.2]
     create_table :notes do |t|
       t.date :day
       t.string :name
-      t.monetize :value
+      t.integer :value_cents
 
       t.timestamps
     end

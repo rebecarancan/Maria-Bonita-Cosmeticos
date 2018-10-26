@@ -3,7 +3,7 @@ class CreateFinances < ActiveRecord::Migration[5.2]
     create_table :finances do |t|
       t.date :day
       t.string :description
-      t.monetize :value
+      t.integer :value_cents
       t.references :expense_type, foreign_key: true
       t.references :record_type, foreign_key: true
 

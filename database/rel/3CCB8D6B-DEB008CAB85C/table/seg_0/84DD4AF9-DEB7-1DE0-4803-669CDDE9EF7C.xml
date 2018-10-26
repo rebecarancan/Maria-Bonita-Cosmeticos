@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="84DD4AF9-DEB7-1DE0-4803-669CDDE9EF7C" name="Bank">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 16:55:11 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="C77765B7-8AC3-550F-E168-1583C38EF759">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 16:56:01 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="64AD9892-CD10-880A-5318-401ED7F5A962">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 17:00:27 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="category_id" id="EC457268-5C47-DCCA-EE9A-87DCD3058B54">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 16:58:24 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C499DC51-3B0A-1EF2-14F6-CBEAD939F0E5" referredColumn="7D4ECD14-A978-DF0D-1A80-7A112A50F4E0"/>
+</associations>
+</Column>
+<Column name="type_id" id="109F3F17-74F6-141C-9C0A-D4D3E8A91C17">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 17:02:32 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E41E55CC-583F-ED2C-B7CA-6C7A6847DED4" referredColumn="75A8D97B-4457-DAD9-C767-EEF1D8ABC609"/>
+</associations>
+</Column>
+<Column name="value" id="3274FC21-3825-82D0-6986-CB1D11981AFE">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 16:56:34 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2036494A-1180-17AC-FAA5-DC73F894980A" name="Bank_PK">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 16:56:01 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C77765B7-8AC3-550F-E168-1583C38EF759"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B5CC9064-D689-4E9D-DAB9-CBFEBBA29F14" name="Accounts_Categories_FK">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 16:58:24 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC457268-5C47-DCCA-EE9A-87DCD3058B54"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AEBFD63B-D6E8-A829-CD60-5DEFF06A5494" name="Accounts_Types_FK">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 17:02:32 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="109F3F17-74F6-141C-9C0A-D4D3E8A91C17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

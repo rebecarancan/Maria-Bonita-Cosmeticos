@@ -3,8 +3,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     create_table :products do |t|
       t.integer :code
       t.string :name
-      t.monetize :cost
-      t.monetize :price
+      t.integer :cost_cents
+      t.integer :price_cents
       t.integer :margin
 
       t.timestamps

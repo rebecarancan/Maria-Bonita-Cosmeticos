@@ -32,7 +32,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="372A676B-4F50-AB81-E1E6-A132EB43044F" name="Types_PK">
+<ind_PK_UK id="372A676B-4F50-AB81-E1E6-A132EB43044F" name="Record_type_PK">
 <createdBy>rebecarancan</createdBy>
 <createdTime>2018-10-23 14:03:31 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>

@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB019F26-7DD2-AAEF-6EBB-31FC94E34F5B" name="Product">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6F1C9E9F-A9A6-C629-F794-BF7B6ADF260B" name="Order">
 <createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:13:04 UTC</createdTime>
+<createdTime>2018-10-23 14:23:20 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
-<ordsAlias>table_1</ordsAlias>
+<ordsAlias>table_9</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="9B02A77E-FCA6-359A-2AF8-4F219E1D06A2">
+<Column name="id" id="F66AB652-14DC-8F00-F0E6-73C86F601EFD">
 <createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:27:24 UTC</createdTime>
+<createdTime>2018-10-23 14:23:48 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -18,56 +18,57 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="code" id="461EA8AC-B63B-7CDF-8184-8EA1D29CAEFA">
+<Column name="date" id="515414DE-CDD3-CF4A-B766-A80035AA4B16">
 <createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:27:53 UTC</createdTime>
+<createdTime>2018-10-23 14:24:06 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="name" id="7C23B5F6-16A4-0886-E5BB-8C11FAB27B90">
+<Column name="expire" id="C4DC23B3-9B34-A377-5A1F-75260362148F">
 <createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:29:06 UTC</createdTime>
+<createdTime>2018-10-23 14:24:44 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="C32A8719-E198-9441-8C3C-489293344CAC">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:25:05 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>250</dataTypeSize>
-<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cost" id="E89B4855-77A8-AB22-1988-23DB6F3B3A98">
+<Column name="payment_id" id="CE440237-A912-01FA-7E3E-EEA00FEFA6C3">
 <createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:36:18 UTC</createdTime>
+<createdTime>2018-10-23 14:29:34 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46BD418F-5E55-8444-B7DA-A562B0CBE077" referredColumn="0FD7A921-09AD-75B6-D2D5-B508535E26E9"/>
+</associations>
 </Column>
-<Column name="margin" id="B5DF4A5A-BD6A-1F1E-7FA5-20C56194B9DD">
+<Column name="value" id="2251D6E7-EAB8-E7DB-DEE1-531D1788BA6F">
 <createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:38:34 UTC</createdTime>
-<ownerDesignName>database</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>2</dataTypePrecision>
-<ownDataTypeParameters>,2,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="price" id="D5E06CDE-DAC9-2844-DF14-A40B28EA18BE">
-<createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:39:33 UTC</createdTime>
+<createdTime>2018-10-23 14:25:25 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -79,15 +80,25 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="7DDB298D-6EC8-6A0F-7748-4A695FD891D8" name="Product_PK">
+<ind_PK_UK id="997BA3DD-9D9B-B90F-2468-35118CA3B33D" name="Order_PK">
 <createdBy>rebecarancan</createdBy>
-<createdTime>2018-10-23 13:27:24 UTC</createdTime>
+<createdTime>2018-10-23 14:23:48 UTC</createdTime>
 <ownerDesignName>database</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9B02A77E-FCA6-359A-2AF8-4F219E1D06A2"/>
+<colUsage columnID="F66AB652-14DC-8F00-F0E6-73C86F601EFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="302CB6F3-FB51-3B49-2032-59CC3AC3FE8C" name="Order_Payment_FK">
+<createdBy>rebecarancan</createdBy>
+<createdTime>2018-10-23 14:29:34 UTC</createdTime>
+<ownerDesignName>database</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE440237-A912-01FA-7E3E-EEA00FEFA6C3"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
