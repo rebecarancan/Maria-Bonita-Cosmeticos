@@ -18,9 +18,8 @@
         <td><%= sale.day %></td>
         <td><%= sale.value %></td>
         <td><%= sale.income_type %></td>
-        <td><%= link_to 'Show', sale %></td>
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_accounting_sale_path(sale) %></td>
+        <td><%= link_to 'Destroy', accounting_sale_path(sale), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Sale', new_sale_path %>
+<%= link_to 'New Sale', new_accounting_sale_path %>

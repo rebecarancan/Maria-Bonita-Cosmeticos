@@ -1,4 +1,4 @@
-<%= form_with(model: expense_type, local: true) do |form| %>
+<%= form_with(model: [:accounting, expense_type], local: true) do |form| %>
   <% if expense_type.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(expense_type.errors.count, "error") %> prohibited this expense_type from being saved:</h2>

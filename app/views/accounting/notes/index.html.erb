@@ -18,8 +18,8 @@
         <td><%= note.day %></td>
         <td><%= note.name %></td>
         <td><%= note.value %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_accounting_note_path(note) %></td>
+        <td><%= link_to 'Destroy', accounting_note_path(note), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Note', new_note_path %>
+<%= link_to 'New Note', new_accounting_note_path %>

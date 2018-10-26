@@ -22,9 +22,8 @@
         <td><%= finance.value %></td>
         <td><%= finance.expense_type %></td>
         <td><%= finance.record_type %></td>
-        <td><%= link_to 'Show', finance %></td>
-        <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
-        <td><%= link_to 'Destroy', finance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_accounting_finance_path(finance) %></td>
+        <td><%= link_to 'Destroy', accounting_finance_path(finance), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Finance', new_finance_path %>
+<%= link_to 'New Finance', new_accounting_finance_path %>

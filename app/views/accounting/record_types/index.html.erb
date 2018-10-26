@@ -14,9 +14,8 @@
     <% @record_types.each do |record_type| %>
       <tr>
         <td><%= record_type.name %></td>
-        <td><%= link_to 'Show', record_type %></td>
-        <td><%= link_to 'Edit', edit_record_type_path(record_type) %></td>
-        <td><%= link_to 'Destroy', record_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_accounting_record_type_path(record_type) %></td>
+        <td><%= link_to 'Destroy', accounting_record_type_path(record_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Record Type', new_record_type_path %>
+<%= link_to 'New Record Type', new_accounting_record_type_path %>

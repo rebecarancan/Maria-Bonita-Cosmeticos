@@ -20,9 +20,8 @@
         <td><%= bank.value %></td>
         <td><%= bank.income_type %></td>
         <td><%= bank.record_type %></td>
-        <td><%= link_to 'Show', bank %></td>
-        <td><%= link_to 'Edit', edit_bank_path(bank) %></td>
-        <td><%= link_to 'Destroy', bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_accounting_bank_path(bank) %></td>
+        <td><%= link_to 'Destroy', accounting_bank_path(bank), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Bank', new_bank_path %>
+<%= link_to 'New Bank', new_accounting_bank_path %>

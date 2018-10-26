@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     resources :record_types
     resources :expense_types
     resources :payments
-    resources :income_kinds
     resources :notes
   end
   resources :home

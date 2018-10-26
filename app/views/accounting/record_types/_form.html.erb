@@ -1,4 +1,4 @@
-<%= form_with(model: record_type, local: true) do |form| %>
+<%= form_with(model: [:accounting, record_type], local: true) do |form| %>
   <% if record_type.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(record_type.errors.count, "error") %> prohibited this record_type from being saved:</h2>
