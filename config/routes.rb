@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
   get 'accounting', to: 'accounting/dashboard#index'
+  get 'home', to: 'home#index'
 
   namespace :accounting do
     get 'dashboard/index'
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
     resources :payments
     resources :notes
   end
-  resources :home
 
   resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
