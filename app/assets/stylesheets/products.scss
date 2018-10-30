@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: OpenSans-Regular;
-  src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
+  src: url('../OpenSans/OpenSans-Regular.ttf');
 }
 
 
@@ -103,7 +103,7 @@ iframe {
 
 .limiter {
   width: 100%;
-  margin: 0 auto;
+  margin-right: 50px;
 }
 
 .container-table100 {
@@ -144,7 +144,7 @@ table td, table th {
 }
 table thead tr {
   height: 40px;
-  background: #600513;
+  background: #c45858;
 }
 table tbody tr {
   height: 50px;
@@ -175,7 +175,7 @@ table td.r, table th.r {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #dbd9d9;
+  background-color: #ffc6c6;
 }
 
 tbody tr {
@@ -188,21 +188,22 @@ tbody tr {
 
 tbody tr:hover {
   color: #ffffff;
-  background-color: #bc5a68;
+  background-color: #ff9191;
   cursor: pointer;
 }
 
 .column1 {
-  width: 260px;
+  width: 160px;
   padding-left: 40px;
 }
 
 .column2 {
-  width: 160px;
+  width: 20px;
+  text-align: center;
 }
 
 .column3 {
-  width: 245px;
+  width: 300px;
 }
 
 .column4 {
@@ -211,14 +212,14 @@ tbody tr:hover {
 }
 
 .column5 {
-  width: 170px;
-  text-align: right;
+  width: 100px;
+  text-align: center;
 }
 
 .column6 {
-  width: 222px;
+  width: 20px;
   text-align: right;
-  padding-right: 62px;
+  padding-right: 40px;
 }
 
 
@@ -298,4 +299,8 @@ tbody tr:hover {
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+.float-right {
+  margin-right: 30px;
 }

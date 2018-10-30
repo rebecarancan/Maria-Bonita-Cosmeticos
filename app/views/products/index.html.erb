@@ -6,37 +6,44 @@
 <div><%= render partial: 'layouts/navigation' %></div>
 
 <br><br><br>
-      <div class="pull-right"><%= link_to 'New Product', new_product_path %></div>
-  <div class="container-table100">
-    <div class="wrap-table100">
-      <div class="table100">
-        <table>
-          <thead>
-            <tr class="table100-head">
-              <th class="column4">Código</th>
-              <th class="column1">Nome</th>
-              <th class="column4">Custo</th>
-              <th class="column4">Preço</th>
-              <th class="column4">Margem</th>
-              <th> </th>
-              <th> </th>
+<%= link_to 'Novo', new_product_path, class: "btn btn-primary float-right", style: "background: #600513", 'data-toggle':"modal", 'data-target':"#newProductModal", remote: true %>
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Código</th>
+            <th class="column3">Nome</th>
+            <th class="column5">Custo</th>
+            <th class="column5">Preço</th>
+            <th class="column5">Margem</th>
+            <th class="column2"></th>
+            <th class="column6"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td class="column1"><%= product.code %></td>
+              <td class="column3"><%= product.name %></td>
+              <td class="column5"><%= product.cost %></td>
+              <td class="column5"><%= product.price %></td>
+              <td class="column5"><%= product.margin %></td>
+              <td class="column2">
+                <%= link_to  edit_product_path(product) do %>
+                  <span style="color: #600513" class="typcn typcn-pencil"></span>
+                <% end %>
+              </td>
+              <td class="column6">
+                <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span style="color: #600513" class="typcn typcn-times"></span>
+                <% end %>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            <% @products.each do |product| %>
-              <tr>
-                <td class="column4"><%= product.code %></td>
-                <td class="column1"><%= product.name %></td>
-                <td class="column4"><%= product.cost %></td>
-                <td class="column4"><%= product.price %></td>
-                <td class="column4"><%= product.margin %></td>
-                <td class="column4"><%= link_to 'Edit', edit_product_path(product) %></td>
-                <td class="column4"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-
+</div>

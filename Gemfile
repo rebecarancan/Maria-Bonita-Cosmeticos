@@ -35,8 +35,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails', '~>1.12'
-# Bootstrap
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+#A gem to automate using jQuery with Rails
+gem 'jquery-rails'
+
+source 'https://rails-assets.org' do
+  #Typicons
+  gem 'rails-assets-typicons'
+  #Bootstrap
+  gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
