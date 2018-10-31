@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'accounting', to: 'accounting/dashboard#index'
   get 'home', to: 'home#index'
-  get "products/new_product" => 'products#new_product', :as => :new_product
+  # get "products/new_product" => 'products#new_product', :as => :new_product
 
   namespace :accounting do
     get 'dashboard/index'

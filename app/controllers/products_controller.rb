@@ -4,13 +4,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @product = Product.new
-    @products = Product.all
+    @products = Product.all.order(:name).page(params[:page]).per(15)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @product }
-    end
   end
 
   # GET /products/1
@@ -32,6 +27,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
+    #helpers.calculate_price(@product.cost, @product.price)
     respond_to do |format|
       if @product.save
         format.html { redirect_to action: :index, notice: 'Product was successfully created.' }
@@ -75,6 +71,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:code, :name, :cost, :price, :margin)
+      params.require(:product).permit(:code, :name, :cost, :margin)
     end
 end

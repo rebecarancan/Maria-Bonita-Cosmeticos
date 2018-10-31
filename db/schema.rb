@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_200344) do
 
   create_table "banks", force: :cascade do |t|
     t.date "day"
-    t.integer "value"
+    t.integer "value_cents"
     t.integer "income_type_id"
     t.integer "record_type_id"
     t.datetime "created_at", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_200344) do
   create_table "finances", force: :cascade do |t|
     t.date "day"
     t.string "description"
-    t.integer "price_cents"
+    t.integer "value_cents"
     t.integer "expense_type_id"
     t.integer "record_type_id"
     t.datetime "created_at", null: false
@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 2018_10_23_200344) do
     t.integer "code"
     t.string "name"
     t.integer "cost_cents"
-    t.integer "price_cents"
     t.integer "margin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,7 +78,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_200344) do
 
   create_table "sales", force: :cascade do |t|
     t.date "day"
-    t.integer "value"
+    t.integer "value_cents"
     t.integer "income_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

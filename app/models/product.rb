@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
   # Rails Money
-  monetize :price_cents, :cost_cents
+  monetize :cost_cents
+
 end

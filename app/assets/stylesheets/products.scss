@@ -10,7 +10,6 @@
 
 @font-face {
   font-family: OpenSans-Regular;
-  src: url('../OpenSans/OpenSans-Regular.ttf');
 }
 
 
@@ -168,7 +167,7 @@ table td.r, table th.r {
 
 .table100-head th{
   font-family: OpenSans-Regular;
-  font-size: 18px;
+  font-size: 20px;
   color: #fff;
   line-height: 1.2;
   font-weight: unset;
@@ -180,7 +179,7 @@ tbody tr:nth-child(even) {
 
 tbody tr {
   font-family: OpenSans-Regular;
-  font-size: 15px;
+  font-size: 22px;
   color: #494949;
   line-height: 1.2;
   font-weight: unset;
