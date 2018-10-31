@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     resources :notes
   end
 
-  resources :products
+  resources :products do
+    get 'search', to: 'search#index'
+  end
 
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
