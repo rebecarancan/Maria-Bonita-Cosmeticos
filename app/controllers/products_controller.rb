@@ -4,8 +4,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.order(:name).page(params[:page]).per(15)
-
+    if params[:code]
+      @products = Product.where('code LIKE ?', "%#{params[:code]}%")
+    else
+      @products = Product.all.order(:name).page(params[:page]).per(15)
+    end
   end
 
   # GET /products/1

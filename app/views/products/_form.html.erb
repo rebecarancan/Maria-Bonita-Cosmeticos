@@ -1,4 +1,11 @@
-<%= form_with(model: product, local: true) do |form| %>
+
+<p id="notice"><%= notice %></p>
+
+<div>
+  <%= render partial: 'layouts/navigation' %>
+</div>
+
+<%= form_with(model: product, local: true, html: { class: "basic-grey"}) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -10,28 +17,34 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.number_field :code %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cost %>
-    <%= form.text_field :cost %>
-  </div>
-
-  <div class="field">
-    <%= form.label :margin %>
-    <%= form.number_field :margin %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <form>
+    <div class="form-row">
+      <div class="col-md-4 mb-10">
+        <%= form.label :code %>
+        <%= form.text_field :code, class:"form-control", placeholder:"Código" %>
+      </div>
+      <div class="col-md-10 mb-10">
+        <%= form.label :name %>
+        <%= form.text_field :name, class:"form-control", placeholder:"Nome" %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-10">
+        <%= form.label :cost %>
+        <%= form.text_field :cost, class:"form-control", placeholder:"Custo" %>
+      </div>
+      <div class="col-md-4 mb-10">
+        <%= form.label :margin %>
+        <%= form.text_field :margin, class:"form-control", placeholder:"Margem" %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-2 mb-10">
+      <%= form.submit "Enviar", class:"btn btn-primary", style: "background: #600513" %>
+      </div>
+    </div>
+  </form>
 <% end %>
+</div>
+</div>
+</div>

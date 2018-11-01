@@ -1091,7 +1091,6 @@ img {
 }
 
 .btn {
-  text-transform: uppercase;
   letter-spacing: 2px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;

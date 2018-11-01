@@ -166,11 +166,10 @@ table td.r, table th.r {
 
 
 .table100-head th{
-  font-family: OpenSans-Regular;
   font-size: 20px;
   color: #fff;
   line-height: 1.2;
-  font-weight: unset;
+  font-weight: bold;
 }
 
 tbody tr:nth-child(even) {
@@ -178,7 +177,6 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr {
-  font-family: OpenSans-Regular;
   font-size: 22px;
   color: #494949;
   line-height: 1.2;
@@ -313,3 +311,6 @@ tbody tr:hover {
   border-width: 1px;
 }
 
+.wrap-form {
+  width: 800px;
+}
