@@ -1,9 +1,38 @@
-<%= render partial: 'layouts/navigation' %>
 
 <%= stylesheet_link_tag    'application', media: 'all' %>
 <%= javascript_include_tag 'application' %>
 
 <br><br><br>
 
-<h1>Accounting::Dashboard#index</h1>
-<p>Find me in app/views/accounting/dashboard/index.html.erb</p>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
+  <a class="navbar-brand"></a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active">Planilhas</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Finanças Diárias", accounting_finances_path, class:"nav-link js-scroll-trigger" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Entrada Diária", accounting_finances_path, class:"nav-link js-scroll-trigger" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Pedidos e Pagamentos", accounting_payments_path, class:"nav-link js-scroll-trigger" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Notas Fiscais", accounting_notes_path, class:"nav-link js-scroll-trigger" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Controle Bancário", accounting_banks_path, class:"nav-link js-scroll-trigger" %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="content-wrapper">
+  <h1>Accounting::Dashboard#index</h1>
+  <p>Find me in app/views/accounting/dashboard/index.html.erb</p>
+</div>
+
+<%= render partial: 'layouts/navigation' %>

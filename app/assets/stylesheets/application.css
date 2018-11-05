@@ -44,10 +44,6 @@ h6 {
   letter-spacing: 0.1rem;
 }
 
-.bg-black {
-  background-color: #000 !important;
-}
-
 .rounded-pill {
   border-radius: 5rem;
 }
@@ -194,7 +190,7 @@ header.masthead .bg-circle-4 {
     padding: 0px 0px 10px 40px;
     display: block;
     border-bottom:1px solid #E4E4E4;
-    margin: -10px -15px 30px -10px;;
+    margin: -10px -15px 30px -10px;
     color: #888;
 }
 .basic-grey h1>span {
@@ -273,3 +269,4 @@ header.masthead .bg-circle-4 {
     font-size: 30px;
     font-weight: bold;
 }
+
