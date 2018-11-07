@@ -4,6 +4,7 @@ class CreateFinances < ActiveRecord::Migration[5.2]
       t.date :day
       t.string :description
       t.integer :value_cents
+      t.references :income_type, foreign_key: true
       t.references :expense_type, foreign_key: true
       t.references :record_type, foreign_key: true
 

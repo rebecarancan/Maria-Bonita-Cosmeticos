@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @accounting_order.day %>
+</p>
+
+<p>
+  <strong>Distributor:</strong>
+  <%= @accounting_order.distributor %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @accounting_order.value %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @accounting_order.payment %>
+</p>
+
+<%= link_to 'Edit', edit_accounting_order_path(@accounting_order) %> |
+<%= link_to 'Back', accounting_orders_path %>

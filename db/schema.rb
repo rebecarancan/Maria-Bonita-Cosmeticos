@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_200344) do
+ActiveRecord::Schema.define(version: 2018_11_07_180049) do
 
   create_table "banks", force: :cascade do |t|
     t.date "day"
@@ -33,11 +33,13 @@ ActiveRecord::Schema.define(version: 2018_10_23_200344) do
     t.date "day"
     t.string "description"
     t.integer "value_cents"
+    t.integer "income_type_id"
     t.integer "expense_type_id"
     t.integer "record_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["expense_type_id"], name: "index_finances_on_expense_type_id"
+    t.index ["income_type_id"], name: "index_finances_on_income_type_id"
     t.index ["record_type_id"], name: "index_finances_on_record_type_id"
   end
 
@@ -53,6 +55,17 @@ ActiveRecord::Schema.define(version: 2018_10_23_200344) do
     t.integer "value_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.date "purchase"
+    t.string "distributor"
+    t.date "expire"
+    t.integer "value_cents"
+    t.integer "payment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_id"], name: "index_orders_on_payment_id"
   end
 
   create_table "payments", force: :cascade do |t|

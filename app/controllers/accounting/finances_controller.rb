@@ -1,6 +1,7 @@
 module Accounting
   class FinancesController < ApplicationController
     before_action :set_finance, only: [:show, :edit, :update, :destroy]
+    before_action :set_options_for_select, only: [:new, :edit, :update, :create]
 
     # GET /finances
     # GET /finances.json
@@ -64,13 +65,19 @@ module Accounting
 
     private
       # Use callbacks to share common setup or constraints between actions.
+      def set_options_for_select
+        @expense_type_options_for_select = ExpenseType.all
+        @income_type_options_for_select = IncomeType.all
+        @record_type_options_for_select = RecordType.all
+      end
+
       def set_finance
         @finance = Finance.find(params[:id])
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def finance_params
-        params.require(:finance).permit(:day, :description, :price_cents, :expense_type_id, :record_type_id)
+        params.require(:finance).permit(:day, :description, :price_cents, :expense_type_id, :income_type_id, :record_type_id)
       end
   end
 end

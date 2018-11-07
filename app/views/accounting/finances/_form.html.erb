@@ -12,6 +12,21 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :record_type_id %>
+    <%= form.collection_select(:record_type_id, @record_type_options_for_select, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expense_type_id %>
+    <%= form.collection_select(:expense_type_id, @expense_type_options_for_select, :id, :name, {include_blank: true}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :income_type_id %>
+    <%= form.collection_select(:income_type_id, @income_type_options_for_select, :id, :name, {include_blank: true}) %>
+  </div>
+
+  <div class="field">
     <%= form.label :day %>
     <%= form.date_select :day %>
   </div>
@@ -24,16 +39,6 @@
   <div class="field">
     <%= form.label :value %>
     <%= form.text_field :value %>
-  </div>
-
-  <div class="field">
-    <%= form.label :expense_type_id %>
-    <%= form.text_field :expense_type_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :record_type_id %>
-    <%= form.text_field :record_type_id %>
   </div>
 
   <div class="actions">

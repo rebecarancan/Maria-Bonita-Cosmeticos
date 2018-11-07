@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :accounting do
+    resources :orders
+  end
   get 'home/index'
   get 'accounting', to: 'accounting/dashboard#index'
   get 'home', to: 'home#index'
