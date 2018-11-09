@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :accounting do
-    resources :orders
-  end
   get 'home/index'
   get 'accounting', to: 'accounting/dashboard#index'
   get 'home', to: 'home#index'
@@ -10,6 +7,7 @@ Rails.application.routes.draw do
 
   namespace :accounting do
     get 'dashboard/index'
+    resources :master_finances
     resources :finances
     resources :banks
     resources :sales
@@ -18,6 +16,8 @@ Rails.application.routes.draw do
     resources :expense_types
     resources :payments
     resources :notes
+    resources :distributors
+    resources :orders
   end
 
   resources :products

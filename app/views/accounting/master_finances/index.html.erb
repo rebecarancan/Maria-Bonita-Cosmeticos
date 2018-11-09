@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Master Finances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @master_finances.each do |master_finance| %>
+      <tr>
+        <td><%= master_finance.month %></td>
+        <td><%= link_to 'Show', accounting_master_finance_path %></td>
+        <td><%= link_to 'Edit', edit_accounting_master_finance_path(master_finance) %></td>
+        <td><%= link_to 'Destroy', accounting_master_finance_path(master_finance), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master Finance', new_accounting_master_finance_path %>

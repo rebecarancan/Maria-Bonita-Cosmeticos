@@ -1,0 +1,33 @@
+<%= form_with(model: [:accounting, master_finance], local: true) do |form| %>
+  <% if master_finance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(master_finance.errors.count, "error") %> prohibited this master_finance from being saved:</h2>
+
+      <ul>
+      <% master_finance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.text_field :month %>
+  </div>
+
+  <div id='finances'>
+    <%= form.fields_for :finances do |finance_fields| %>
+      <%= render 'finance_fields', f: finance_fields %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Adicionar', form, :finances %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+

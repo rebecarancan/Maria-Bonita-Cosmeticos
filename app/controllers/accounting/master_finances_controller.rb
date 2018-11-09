@@ -1,0 +1,79 @@
+module Accounting
+  class MasterFinancesController < ApplicationController
+    before_action :set_master_finance, only: [:show, :edit, :update, :destroy]
+
+    # GET /master_finances
+    # GET /master_finances.json
+    def index
+      @master_finances = MasterFinance.all
+    end
+
+    # GET /master_finances/1
+    # GET /master_finances/1.json
+    def show
+    end
+
+    # GET /master_finances/new
+    def new
+      @master_finance = MasterFinance.new
+    end
+
+    # GET /master_finances/1/edit
+    def edit
+    end
+
+    # POST /master_finances
+    # POST /master_finances.json
+    def create
+      @master_finance = MasterFinance.new(master_finance_params)
+
+      respond_to do |format|
+        if @master_finance.save
+          format.html { redirect_to action: :index, notice: 'Master finance was successfully created.' }
+          format.json { render :show, status: :created, location: @master_finance }
+        else
+          format.html { render :new }
+          format.json { render json: @master_finance.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    # PATCH/PUT /master_finances/1
+    # PATCH/PUT /master_finances/1.json
+    def update
+      respond_to do |format|
+        if @master_finance.update(master_finance_params)
+          format.html { redirect_to action: :index, notice: 'Master finance was successfully updated.' }
+          format.json { render :show, status: :ok, location: @master_finance }
+        else
+          format.html { render :edit }
+          format.json { render json: @master_finance.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    # DELETE /master_finances/1
+    # DELETE /master_finances/1.json
+    def destroy
+      @master_finance.destroy
+      respond_to do |format|
+        format.html { redirect_to master_finances_url, notice: 'Master finance was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    end
+
+    private
+      # Use callbacks to share common setup or constraints between actions.
+      def set_master_finance
+        @master_finance = MasterFinance.find(params[:id])
+      end
+
+      # Never trust parameters from the scary internet, only allow the white list through.
+      def master_finance_params
+        params.require(:master_finance).permit(:month,
+                                        finances_attributes: [
+                                        :id, :day, :description, :value, :expense_type_id,
+                                        :income_type_id, :record_type_id, :_destroy])
+      end
+  end
+end

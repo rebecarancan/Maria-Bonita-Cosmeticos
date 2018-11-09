@@ -1,0 +1,32 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= finance_fields.label :record_type_id %>
+    <%= finance_fields.collection_select(:record_type_id, @record_type_options_for_select, :id, :name, {include_blank: true}) %>
+  </div>
+
+  <div class="field">
+    <%= finance_fields.label :income_type_id %>
+    <%= finance_fields.collection_select(:income_type_id, @income_type_options_for_select, :id, :name, {include_blank: true}) %>
+  </div>
+
+  <div class="field">
+    <%= finance_fields.label :expense_type_id %>
+    <%= finance_fields.collection_select(:expense_type_id, @expense_type_options_for_select, :id, :name, {include_blank: true}) %>
+  </div>
+
+  <div class="field">
+    <%= finance_fields.label :day %>
+    <%= finance_fields.date_select :day %>
+  </div>
+
+  <div class="field">
+    <%= finance_fields.label :description %>
+    <%= finance_fields.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= finance_fields.label :value %>
+    <%= finance_fields.text_field :value %>
+  </div>
+  <%= link_to_remove_association "Remover", form %>
+</div>
