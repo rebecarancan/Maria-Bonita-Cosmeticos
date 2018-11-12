@@ -1,2 +1,0 @@
-class Distributor < ApplicationRecord
-end

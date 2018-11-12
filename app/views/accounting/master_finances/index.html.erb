@@ -1,3 +1,6 @@
+<%= render partial: 'layouts/navigation' %>
+
+<br><br><br>
 <p id="notice"><%= notice %></p>
 
 <h1>Master Finances</h1>
@@ -14,7 +17,7 @@
     <% @master_finances.each do |master_finance| %>
       <tr>
         <td><%= master_finance.month %></td>
-        <td><%= link_to 'Show', accounting_master_finance_path %></td>
+        <td><%= link_to 'Show', accounting_master_finance_path(master_finance) %></td>
         <td><%= link_to 'Edit', edit_accounting_master_finance_path(master_finance) %></td>
         <td><%= link_to 'Destroy', accounting_master_finance_path(master_finance), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

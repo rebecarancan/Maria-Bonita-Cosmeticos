@@ -70,7 +70,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def bank_params
-        params.require(:bank).permit(:day, :value, :income_type_id, :record_type_id)
+        params.require(:bank).permit(:day, :value, :income_type_id, :expense_type_id)
       end
   end
 end

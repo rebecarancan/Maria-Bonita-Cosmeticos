@@ -6,11 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Gerando os tipos de registros (RecordType)..."
-RecordType.create!([{name: "Entrada"},
-      {name: "Saída"}])
-puts "Gerando os tipos de registros (RecordType)... [OK]"
-
 puts "Gerando os tipos de entrada (IncomeType)..."
 IncomeType.create!([{name: "Dinheiro"},
       {name: "Débito"},
@@ -25,6 +20,7 @@ ExpenseType.create!([{name: "Acerto"},
       {name: "Aladim"},
       {name: "Aluguel"},
       {name: "Arcon"},
+      {name: "Boleto"},
       {name: "Bombeiro"},
       {name: "Casa"},
       {name: "Comida"},

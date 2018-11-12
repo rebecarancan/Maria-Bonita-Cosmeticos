@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= form.label :month %>
-    <%= form.text_field :month %>
+    <%= form.select :month, options_for_month(@master_finance.month) %>
   </div>
 
   <div id='finances'>
-    <%= form.fields_for :finances do |finance_fields| %>
-      <%= render 'finance_fields', f: finance_fields %>
+    <%= form.fields_for :finances do |finances_fields| %>
+      <%= render 'finance_fields', f: finances_fields %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Adicionar', form, :finances %>
+      <%= link_to_add_association('Adicionar', form, :finances) %>
     </div>
   </div>
 

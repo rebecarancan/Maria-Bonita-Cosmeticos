@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 2018_11_09_175045) do
     t.date "day"
     t.integer "value_cents"
     t.integer "income_type_id"
-    t.integer "record_type_id"
+    t.integer "expense_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["expense_type_id"], name: "index_banks_on_expense_type_id"
     t.index ["income_type_id"], name: "index_banks_on_income_type_id"
-    t.index ["record_type_id"], name: "index_banks_on_record_type_id"
   end
 
   create_table "distributors", force: :cascade do |t|
@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 2018_11_09_175045) do
     t.integer "value_cents"
     t.integer "income_type_id"
     t.integer "expense_type_id"
-    t.integer "record_type_id"
+    t.integer "master_finance_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["expense_type_id"], name: "index_finances_on_expense_type_id"
     t.index ["income_type_id"], name: "index_finances_on_income_type_id"
-    t.index ["record_type_id"], name: "index_finances_on_record_type_id"
+    t.index ["master_finance_id"], name: "index_finances_on_master_finance_id"
   end
 
   create_table "income_types", force: :cascade do |t|
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_175045) do
 
   create_table "master_finances", force: :cascade do |t|
     t.string "month"
+    t.string "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,12 +92,6 @@ ActiveRecord::Schema.define(version: 2018_11_09_175045) do
     t.string "name"
     t.integer "cost_cents"
     t.integer "margin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "record_types", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

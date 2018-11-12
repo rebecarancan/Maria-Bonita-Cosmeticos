@@ -6,7 +6,7 @@ class CreateFinances < ActiveRecord::Migration[5.2]
       t.integer :value_cents
       t.references :income_type, foreign_key: true
       t.references :expense_type, foreign_key: true
-      t.references :record_type, foreign_key: true
+      t.references :master_finance, foreign_key: true
 
       t.timestamps
     end

@@ -1,6 +1,7 @@
 module Accounting
   class MasterFinancesController < ApplicationController
     before_action :set_master_finance, only: [:show, :edit, :update, :destroy]
+    before_action :set_options_for_select, only: [:new, :create, :update, :edit]
 
     # GET /master_finances
     # GET /master_finances.json
@@ -63,6 +64,11 @@ module Accounting
     end
 
     private
+
+      def set_options_for_select
+        @expense_type_options_for_select = ExpenseType.all
+        @income_type_options_for_select = IncomeType.all
+      end
       # Use callbacks to share common setup or constraints between actions.
       def set_master_finance
         @master_finance = MasterFinance.find(params[:id])
@@ -70,7 +76,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_finance_params
-        params.require(:master_finance).permit(:month,
+        params.require(:master_finance).permit(:month, :year,
                                         finances_attributes: [
                                         :id, :day, :description, :value, :expense_type_id,
                                         :income_type_id, :record_type_id, :_destroy])

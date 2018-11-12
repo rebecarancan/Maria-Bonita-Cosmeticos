@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :distributor %>
-    <%= form.text_field :distributor %>
+    <%= form.select :distributor, options_for_distributor(@order.distributor) %>
   </div>
 
   <div class="field">
