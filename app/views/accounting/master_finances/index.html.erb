@@ -3,28 +3,55 @@
 <br><br><br>
 <p id="notice"><%= notice %></p>
 
-<h1>Master Finances</h1>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group float-left text-box">
+      <h1 style="color: #600513">Finanças Diárias</h1>
+    </div>
+  </div>
+  <%= link_to 'Novo', new_accounting_master_finance_path, class: "btn btn-primary butt-align", style: "background: #600513" %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Month</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Ano</th>
+            <th class="column3">Mês</th>
+            <th class="column5">Mostrar</th>
+            <th class="column5">Editar</th>
+            <th class="column5">Apagar</th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @master_finances.each do |master_finance| %>
-      <tr>
-        <td><%= master_finance.month %></td>
-        <td><%= link_to 'Show', accounting_master_finance_path(master_finance) %></td>
-        <td><%= link_to 'Edit', edit_accounting_master_finance_path(master_finance) %></td>
-        <td><%= link_to 'Destroy', accounting_master_finance_path(master_finance), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @master_finances.each do |master_finance| %>
+            <tr>
+              <td class="column1"><%= master_finance.year %></td>
+              <td class="column3"><%= master_finance.month %></td>
+              <td class="column5">
+                <%= link_to accounting_master_finance_path(master_finance) do %>
+                  <span style="color: #600513" class="typcn typcn-th-list"></span>
+                <% end %>
+              </td>
+              <td class="column5">
+                <%= link_to edit_accounting_master_finance_path(master_finance) do %>
+                  <span style="color: #600513" class="typcn typcn-pencil"></span>
+                <% end %>
+              </td>
+              <td class="column5">
+                <%= link_to accounting_master_finance_path(master_finance), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span style="color: #600513" class="typcn typcn-times""></span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <br>
-
-<%= link_to 'New Master Finance', new_accounting_master_finance_path %>

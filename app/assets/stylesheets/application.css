@@ -184,6 +184,7 @@ header.masthead .bg-circle-4 {
     background: #ffc6c6;
     padding: 20px 10px 20px 20px;
     border-radius: 10px;
+    box-shadow: inset 0px 1px 4px #fda9a9;
 }
 .basic-grey h1 {
     font-size: 25px;
@@ -210,8 +211,9 @@ header.masthead .bg-circle-4 {
     color: #888;
 }
 .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
-    border: 1px solid #DADADA;
-    color: #888;
+    border: 1px transparent;
+    border-radius: 5px;
+    color: #494949;
     height: 30px;
     margin-bottom: 16px;
     margin-right: 6px;
@@ -221,9 +223,9 @@ header.masthead .bg-circle-4 {
     width: 70%;
     font-size: 12px;
     line-height:15px;
-    box-shadow: inset 0px 1px 4px #ECECEC;
-    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+    box-shadow: inset 0px 1px 4px #ff5d5d;
+    -moz-box-shadow: inset 0px 1px 4px #ff5d5d;
+    -webkit-box-shadow: inset 0px 1px 4px #ff5d5d;
 }
 .basic-grey textarea{
     padding: 5px 3px 3px 5px;
@@ -268,5 +270,10 @@ header.masthead .bg-circle-4 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    box-shadow: inset 0px 1px 4px #b34a4a;
 }
 
+.label {
+  color: #c45858;
+  font-weight: bold;
+}

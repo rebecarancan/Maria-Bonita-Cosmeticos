@@ -20,27 +20,27 @@
   <form>
     <div class="form-row">
       <div class="col-md-4 mb-10">
-        <%= form.label :code %>
+        <%= form.label :code, class:"label" %>
         <%= form.text_field :code, class:"form-control", placeholder:"Código" %>
       </div>
       <div class="col-md-10 mb-10">
-        <%= form.label :name %>
+        <%= form.label :name, class:"label" %>
         <%= form.text_field :name, class:"form-control", placeholder:"Nome" %>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-4 mb-10">
-        <%= form.label :cost %>
+        <%= form.label :cost, class:"label" %>
         <%= form.text_field :cost, class:"form-control", placeholder:"Custo" %>
       </div>
       <div class="col-md-4 mb-10">
-        <%= form.label :margin %>
+        <%= form.label :margin, class:"label" %>
         <%= form.text_field :margin, class:"form-control", placeholder:"Margem" %>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-2 mb-10">
-      <%= form.submit "Salvar", class:"btn btn-primary", style: "background: #600513" %>
+      <%= form.submit "Salvar", class:"btn btn-primary", style: "background: #600513"%>
       </div>
       <div class="col-md-2 mb-10">
       <%= link_to "Voltar", products_path, class:"btn btn-primary", style: "background: #c45858" %>

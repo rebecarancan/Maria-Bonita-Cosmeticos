@@ -1,4 +1,8 @@
-<%= form_with(model: [:accounting, master_finance], local: true) do |form| %>
+<div>
+  <%= render partial: 'layouts/navigation' %>
+</div>
+
+<%= form_with(model: [:accounting, master_finance], local: true, html: { class: "basic-grey"}) do |form| %>
   <% if master_finance.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(master_finance.errors.count, "error") %> prohibited this master_finance from being saved:</h2>
@@ -11,23 +15,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :month %>
-    <%= form.select :month, options_for_month(@master_finance.month) %>
-  </div>
-
-  <div id='finances'>
-    <%= form.fields_for :finances do |finances_fields| %>
-      <%= render 'finance_fields', f: finances_fields %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association('Adicionar', form, :finances) %>
+  <form>
+    <div class="form-row">
+      <div class="col-md-4 mb-10">
+      <%= form.label :month %>
+      <%= form.select :month, options_for_month(@master_finance.month), class:"form-control" %>
+      </div>
     </div>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-10">
+        <%= form.label :year %>
+        <%= form.text_field :year,  class:"form-control" %>
+      </div>
+    </div>
+
+    <div id='finances'>
+      <%= form.fields_for :finances do |finances_fields| %>
+        <%= render 'finance_fields', f: finances_fields %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association('Adicionar', form, :finances) %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </form>
 <% end %>
 
 
