@@ -23,12 +23,6 @@ ActiveRecord::Schema.define(version: 2018_11_09_175045) do
     t.index ["income_type_id"], name: "index_banks_on_income_type_id"
   end
 
-  create_table "distributors", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "expense_types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false

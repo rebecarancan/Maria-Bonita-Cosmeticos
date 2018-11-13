@@ -17,30 +17,37 @@
 
   <form>
     <div class="form-row">
-      <div class="col-md-4 mb-10">
-      <%= form.label :month %>
+      <div class="col-md-2 mb-10">
+        <%= form.label :year, class:"label" %>
+        <%= form.text_field :year,  class:"form-control" %>
+      </div>
+
+      <div class="col-md-2 mb-10">
+      <%= form.label :month, class:"label" %>
       <%= form.select :month, options_for_month(@master_finance.month), class:"form-control" %>
       </div>
     </div>
 
-    <div class="form-row">
-      <div class="col-md-4 mb-10">
-        <%= form.label :year %>
-        <%= form.text_field :year,  class:"form-control" %>
-      </div>
-    </div>
+    <br><br>
 
     <div id='finances'>
       <%= form.fields_for :finances do |finances_fields| %>
         <%= render 'finance_fields', f: finances_fields %>
       <% end %>
       <div class='links'>
-        <%= link_to_add_association('Adicionar', form, :finances) %>
+        <%= link_to_add_association('+', form, :finances, class: "badge badge-pill badge-secondary", style: "background: #c45858") %>
       </div>
     </div>
 
-    <div class="actions">
-      <%= form.submit %>
+    <br><br><br>
+
+    <div class="form-row">
+      <div class="col-md-1 mb-10">
+        <%= form.submit "Salvar", class:"btn btn-primary", style: "background: #600513" %>
+      </div>
+      <div class="col-md-1 mb-10">
+        <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-primary", style: "background: #c45858" %>
+      </div>
     </div>
   </form>
 <% end %>

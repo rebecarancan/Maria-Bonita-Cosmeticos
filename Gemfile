@@ -37,6 +37,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'money-rails', '~>1.12'
 # A gem to automate using jQuery with Rails
 gem 'jquery-rails'
+# jQuery UI for the Rails asset pipeline
+gem 'jquery-ui-rails'
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps

@@ -30,7 +30,7 @@ module Accounting
 
       respond_to do |format|
         if @master_finance.save
-          format.html { redirect_to action: :index, notice: 'Master finance was successfully created.' }
+          format.html { redirect_to action: :show, notice: 'Master finance was successfully created.' }
           format.json { render :show, status: :created, location: @master_finance }
         else
           format.html { render :new }
@@ -44,7 +44,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_finance.update(master_finance_params)
-          format.html { redirect_to action: :index, notice: 'Master finance was successfully updated.' }
+          format.html { redirect_to action: :show, notice: 'Master finance was successfully updated.' }
           format.json { render :show, status: :ok, location: @master_finance }
         else
           format.html { render :edit }

@@ -19,30 +19,28 @@
   <% end %>
   <form>
     <div class="form-row">
-      <div class="col-md-4 mb-10">
+      <div class="col-md-2 mb-5">
         <%= form.label :code, class:"label" %>
-        <%= form.text_field :code, class:"form-control", placeholder:"Código" %>
+        <%= form.text_field :code, class:"form-control"%>
       </div>
-      <div class="col-md-10 mb-10">
+      <div class="col-md-6 mb-5">
         <%= form.label :name, class:"label" %>
-        <%= form.text_field :name, class:"form-control", placeholder:"Nome" %>
+        <%= form.text_field :name, class:"form-control"%>
       </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-4 mb-10">
+      <div class="col-md-2 mb-5">
         <%= form.label :cost, class:"label" %>
-        <%= form.text_field :cost, class:"form-control", placeholder:"Custo" %>
+        <%= form.text_field :cost, class:"form-control"%>
       </div>
-      <div class="col-md-4 mb-10">
+      <div class="col-md-2 mb-5">
         <%= form.label :margin, class:"label" %>
-        <%= form.text_field :margin, class:"form-control", placeholder:"Margem" %>
+        <%= form.text_field :margin, class:"form-control"%>
       </div>
     </div>
     <div class="form-row">
-      <div class="col-md-2 mb-10">
+      <div class="col-md-1 mb-10">
       <%= form.submit "Salvar", class:"btn btn-primary", style: "background: #600513"%>
       </div>
-      <div class="col-md-2 mb-10">
+      <div class="col-md-1 mb-10">
       <%= link_to "Voltar", products_path, class:"btn btn-primary", style: "background: #c45858" %>
       </div>
     </div>

@@ -1,14 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Month:</strong>
-  <%= @master_finance.month %>
-</p>
+<div>
+  <%= render partial: 'layouts/navigation' %>
+</div>
 
-<p>
-  <strong>Month:</strong>
-  <%= @master_finance.month %>
-</p>
+<br><br><br>
 
-<%= link_to 'Edit', edit_accounting_master_finance_path(@master_finance) %> |
-<%= link_to 'Back', accounting_master_finances_path %>
+<p class="basic-title"><%= "Finanças Diárias #{@master_finance.month} / #{@master_finance.year}" %></p>
+
+<% balance = 0 %>
+<p>Saldo: <%= calc_balance(balance) %> <p>
+
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Dia</th>
+            <th class="column3">Entrada</th>
+            <th class="column3">Saída</th>
+            <th class="column3">Descrição</th>
+            <th class="column6">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @master_finance.finances.each do |finance| %>
+            <tr>
+              <td class="column1"><%= l(finance.day) %></td>
+              <td class="column3">
+                <% unless finance.income_type.blank? %>
+                  <%= finance.income_type.name %>
+                <% end %>
+                </td>
+              <td class="column3">
+                <% unless finance.expense_type.blank? %>
+                  <%= finance.expense_type.name %>
+                <% end %>
+              </td>
+              <td class="column3"><%= finance.description %></td>
+              <td class="column6"><%= finance.value %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Editar', edit_accounting_master_finance_path(@master_finance), class:"btn btn-primary", style: "background: #600513"%>
+  </div>
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-primary", style: "background: #c45858" %>
+  </div>
+</div>
+

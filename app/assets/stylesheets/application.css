@@ -14,6 +14,7 @@
  *= require_self
  *= require bootstrap
 .*= require typicons
+ *= require jquery-ui/datepicker
  */
 
 /*!
@@ -180,7 +181,7 @@ header.masthead .bg-circle-4 {
 .basic-grey {
     margin-left:auto;
     margin-right:auto;
-    width: 600px;
+    width: 1305px;
     background: #ffc6c6;
     padding: 20px 10px 20px 20px;
     border-radius: 10px;
@@ -221,7 +222,7 @@ header.masthead .bg-circle-4 {
     outline: 0 none;
     padding: 3px 3px 3px 5px;
     width: 70%;
-    font-size: 12px;
+    font-size: 16px;
     line-height:15px;
     box-shadow: inset 0px 1px 4px #ff5d5d;
     -moz-box-shadow: inset 0px 1px 4px #ff5d5d;
@@ -262,7 +263,7 @@ header.masthead .bg-circle-4 {
 .basic-title {
     margin-left:auto;
     margin-right:auto;
-    width: 600px;
+    width: 1305px;
     background: #c45858;
     padding: 25px 15px 25px 10px;
     border-radius: 10px;

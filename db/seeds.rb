@@ -52,19 +52,3 @@ Payment.create!([{description: "Dinheiro"},
       {description: "Boleto/Dinheiro"},
       {description: "Boleto/Banco"}])
 puts "Gerando os tipos de entrada (Payment)... [OK]"
-
-puts "Gerando as distribuidoras (Distributor)..."
-Distributor.create!([{name: "Aladim"},
-      {name: "Arcon"},
-      {name: "Aspa"},
-      {name: "Cristal"},
-      {name: "GAO"},
-      {name: "Glaucia"},
-      {name: "Marco Boni"},
-      {name: "Make One"},
-      {name: "Novo Toque"},
-      {name: "Real"},
-      {name: "Ricosti"},
-      {name: "Rio Vermelho"},
-      {name: "Wanderley"}])
-puts "Gerando as distribuidoras (Distributor)... [OK]"
