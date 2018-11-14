@@ -59,7 +59,7 @@ module Accounting
     def destroy
       @master_finance.destroy
       respond_to do |format|
-        format.html { redirect_to master_finances_url, notice: 'Master finance was successfully destroyed.' }
+        format.html { redirect_to action: :index, notice: 'Master finance was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
