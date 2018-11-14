@@ -109,7 +109,6 @@ iframe {
   width: 100%;
   min-height: 10vh;
   background: #ffffff;
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -143,10 +142,11 @@ table td, table th {
 }
 table thead tr {
   height: 60px;
-  background: #c45858;
+  background: #a53838;
 }
 table tbody tr {
   height: 50px;
+  border-bottom: 3px solid #fff;
 }
 table tbody tr:last-child {
   border: 0;
@@ -173,19 +173,20 @@ table td.r, table th.r {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #ffc6c6;
+  background-color: #ff7f7f;
 }
 
 tbody tr {
   font-size: 25px;
-  color: #494949;
+  color: #600513;
   line-height: 1.2;
-  font-weight: unset;
+  font-weight: bold;
+  background-color: #ffaaaa;
 }
 
 tbody tr:hover {
   color: #ffffff;
-  background-color: #ff9191;
+  background-color: #c13a3a;
   cursor: pointer;
 }
 
@@ -305,6 +306,10 @@ tbody tr:hover {
 
 .float-left {
   margin-left: 30px;
+}
+
+.float-right {
+  margin-right: 30px;
 }
 
 .text-box {

@@ -6,9 +6,24 @@
 
 <br><br><br>
 
-<p class="basic-title"><%= "Finanças Diárias #{@master_finance.month} / #{@master_finance.year}" %></p>
+<p class="basic-title"><%= "Finanças Diárias - #{@master_finance.month} / #{@master_finance.year}" %></p>
 
-<p class="numbers">Saldo: <%= calc_balance(@master_finance.balance) %> <p>
+<br>
+<div class="row">
+  <p class="numbers" style="background: #c61d1d">Saldo</p><p class="val" style="background: #c61d1d"><%= calc_balance(@master_finance.balance)%></p>
+</div>
+<div class="row">
+  <p class="numbers" style="background: #417ee2">Entradas</p><p class="val" style="background: #417ee2"><%= calc_income %></p>
+</div>
+<div class="row">
+  <p class="numbers" style="background: #e55757">Saídas</p><p class="val" style="background: #e55757"><%= calc_expense %></p>
+</div>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Editar', edit_accounting_master_finance_path(@master_finance), class:"btn btn-primary", style: "background: #600513"%>
+  </div>
+</div>
 
 <div class="container-table100">
   <div class="wrap-table100">
@@ -25,7 +40,13 @@
         </thead>
         <tbody>
           <% @master_finance.finances.each do |finance| %>
-            <tr>
+
+            <tr <% if finance.expense_type.blank? %>
+                  style="background: #a7bfe8"
+                <% else %>
+                  style="background: #ffaaaa"
+                <% end %>
+            >
               <td class="column1"><%= l(finance.day) %></td>
               <td class="column3">
                 <% unless finance.income_type.blank? %>
@@ -49,10 +70,9 @@
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
-    <%= link_to 'Editar', edit_accounting_master_finance_path(@master_finance), class:"btn btn-primary", style: "background: #600513"%>
-  </div>
-  <div class="col-md-1 mb-10">
-    <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-primary", style: "background: #c45858" %>
+    <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-primary", style: "background: #e55757" %>
   </div>
 </div>
+
+<br>
 

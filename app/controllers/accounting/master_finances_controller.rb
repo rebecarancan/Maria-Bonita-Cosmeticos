@@ -6,12 +6,13 @@ module Accounting
     # GET /master_finances
     # GET /master_finances.json
     def index
-      @master_finances = MasterFinance.all
+      @master_finances = MasterFinance.all.order('master_finances.created_at DESC')
     end
 
     # GET /master_finances/1
     # GET /master_finances/1.json
     def show
+      @master_finance.finances.order('master_finance.finances.created_at DESC')
     end
 
     # GET /master_finances/new
@@ -30,7 +31,7 @@ module Accounting
 
       respond_to do |format|
         if @master_finance.save
-          format.html { redirect_to action: :show, notice: 'Master finance was successfully created.' }
+          format.html { redirect_to accounting_master_finance_path(@master_finance), notice: 'Master finance was successfully created.' }
           format.json { render :show, status: :created, location: @master_finance }
         else
           format.html { render :new }

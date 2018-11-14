@@ -1,6 +1,4 @@
-<div>
-  <%= render partial: 'layouts/navigation' %>
-</div>
+<%= render partial: 'layouts/navigation' %>
 
 <%= form_with(model: [:accounting, master_finance], local: true, html: { class: "basic-grey"}) do |form| %>
   <% if master_finance.errors.any? %>
@@ -40,7 +38,7 @@
         <%= render 'finance_fields', f: finances_fields %>
       <% end %>
       <div class='links'>
-        <%= link_to_add_association('+', form, :finances, class: "badge badge-pill badge-secondary", style: "background: #c45858") %>
+        <%= link_to_add_association('+', form, :finances, class: "badge badge-pill badge-secondary", style: "background: #a53838") %>
       </div>
     </div>
 
@@ -51,10 +49,10 @@
         <%= form.submit "Salvar", class:"btn btn-primary", style: "background: #600513" %>
       </div>
       <div class="col-md-1 mb-10">
-        <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-primary", style: "background: #c45858" %>
+        <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-primary", style: "background: #e55757" %>
       </div>
     </div>
   </form>
 <% end %>
 
-
+<br>

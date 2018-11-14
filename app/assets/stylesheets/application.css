@@ -181,11 +181,10 @@ header.masthead .bg-circle-4 {
 .basic-grey {
     margin-left:auto;
     margin-right:auto;
-    width: 1305px;
-    background: #ffc6c6;
+    width: 1295px;
+    background: #ffaaaa;
     padding: 20px 10px 20px 20px;
     border-radius: 10px;
-    box-shadow: inset 0px 1px 4px #fda9a9;
 }
 .basic-grey h1 {
     font-size: 25px;
@@ -224,9 +223,9 @@ header.masthead .bg-circle-4 {
     width: 70%;
     font-size: 16px;
     line-height:15px;
-    box-shadow: inset 0px 1px 4px #ff5d5d;
-    -moz-box-shadow: inset 0px 1px 4px #ff5d5d;
-    -webkit-box-shadow: inset 0px 1px 4px #ff5d5d;
+    box-shadow: inset 0px 1px 4px #fc4e4e;
+    -moz-box-shadow: inset 0px 1px 4px #fc4e4e;
+    -webkit-box-shadow: inset 0px 1px 4px #fc4e4e;
 }
 .basic-grey textarea{
     padding: 5px 3px 3px 5px;
@@ -263,8 +262,8 @@ header.masthead .bg-circle-4 {
 .basic-title {
     margin-left:auto;
     margin-right:auto;
-    width: 1305px;
-    background: #c45858;
+    width: 1295px;
+    background: #a53838;
     padding: 25px 15px 25px 10px;
     border-radius: 10px;
     color: #FFF;
@@ -274,19 +273,35 @@ header.masthead .bg-circle-4 {
 }
 
 .label {
-  color: #c45858;
+  color: #a53838;
   font-weight: bold;
 }
 
 .numbers {
-    margin-left:auto;
-    margin-right:auto;
-    width: 250px;
+    margin-left: auto;
+    width: 200px;
+    border-radius: 7px 0px 0px 7px;
     background: #ad2424;
-    padding: 25px 15px 25px 10px;
-    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    color: #FFF;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.val {
+    margin-left:3px;
+    margin-right:550px;
+    border-radius: 0px 7px 7px 0px;
+    width: 100px;
+    background: #ad2424;
+    padding: 10px 10px 10px 10px;
     color: #FFF;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
+}
+
+td {
+  font-size: 16px;
 }
