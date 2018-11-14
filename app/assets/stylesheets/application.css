@@ -271,10 +271,22 @@ header.masthead .bg-circle-4 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    box-shadow: inset 0px 1px 4px #b34a4a;
 }
 
 .label {
   color: #c45858;
   font-weight: bold;
+}
+
+.numbers {
+    margin-left:auto;
+    margin-right:auto;
+    width: 250px;
+    background: #ad2424;
+    padding: 25px 15px 25px 10px;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
 }

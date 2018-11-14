@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_175045) do
   create_table "master_finances", force: :cascade do |t|
     t.string "month"
     t.string "year"
+    t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

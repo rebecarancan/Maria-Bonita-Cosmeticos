@@ -5,4 +5,7 @@ class MasterFinance < ApplicationRecord
 
   accepts_nested_attributes_for :finances, allow_destroy: true
 
+  # Rails Money
+  monetize :balance_cents
+
 end

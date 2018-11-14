@@ -19,12 +19,17 @@
     <div class="form-row">
       <div class="col-md-2 mb-10">
         <%= form.label :year, class:"label" %>
-        <%= form.text_field :year,  class:"form-control" %>
+        <%= form.text_field :year, class:"form-control" %>
       </div>
 
       <div class="col-md-2 mb-10">
-      <%= form.label :month, class:"label" %>
-      <%= form.select :month, options_for_month(@master_finance.month), class:"form-control" %>
+        <%= form.label :month, class:"label" %>
+        <%= form.select :month, options_for_month(@master_finance.month), class:"form-control" %>
+      </div>
+
+      <div class="col-md-2 mb-10">
+        <%= form.label :balance, class:"label" %>
+        <%= form.text_field :balance, class:"form-control" %>
       </div>
     </div>
 

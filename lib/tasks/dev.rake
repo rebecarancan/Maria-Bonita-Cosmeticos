@@ -21,14 +21,15 @@ namespace :dev do
     12.times do
       MasterFinance.create!(
         year: "2018",
-        month: MESES.sample
+        month: MESES.sample,
+        balance: "#{Random.rand(500)},#{Random.rand(99)}"
       )
     end
     puts "PLANILHAS geradas com sucesso!"
 
     puts "Gerando as ENTRADAS..."
     MasterFinance.all.each do |finance|
-      Random.rand(10..20).times do |i|
+      Random.rand(5..15).times do |i|
         Finance.create!(
         day: Date.today - Random.rand(90),
         income_type: IncomeType.all.sample,
@@ -42,7 +43,7 @@ namespace :dev do
 
     puts "Gerando as SAÍDAS..."
     MasterFinance.all.each do |finance|
-      Random.rand(10..20).times do |i|
+      Random.rand(5..15).times do |i|
         Finance.create!(
         day: Date.today - Random.rand(90),
         expense_type: ExpenseType.all.sample,
