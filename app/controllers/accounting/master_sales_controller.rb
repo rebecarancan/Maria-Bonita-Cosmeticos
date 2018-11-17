@@ -75,7 +75,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_sale_params
-        params.require(:master_sale).permit(:year, :month, :balance,
+        params.require(:master_sale).permit(:year, :month,
                                             sales_attributes: [
                                             :day, :value, :income_type_id, :_destroy])
       end

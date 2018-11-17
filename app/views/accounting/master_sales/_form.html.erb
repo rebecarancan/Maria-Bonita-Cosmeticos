@@ -1,6 +1,6 @@
 <%= render partial: 'layouts/navigation' %>
 
-<%= form_with(model: [:accounting, master_sale], local: true) do |form| %>
+<%= form_with(model: [:accounting, master_sale], local: true, html: { class: "basic-grey"}) do |form| %>
   <% if master_sale.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(master_sale.errors.count, "error") %> prohibited this master_sale from being saved:</h2>
@@ -13,22 +13,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
-  </div>
+  <form>
+    <div class="form-row">
+      <div class="col-md-2 mb-10">
+        <%= form.label :year, class:"label" %>
+        <%= form.text_field :year, class:"form-control" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :month %>
-    <%= form.text_field :month %>
-  </div>
+      <div class="col-md-2 mb-10">
+        <%= form.label :month, class:"label" %>
+        <%= form.select :month, options_for_month(@master_sale.month), class:"form-control" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :balance %>
-    <%= form.text_field :balance %>
-  </div>
+    <br><br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div id='sales'>
+      <%= form.fields_for :sales do |sales_fields| %>
+        <%= render 'sale_fields', f: sales_fields %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association('+', form, :sales, class: "badge badge-pill badge-secondary", style: "background: #a53838") %>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="form-row">
+      <div class="col-md-1 mb-10">
+        <%= form.submit "Salvar", class:"btn btn-primary", style: "background: #600513" %>
+      </div>
+      <div class="col-md-1 mb-10">
+        <%= link_to 'Voltar', accounting_master_sales_path, class:"btn btn-primary", style: "background: #e55757" %>
+      </div>
+    </div>
+  </form>
 <% end %>
+
+<br>

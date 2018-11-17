@@ -5,7 +5,4 @@ class MasterSale < ApplicationRecord
 
   accepts_nested_attributes_for :sales, allow_destroy: true
 
-  # Rails Money
-  monetize :balance_cents
-
 end

@@ -103,9 +103,11 @@ ActiveRecord::Schema.define(version: 2018_11_17_123111) do
     t.date "day"
     t.integer "value_cents"
     t.integer "income_type_id"
+    t.integer "master_sale_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["income_type_id"], name: "index_sales_on_income_type_id"
+    t.index ["master_sale_id"], name: "index_sales_on_master_sale_id"
   end
 
 end

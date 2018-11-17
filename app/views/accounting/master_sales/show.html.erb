@@ -1,19 +1,63 @@
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @master_sale.year %>
-</p>
+<div>
+  <%= render partial: 'layouts/navigation' %>
+</div>
 
-<p>
-  <strong>Month:</strong>
-  <%= @master_sale.month %>
-</p>
+<br><br><br>
 
-<p>
-  <strong>Balance:</strong>
-  <%= @master_sale.balance %>
-</p>
+<p class="basic-title"><%= "Entradas Diárias - #{@master_sale.month} / #{@master_sale.year}" %></p>
 
-<%= link_to 'Edit', edit_accounting_master_sale_path(@master_sale) %> |
-<%= link_to 'Back', accounting_master_sales_path %>
+<br>
+<div class="row">
+  <p class="numbers" style="background: #c61d1d">Saldo</p><p class="val" style="background: #c61d1d"><%= %></p>
+</div>
+<div class="row">
+  <p class="numbers" style="background: #417ee2">Entradas</p><p class="val" style="background: #417ee2"><%=  %></p>
+</div>
+<div class="row">
+  <p class="numbers" style="background: #e55757">Saídas</p><p class="val" style="background: #e55757"><%=  %></p>
+</div>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Editar', edit_accounting_master_sale_path(@master_sale), class:"btn btn-primary", style: "background: #600513"%>
+  </div>
+</div>
+
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Dia</th>
+            <th class="column3">Descrição</th>
+            <th class="column6">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @master_sale.sales.each do |sale| %>
+
+            <tr>
+              <td class="column1"><%= l(sale.day) %></td>
+              <td class="column3"><%= sale.income_type.name %></td>
+              <td class="column6"><%= sale.value %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Voltar', accounting_master_sales_path, class:"btn btn-primary", style: "background: #e55757" %>
+  </div>
+</div>
+
+<br>
+
