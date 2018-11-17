@@ -80,7 +80,7 @@ module Accounting
         params.require(:master_finance).permit(:month, :year, :balance,
                                         finances_attributes: [
                                         :id, :day, :description, :value, :expense_type_id,
-                                        :income_type_id, :record_type_id, :_destroy])
+                                        :income_type_id, :_destroy])
       end
   end
 end

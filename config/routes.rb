@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :accounting do
     get 'dashboard/index'
     resources :master_finances
+    resources :master_sales
     resources :banks
     resources :sales
     resources :payments

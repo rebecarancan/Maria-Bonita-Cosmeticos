@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_175045) do
+ActiveRecord::Schema.define(version: 2018_11_17_123111) do
 
   create_table "banks", force: :cascade do |t|
     t.date "day"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 2018_11_09_175045) do
   create_table "master_finances", force: :cascade do |t|
     t.string "month"
     t.string "year"
+    t.integer "balance_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "master_sales", force: :cascade do |t|
+    t.integer "year"
+    t.string "month"
     t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

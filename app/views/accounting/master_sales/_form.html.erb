@@ -1,0 +1,34 @@
+<%= render partial: 'layouts/navigation' %>
+
+<%= form_with(model: [:accounting, master_sale], local: true) do |form| %>
+  <% if master_sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(master_sale.errors.count, "error") %> prohibited this master_sale from being saved:</h2>
+
+      <ul>
+      <% master_sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.text_field :month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :balance %>
+    <%= form.text_field :balance %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

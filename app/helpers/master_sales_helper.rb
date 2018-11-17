@@ -1,0 +1,2 @@
+module MasterSalesHelper
+end

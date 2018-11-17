@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @master_sale.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @master_sale.month %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @master_sale.balance %>
+</p>
+
+<%= link_to 'Edit', edit_accounting_master_sale_path(@master_sale) %> |
+<%= link_to 'Back', accounting_master_sales_path %>
