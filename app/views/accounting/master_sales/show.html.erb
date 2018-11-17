@@ -12,19 +12,39 @@
 
 <br>
 <div class="row">
-  <p class="numbers" style="background: #c61d1d">Saldo</p><p class="val" style="background: #c61d1d"><%= %></p>
+  <p class="numbers num-color1">Total do Mês</p><p class="val num-color1"><%= calc_total %></p>
 </div>
-<div class="row">
-  <p class="numbers" style="background: #417ee2">Entradas</p><p class="val" style="background: #417ee2"><%=  %></p>
+
+<div class="data">
+  <div class="row">
+    <p class="numbers1 num-color2">Dinheiro Total</p><p class="val1 num-color2"><%= income_total(1) %></p>
+    <p class="numbers1 num-color2">Média</p><p class="val1 num-color2"><%= average(1) %></p>
+    <p class="numbers1 num-color2">Dias</p><p class="val1 num-color2"><%= days_total(1) %></p>
+  </div>
 </div>
-<div class="row">
-  <p class="numbers" style="background: #e55757">Saídas</p><p class="val" style="background: #e55757"><%=  %></p>
+
+<div class="data">
+  <div class="row">
+    <p class="numbers1 num-color3">Débito Total</p><p class="val1 num-color3"><%= income_total(2) %></p>
+    <p class="numbers1 num-color3">Média</p><p class="val1 num-color3"><%= average(2) %></p>
+    <p class="numbers1 num-color3">Dias</p><p class="val1 num-color3"><%= days_total(2) %></p>
+  </div>
 </div>
+
+<div class="data">
+  <div class="row">
+    <p class="numbers1 num-color4">Crédito Total</p><p class="val1 num-color4"><%= income_total(3) %></p>
+    <p class="numbers1 num-color4">Média</p><p class="val1 num-color4"><%= average(3) %></p>
+    <p class="numbers1 num-color4">Dias</p><p class="val1 num-color4"><%= days_total(3) %></p>
+  </div>
+</div>
+<br>
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
-    <%= link_to 'Editar', edit_accounting_master_sale_path(@master_sale), class:"btn btn-primary", style: "background: #600513"%>
+    <%= link_to 'Voltar',  accounting_master_sales_path, class:"btn btn-secondary"%>
   </div>
+    <%= link_to 'Editar', edit_accounting_master_sale_path(@master_sale), class:"btn btn-primary butt-align2"%>
 </div>
 
 <div class="container-table100">
@@ -53,11 +73,4 @@
   </div>
 </div>
 
-<div class="form-row" style="margin-left: 25px">
-  <div class="col-md-1 mb-10">
-    <%= link_to 'Voltar', accounting_master_sales_path, class:"btn btn-primary", style: "background: #e55757" %>
-  </div>
-</div>
-
-<br>
 

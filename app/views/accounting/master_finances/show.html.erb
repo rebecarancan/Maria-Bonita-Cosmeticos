@@ -10,19 +10,20 @@
 
 <br>
 <div class="row">
-  <p class="numbers" style="background: #c61d1d">Saldo</p><p class="val" style="background: #c61d1d"><%= calc_balance(@master_finance.balance)%></p>
+  <p class="numbers num-color1">Saldo</p><p class="val num-color1"><%= calc_balance(@master_finance.balance)%></p>
 </div>
 <div class="row">
-  <p class="numbers" style="background: #417ee2">Entradas</p><p class="val" style="background: #417ee2"><%= calc_income %></p>
+  <p class="numbers num-color2">Entradas</p><p class="val num-color2"><%= calc_income %></p>
 </div>
 <div class="row">
-  <p class="numbers" style="background: #e55757">Saídas</p><p class="val" style="background: #e55757"><%= calc_expense %></p>
+  <p class="numbers num-color3">Saídas</p><p class="val num-color3"><%= calc_expense %></p>
 </div>
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
-    <%= link_to 'Editar', edit_accounting_master_finance_path(@master_finance), class:"btn btn-primary", style: "background: #600513"%>
+    <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-secondary"%>
   </div>
+    <%= link_to 'Editar', edit_accounting_master_finance_path(@master_finance), class:"btn btn-primary butt-align2"%>
 </div>
 
 <div class="container-table100">
@@ -42,7 +43,7 @@
           <% @master_finance.finances.each do |finance| %>
 
             <tr <% if finance.expense_type.blank? %>
-                  style="background: #a7bfe8"
+                  style="background: #d9b3ff"
                 <% else %>
                   style="background: #ffaaaa"
                 <% end %>
@@ -67,12 +68,3 @@
     </div>
   </div>
 </div>
-
-<div class="form-row" style="margin-left: 25px">
-  <div class="col-md-1 mb-10">
-    <%= link_to 'Voltar', accounting_master_finances_path, class:"btn btn-primary", style: "background: #e55757" %>
-  </div>
-</div>
-
-<br>
-

@@ -6,7 +6,7 @@
 <p class="basic-title">Finanças Diárias</p>
 
 <div class="float-right">
-  <%= link_to 'Novo', new_accounting_master_finance_path, class: "btn btn-primary", style: "background: #600513" %>
+  <%= link_to 'Novo', new_accounting_master_finance_path, class: "btn btn-primary" %>
 </div>
 
 <div class="container-table100">
@@ -30,17 +30,17 @@
               <td class="column3"><%= master_finance.month %></td>
               <td class="column5">
                 <%= link_to accounting_master_finance_path(master_finance) do %>
-                  <span style="color: #600513" class="typcn typcn-th-list"></span>
+                  <span class="typcn typcn-th-list basic-color"></span>
                 <% end %>
               </td>
               <td class="column5">
                 <%= link_to edit_accounting_master_finance_path(master_finance) do %>
-                  <span style="color: #600513" class="typcn typcn-pencil"></span>
+                  <span class="typcn typcn-pencil basic-color"></span>
                 <% end %>
               </td>
               <td class="column5">
                 <%= link_to accounting_master_finance_path(master_finance), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span style="color: #600513" class="typcn typcn-times""></span>
+                  <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>
             </tr>

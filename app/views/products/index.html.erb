@@ -11,11 +11,11 @@
     <div class="input-group float-left text-box">
       <input type="text" class="form-control" placeholder="Pesquisar por...">
       <span class="input-group-btn">
-        <button class="btn btn-primary" style="background: #600513" type="button">OK!</button>
+        <button class="btn btn-primary">OK!</button>
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
-  <%= link_to 'Novo', new_product_path, class: "btn btn-primary butt-align", style: "background: #600513" %>
+  <%= link_to 'Novo', new_product_path, class: "btn btn-primary butt-align" %>
 </div><!-- /.row -->
 
 <div class="container-table100">
@@ -43,12 +43,12 @@
               <td class="column5"><%=calculate_price(product.cost, product.margin)%></td>
               <td class="column2">
                 <%= link_to  edit_product_path(product) do %>
-                  <span style="color: #600513" class="typcn typcn-pencil"></span>
+                  <span class="typcn typcn-pencil basic-color"></span>
                 <% end %>
               </td>
               <td class="column6">
                 <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span style="color: #600513" class="typcn typcn-times"></span>
+                  <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>
             </tr>

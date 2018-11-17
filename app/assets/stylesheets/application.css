@@ -164,13 +164,13 @@ header.masthead .bg-circle-4 {
 }
 
 .btn-secondary {
-  background-color: #ff6a00;
-  border-color: #ff6a00;
+  background-color: #e55757;
+  border-color: #e55757;
 }
 
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
-  background-color: #cc5500 !important;
-  border-color: #cc5500 !important;
+  background-color: #ad2424 !important;
+  border-color: #ad2424 !important;
 }
 
 .btn-secondary:focus {
@@ -272,6 +272,10 @@ header.masthead .bg-circle-4 {
     font-weight: bold;
 }
 
+.basic-color {
+    color: #600513;
+}
+
 .label {
   color: #a53838;
   font-weight: bold;
@@ -304,4 +308,50 @@ header.masthead .bg-circle-4 {
 
 td {
   font-size: 16px;
+}
+
+.data {
+  margin-left: 95px;
+  margin-right:auto;
+}
+
+.numbers1 {
+    margin-left: 100px;
+    width: 200px;
+    border-radius: 7px 0px 0px 7px;
+    background: #ad2424;
+    padding: 10px 10px 10px 10px;
+    color: #FFF;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.val1 {
+    margin-left:3px;
+    margin-right:-70px;
+    border-radius: 0px 7px 7px 0px;
+    width: 100px;
+    background: #ad2424;
+    padding: 10px 10px 10px 10px;
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.num-color1 {
+  background: #c61d1d;
+}
+
+.num-color2 {
+  background: #8000ff;
+}
+
+.num-color3 {
+  background: #e55757;
+}
+
+.num-color4 {
+  background: #ce4040;
 }
