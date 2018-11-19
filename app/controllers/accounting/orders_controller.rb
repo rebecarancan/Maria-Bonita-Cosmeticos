@@ -70,7 +70,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def order_params
-        params.require(:order).permit(:purchase, :distributor, :expire, :value_cents, :payment_id)
+        params.require(:order).permit(:purchase, :distributor, :expire, :value_cents, :payment)
       end
   end
 end

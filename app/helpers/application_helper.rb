@@ -14,4 +14,10 @@ module ApplicationHelper
     options_for_select(DISTRIBUIDORAS, selected)
   end
 
+  PAGAMENTOS = [" ", "Dinheiro", "Boleto/Dinheiro", "Boleto/Banco", "Cheque"]
+
+  def options_for_payment(selected)
+    options_for_select(PAGAMENTOS, selected)
+  end
+
 end

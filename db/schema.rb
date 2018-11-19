@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_123111) do
+ActiveRecord::Schema.define(version: 2018_11_19_105628) do
 
   create_table "banks", force: :cascade do |t|
     t.date "day"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 2018_11_17_123111) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "master_orders", force: :cascade do |t|
+    t.integer "year"
+    t.string "month"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "master_sales", force: :cascade do |t|
     t.integer "year"
     t.string "month"
@@ -78,10 +85,11 @@ ActiveRecord::Schema.define(version: 2018_11_17_123111) do
     t.string "distributor"
     t.date "expire"
     t.integer "value_cents"
-    t.integer "payment_id"
+    t.integer "payment"
+    t.integer "master_order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["payment_id"], name: "index_orders_on_payment_id"
+    t.index ["master_order_id"], name: "index_orders_on_master_order_id"
   end
 
   create_table "payments", force: :cascade do |t|

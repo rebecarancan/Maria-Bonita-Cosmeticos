@@ -1,0 +1,54 @@
+<%= render partial: 'layouts/navigation' %>
+
+<br><br><br>
+<p id="notice"><%= notice %></p>
+
+<p class="basic-title">Pedidos e Pagamentos</p>
+
+<div class="float-right">
+  <%= link_to 'Novo', new_accounting_master_order_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Ano</th>
+            <th class="column3">Mês</th>
+            <th class="column5">Mostrar</th>
+            <th class="column5">Editar</th>
+            <th class="column5">Apagar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @master_orders.each do |master_order| %>
+            <tr>
+              <td class="column1"><%= master_order.year %></td>
+              <td class="column3"><%= master_order.month %></td>
+              <td class="column5">
+                <%= link_to accounting_master_order_path(master_order) do %>
+                  <span class="typcn typcn-th-list basic-color"></span>
+                <% end %>
+              </td>
+              <td class="column5">
+                <%= link_to edit_accounting_master_order_path(master_order) do %>
+                  <span class="typcn typcn-pencil basic-color"></span>
+                <% end %>
+              </td>
+              <td class="column5">
+                <%= link_to accounting_master_order_path(master_order), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="typcn typcn-times basic-color"></span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<br>

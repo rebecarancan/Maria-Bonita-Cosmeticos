@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <%= render partial: 'layouts/navigation' %>
+</div>
+
+<br><br><br>
+
+<p class="basic-title"><%= "Pedidos e Pagamentos - #{@master_order.month} / #{@master_order.year}" %></p>
+
+<br>
+<div class="row">
+  <p class="numbers num-color1">Total</p><p class="val num-color1"><%= %></p>
+</div>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Voltar', accounting_master_orders_path, class:"btn btn-secondary"%>
+  </div>
+    <%= link_to 'Editar', edit_accounting_master_order_path(@master_order), class:"btn btn-primary butt-align2"%>
+</div>
+
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Data</th>
+            <th class="column3">Vencimento</th>
+            <th class="column3">Distribuidora</th>
+            <th class="column3">Valor</th>
+            <th class="column6">Pagamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @master_order.orders.each do |order| %>
+
+            <tr>
+              <td class="column1"><%= l(order.purchase) %></td>
+              <td class="column3"><%= l(order.expire) %></td>
+              <td class="column3"><%= order.distributor %></td>
+              <td class="column3"><%= order.value %></td>
+              <td class="column6"><%= order.payment %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
