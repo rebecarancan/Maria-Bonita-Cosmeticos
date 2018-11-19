@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <%= render partial: 'layouts/navigation' %>
+</div>
+
+<br><br><br>
+
+<p class="basic-title"><%= "Notas Fiscais - #{@master_note.month} / #{@master_note.year}" %></p>
+
+<br>
+<div class="row">
+  <p class="numbers num-color1">Total</p><p class="val num-color1"><%= notes_total %></p>
+</div>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Voltar', accounting_master_notes_path, class:"btn btn-secondary"%>
+  </div>
+    <%= link_to 'Editar', edit_accounting_master_note_path(@master_note), class:"btn btn-primary butt-align2"%>
+</div>
+
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Data</th>
+            <th class="column3">Distribuidora</th>
+            <th class="column6">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @master_note.notes.each do |note| %>
+
+            <tr>
+              <td class="column1"><%= l(note.day) %></td>
+              <td class="column3"><%= note.name %></td>
+              <td class="column6"><%= note.value %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :master_notes
   resources :master_orders
   get 'home/index'
   get 'accounting', to: 'accounting/dashboard#index'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     resources :master_finances
     resources :master_sales
     resources :master_orders
+    resources :master_notes
     resources :banks
     resources :sales
     resources :payments

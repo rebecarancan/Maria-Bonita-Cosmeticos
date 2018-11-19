@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
 
- # Associations
+  # Associations
   belongs_to :master_order
 
   # Rails Money
