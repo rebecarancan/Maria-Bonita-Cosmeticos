@@ -45,10 +45,3 @@ ExpenseType.create!([{name: "Acerto"},
       {name: "Saque"},
       {name: "Wanderley"}])
 puts "Gerando os tipos de saída (ExpenseType)... [OK]"
-
-puts "Gerando os tipos de pagamento (Payment)..."
-Payment.create!([{description: "Dinheiro"},
-      {description: "Cheque"},
-      {description: "Boleto/Dinheiro"},
-      {description: "Boleto/Banco"}])
-puts "Gerando os tipos de entrada (Payment)... [OK]"

@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_105628) do
     t.string "distributor"
     t.date "expire"
     t.integer "value_cents"
-    t.integer "payment"
+    t.string "payment"
     t.integer "master_order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

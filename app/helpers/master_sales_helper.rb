@@ -1,6 +1,6 @@
 module MasterSalesHelper
 
-  def calc_total
+  def sales_total
     total = 0
 
     @master_sale.sales.each do |sale|

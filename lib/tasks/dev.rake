@@ -1,5 +1,5 @@
-MESES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio","Junho", "Julho",
-          "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+require "#{Rails.root}/app/helpers/application_helper"
+include ApplicationHelper
 
 namespace :dev do
 
@@ -56,7 +56,7 @@ namespace :dev do
     puts "SAÍDAS FINANÇAS DIÁRIAS geradas com sucesso!"
 
     puts "Gerando as ENTRADAS DIÁRIAS..."
-    12.times do
+    15.times do
       MasterSale.create!(
         year: "2018",
         month: MESES.sample
@@ -64,7 +64,7 @@ namespace :dev do
     end
     puts "ENTRADAS DIÁRIAS geradas com sucesso!"
 
-    puts "Gerando as LANÇAMENTOS ENTRADAS DIÁRIAS..."
+    puts "Gerando os LANÇAMENTOS ENTRADAS DIÁRIAS..."
     MasterSale.all.each do |sale|
       Random.rand(5..15).times do |i|
         Sale.create!(
@@ -75,7 +75,31 @@ namespace :dev do
         )
       end
     end
-    puts "LANÇAMENTOS ENTRADAS DIÁRIAS geradas com sucesso!"
+    puts "LANÇAMENTOS ENTRADAS DIÁRIAS gerados com sucesso!"
+
+    puts "Gerando os PEDIDOS E PAGAMENTOS..."
+    15.times do
+      MasterOrder.create!(
+        year: "2018",
+        month: MESES.sample
+      )
+    end
+    puts "PEDIDOS E PAGAMENTOS gerados com sucesso!"
+
+    puts "Gerando os LANÇAMENTOS PEDIDOS E PAGAMENTOS..."
+    MasterOrder.all.each do |order|
+      Random.rand(5..15).times do |i|
+        Order.create!(
+        purchase: Date.today - Random.rand(90),
+        expire: Date.today - Random.rand(90),
+        distributor: DISTRIBUIDORAS.sample,
+        value: "#{Random.rand(500)},#{Random.rand(99)}",
+        payment: PAGAMENTOS.sample,
+        master_order: order
+        )
+      end
+    end
+    puts "LANÇAMENTOS PEDIDOS E PAGAMENTOS gerados com sucesso!"
 
   end
 end
