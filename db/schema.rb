@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_165117) do
+ActiveRecord::Schema.define(version: 2018_11_19_174406) do
 
   create_table "banks", force: :cascade do |t|
     t.date "day"
+    t.string "description"
     t.integer "value_cents"
+    t.integer "master_bank_id"
     t.integer "income_type_id"
     t.integer "expense_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["expense_type_id"], name: "index_banks_on_expense_type_id"
     t.index ["income_type_id"], name: "index_banks_on_income_type_id"
+    t.index ["master_bank_id"], name: "index_banks_on_master_bank_id"
   end
 
   create_table "expense_types", force: :cascade do |t|
@@ -45,6 +48,14 @@ ActiveRecord::Schema.define(version: 2018_11_19_165117) do
 
   create_table "income_types", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "master_banks", force: :cascade do |t|
+    t.integer "year"
+    t.string "month"
+    t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

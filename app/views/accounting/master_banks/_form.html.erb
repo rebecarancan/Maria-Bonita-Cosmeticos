@@ -1,0 +1,58 @@
+<%= render partial: 'layouts/navigation' %>
+
+<%= form_with(model: [:accounting, master_bank], local: true, html: { class: "basic-grey"}) do |form| %>
+  <% if master_bank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(master_bank.errors.count, "error") %> prohibited this master_bank from being saved:</h2>
+
+      <ul>
+      <% master_bank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+    <div class="form-row">
+      <div class="col-md-2 mb-10">
+        <%= form.label :year, class:"label" %>
+        <%= form.text_field :year, class:"form-control" %>
+      </div>
+
+      <div class="col-md-2 mb-10">
+        <%= form.label :month, class:"label" %>
+        <%= form.select :month, options_for_month(@master_bank.month), class:"form-control" %>
+      </div>
+
+      <div class="col-md-2 mb-10">
+        <%= form.label :balance, class:"label" %>
+        <%= form.text_field :balance, class:"form-control" %>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div id='banks'>
+      <%= form.fields_for :banks do |banks_fields| %>
+        <%= render 'bank_fields', f: banks_fields %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association('+', form, :banks, class: "badge badge-pill badge-secondary", style: "background: #a53838") %>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="form-row">
+      <div class="col-md-1 mb-10">
+        <%= form.submit "Salvar", class:"btn btn-primary" %>
+      </div>
+      <div class="col-md-1 mb-10">
+        <%= link_to 'Voltar', accounting_master_banks_path, class:"btn btn-secondary"%>
+      </div>
+    </div>
+  </form>
+<% end %>
+
+<br>

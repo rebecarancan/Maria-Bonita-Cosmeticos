@@ -1,0 +1,2 @@
+module MasterBanksHelper
+end

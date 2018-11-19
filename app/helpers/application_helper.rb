@@ -20,4 +20,35 @@ module ApplicationHelper
     options_for_select(PAYMENTS, selected)
   end
 
+  def calc_balance(model, balance)
+    model.each do |i|
+      if i.expense_type.blank?
+        balance += i.value
+      else
+        balance -= i.value
+      end
+    end
+    return balance
+  end
+
+  def calc_income(model)
+    income = 0
+    model.each do |i|
+      if i.expense_type.blank?
+        income += i.value
+      end
+    end
+    return income
+  end
+
+    def calc_expense(model)
+    expense = 0
+    model.each do |i|
+      if i.income_type.blank?
+        expense += i.value
+      end
+    end
+    return expense
+  end
+
 end

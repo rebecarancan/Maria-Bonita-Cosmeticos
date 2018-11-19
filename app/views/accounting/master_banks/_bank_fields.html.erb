@@ -1,0 +1,42 @@
+<div class="nested-fields">
+
+  <div class="form-row">
+    <div class="col-md-2 mb-3">
+      <div class="field">
+        <%= f.label :day, class:"label" %>
+        <%= f.text_field :day, class: "form-control datepicker" %>
+      </div>
+    </div>
+    <div class="col-md-2 mb-3">
+      <div class="field">
+        <%= f.label :income_type_id, class:"label" %>
+        <%= f.collection_select(:income_type_id, @income_type_options_for_select, :id, :name, {include_blank: true}) %>
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <div class="field">
+        <%= f.label :expense_type_id, class:"label" %>
+        <%= f.collection_select(:expense_type_id, @expense_type_options_for_select, :id, :name, {include_blank: true}) %>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <div class="field">
+        <%= f.label :description, class:"label" %>
+        <%= f.text_field :description %>
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <div class="field">
+        <%= f.label :value, class:"label" %>
+        <%= f.text_field :value %>
+      </div>
+    </div>
+    <div class="col-md-1 mb-3">
+      <%= link_to_remove_association("x", f, class: "badge badge-pill badge-secondary", style: "background: #a53838") %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <%= render partial: 'layouts/navigation' %>
+</div>
+
+<br><br><br>
+
+<p class="basic-title"><%= "Controle Bancário - #{@master_bank.month} / #{@master_bank.year}" %></p>
+
+<br>
+<div class="row">
+  <p class="numbers num-color1">Saldo</p><p class="val num-color1"><%= calc_balance(@master_bank.banks, @master_bank.balance) %></p>
+</div>
+<div class="row">
+  <p class="numbers num-color2">Entradas</p><p class="val num-color2"><%= calc_income(@master_bank.banks) %></p>
+</div>
+<div class="row">
+  <p class="numbers num-color3">Saídas</p><p class="val num-color3"><%= calc_expense(@master_bank.banks) %></p>
+</div>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to 'Voltar', accounting_master_banks_path, class:"btn btn-secondary"%>
+  </div>
+    <%= link_to 'Editar', edit_accounting_master_bank_path(@master_bank), class:"btn btn-primary butt-align2"%>
+</div>
+
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Dia</th>
+            <th class="column3">Entrada</th>
+            <th class="column3">Saída</th>
+            <th class="column3">Descrição</th>
+            <th class="column6">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @master_bank.banks.each do |bank| %>
+
+            <tr <% if bank.expense_type.blank? %>
+                  style="background: #d9b3ff"
+                <% else %>
+                  style="background: #ffaaaa"
+                <% end %>
+            >
+              <td class="column1"><%= l(bank.day) %></td>
+              <td class="column3">
+                <% unless bank.income_type.blank? %>
+                  <%= bank.income_type.name %>
+                <% end %>
+                </td>
+              <td class="column3">
+                <% unless bank.expense_type.blank? %>
+                  <%= bank.expense_type.name %>
+                <% end %>
+              </td>
+              <td class="column3"><%= bank.description %></td>
+              <td class="column6"><%= bank.value %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
