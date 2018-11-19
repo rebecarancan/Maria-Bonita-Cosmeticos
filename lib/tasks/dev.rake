@@ -21,7 +21,7 @@ namespace :dev do
     12.times do
       MasterFinance.create!(
         year: "2018",
-        month: MESES.sample,
+        month: MONTHS.sample,
         balance: "#{Random.rand(500)},#{Random.rand(99)}"
       )
     end
@@ -59,7 +59,7 @@ namespace :dev do
     15.times do
       MasterSale.create!(
         year: "2018",
-        month: MESES.sample
+        month: MONTHS.sample
       )
     end
     puts "ENTRADAS DIÁRIAS geradas com sucesso!"
@@ -81,7 +81,7 @@ namespace :dev do
     15.times do
       MasterOrder.create!(
         year: "2018",
-        month: MESES.sample
+        month: MONTHS.sample
       )
     end
     puts "PEDIDOS E PAGAMENTOS gerados com sucesso!"
@@ -92,14 +92,36 @@ namespace :dev do
         Order.create!(
         purchase: Date.today - Random.rand(90),
         expire: Date.today - Random.rand(90),
-        distributor: DISTRIBUIDORAS.sample,
+        distributor: DISTRIBUTORS.sample,
         value: "#{Random.rand(500)},#{Random.rand(99)}",
-        payment: PAGAMENTOS.sample,
+        payment: PAYMENTS.sample,
         master_order: order
         )
       end
     end
     puts "LANÇAMENTOS PEDIDOS E PAGAMENTOS gerados com sucesso!"
+
+    puts "Gerando As NOTAS FISCAIS..."
+    15.times do
+      MasterNote.create!(
+        year: "2018",
+        month: MONTHS.sample
+      )
+    end
+    puts "NOTAS FISCAIS geradas com sucesso!"
+
+    puts "Gerando os LANÇAMENTOS NOTAS FISCAIS..."
+    MasterNote.all.each do |note|
+      Random.rand(5..15).times do |i|
+        Note.create!(
+        day: Date.today - Random.rand(90),
+        name: DISTRIBUTORS.sample,
+        value: "#{Random.rand(500)},#{Random.rand(99)}",
+        master_note: note
+        )
+      end
+    end
+    puts "LANÇAMENTOS NOTAS FISCAIS gerados com sucesso!"
 
   end
 end

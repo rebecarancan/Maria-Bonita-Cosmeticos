@@ -1,23 +1,23 @@
 module ApplicationHelper
 
-  MESES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio","Junho", "Julho",
+  MONTHS = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio","Junho", "Julho",
           "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
   def options_for_month(selected)
-    options_for_select(MESES, selected)
+    options_for_select(MONTHS, selected)
   end
 
-  DISTRIBUIDORAS = ["Aladim", "Arcon", "Aspa", "Cristal", "GAO", "Glaucia","Marco Boni",
+  DISTRIBUTORS = ["Aladim", "Arcon", "Aspa", "Cristal", "GAO", "Glaucia","Marco Boni",
                   "Make One","Novo Toque", "Real", "Ricosti", "Rio Vermelho", "Wanderley"]
 
   def options_for_distributor(selected)
-    options_for_select(DISTRIBUIDORAS, selected)
+    options_for_select(DISTRIBUTORS, selected)
   end
 
-  PAGAMENTOS = ["-", "Dinheiro", "Boleto/Dinheiro", "Boleto/Banco", "Cheque"]
+  PAYMENTS = ["-", "Dinheiro", "Boleto/Dinheiro", "Boleto/Banco", "Cheque"]
 
   def options_for_payment(selected)
-    options_for_select(PAGAMENTOS, selected)
+    options_for_select(PAYMENTS, selected)
   end
 
 end
