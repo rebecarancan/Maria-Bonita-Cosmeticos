@@ -5,7 +5,8 @@ module Accounting
     # GET /master_notes
     # GET /master_notes.json
     def index
-      @master_notes = MasterNote.all
+      @master_notes = MasterNote.all.order('master_notes.created_at DESC')
+      @master_notes = Kaminari.paginate_array(@master_notes).page(params[:page]).per(12)
     end
 
     # GET /master_notes/1

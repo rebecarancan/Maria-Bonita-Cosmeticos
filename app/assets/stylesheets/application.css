@@ -355,3 +355,20 @@ td {
 .num-color4 {
   background: #ce4040;
 }
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    color: #600513;
+    background-color: #ffaaaa;
+    border: 1px solid #ffaaaa;
+    border-left-width: 0;
+}
+
+.pagination a:hover:not(.active) {
+  color: #ce4040;
+  border: 1px solid #ffcccc;
+  background-color: #ffcccc;
+}

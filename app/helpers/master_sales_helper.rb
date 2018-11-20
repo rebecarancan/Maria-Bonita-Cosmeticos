@@ -59,17 +59,16 @@ module MasterSalesHelper
 
   def average(type)
 
-    if type === 1
+    if type === 1 && days_total(1) != 0
       m_average = income_total(1) / days_total(1)
       return m_average
-    elsif type === 2
+    elsif type === 2 && days_total(2) != 0
       d_average = income_total(2) / days_total(2)
       return d_average
-    else
+    elsif type === 3 && days_total(3) != 0
       c_average = income_total(3) / days_total(3)
       return c_average
     end
   end
-
 
 end

@@ -101,7 +101,7 @@ namespace :dev do
     end
     puts "LANÇAMENTOS PEDIDOS E PAGAMENTOS gerados com sucesso!"
 
-    puts "Gerando As NOTAS FISCAIS..."
+    puts "Gerando as NOTAS FISCAIS..."
     15.times do
       MasterNote.create!(
         year: "2018",
@@ -122,6 +122,44 @@ namespace :dev do
       end
     end
     puts "LANÇAMENTOS NOTAS FISCAIS gerados com sucesso!"
+
+    puts "Gerando o CONTROLE BANCÁRIO..."
+    15.times do
+      MasterBank.create!(
+        year: "2018",
+        month: MONTHS.sample,
+        balance: "#{Random.rand(500)},#{Random.rand(99)}"
+      )
+    end
+    puts "CONTROLE BANCÁRIO geradas com sucesso!"
+
+    puts "Gerando as ENTRADAS FINANÇAS DIÁRIAS..."
+    MasterBank.all.each do |bank|
+      Random.rand(5..15).times do |i|
+        Bank.create!(
+        day: Date.today - Random.rand(90),
+        income_type: IncomeType.all.sample,
+        description: Faker::Lorem.sentence(3),
+        value: "#{Random.rand(500)},#{Random.rand(99)}",
+        master_bank: bank
+        )
+      end
+    end
+    puts "ENTRADAS FINANÇAS DIÁRIAS geradas com sucesso!"
+
+    puts "Gerando as SAÍDAS FINANÇAS DIÁRIAS..."
+    MasterBank.all.each do |bank|
+      Random.rand(5..15).times do |i|
+        Bank.create!(
+        day: Date.today - Random.rand(90),
+        expense_type: ExpenseType.all.sample,
+        description: Faker::Lorem.sentence(3),
+        value: "#{Random.rand(500)},#{Random.rand(99)}",
+        master_bank: bank
+        )
+      end
+    end
+    puts "SAÍDAS FINANÇAS DIÁRIAS geradas com sucesso!"
 
   end
 end

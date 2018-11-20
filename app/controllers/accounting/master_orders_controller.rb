@@ -5,7 +5,8 @@ module Accounting
     # GET /master_orders
     # GET /master_orders.json
     def index
-      @master_orders = MasterOrder.all
+      @master_orders = MasterOrder.all.order('master_orders.created_at DESC')
+      @master_orders = Kaminari.paginate_array(@master_orders).page(params[:page]).per(12)
     end
 
     # GET /master_orders/1

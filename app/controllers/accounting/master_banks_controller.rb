@@ -6,7 +6,8 @@ module Accounting
     # GET /master_banks
     # GET /master_banks.json
     def index
-      @master_banks = MasterBank.all
+      @master_banks = MasterBank.all.order('master_banks.created_at DESC')
+      @master_banks = Kaminari.paginate_array(@master_banks).page(params[:page]).per(12)
     end
 
     # GET /master_banks/1
