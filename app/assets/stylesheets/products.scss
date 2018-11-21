@@ -301,7 +301,16 @@ tbody tr:hover {
 }
 
 .butt-align {
-  margin-left: 560px;
+  margin-left: 685px;
+}
+
+.basic-box {
+    margin-left:auto;
+    margin-right:auto;
+    width: 1295px;
+    background: #ffaaaa;
+    padding: 15px 15px 15px 15px;
+    border-radius: 10px;
 }
 
 .butt-align2 {
@@ -314,11 +323,6 @@ tbody tr:hover {
 
 .float-right {
   margin-right: 30px;
-}
-
-.text-box {
-  border-color: #ff9191;
-  border-width: 1px;
 }
 
 .wrap-form {

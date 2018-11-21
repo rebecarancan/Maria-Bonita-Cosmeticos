@@ -4,8 +4,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    if params[:code]
-      @products = Product.where('code LIKE ?', "%#{params[:code]}%")
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(15)
     else
       @products = Product.all.order(:name).page(params[:page]).per(15)
     end

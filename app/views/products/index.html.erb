@@ -6,17 +6,23 @@
 
 <br><br><br>
 
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group float-left text-box">
-      <input type="text" class="form-control" placeholder="Pesquisar por...">
+<%= form_tag(products_path, :method => "get", id: "search-form") do %>
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="input-group float-left basic-box">
+        <%= text_field_tag :search, params[:search], class:"form-control", placeholder:"Pesquisar por..." %>
       <span class="input-group-btn">
-        <button class="btn btn-primary">OK!</button>
+        <%= submit_tag "OK!", class:"btn btn-primary" %>
       </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  <%= link_to 'Novo', new_product_path, class: "btn btn-primary butt-align" %>
-</div><!-- /.row -->
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+<% end %>
+    <div class="d-flex align-items-end">
+      <%= link_to 'Novo', new_product_path, class: "btn btn-primary butt-align" %>
+    </div>
+  </div><!-- /.row -->
+
+
 
 <div class="container-table100">
   <div class="wrap-table100">
