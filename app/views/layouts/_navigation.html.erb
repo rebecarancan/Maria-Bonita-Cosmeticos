@@ -1,17 +1,14 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
   <div class="container">
-    <%= link_to "Maria Bonita", home_path, class: "navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%= link_to t('app.name'), home_path, class: "navbar-brand" %>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item ">
-          <%= link_to "Produtos", products_path, class: "nav-link js-scroll-trigger" %>
+          <%= link_to t('app.products'), products_path, class: "nav-link js-scroll-trigger" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Contabilidade", accounting_dashboard_index_path, class: "nav-link js-scroll-trigger" %>
+          <%= link_to t('app.accounting'), accounting_dashboard_index_path, class: "nav-link js-scroll-trigger" %>
         </li>
       </ul>
     </div>

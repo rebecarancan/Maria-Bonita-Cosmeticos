@@ -4,24 +4,24 @@
 
 <br><br><br>
 
-<p class="basic-title"><%= "Controle Bancário - #{@master_bank.month} / #{@master_bank.year}" %></p>
+<p class="basic-title"><%= "#{t('accounting.bank')} - #{@master_bank.month} / #{@master_bank.year}" %></p>
 
 <br>
 <div class="row">
-  <p class="numbers num-color1">Saldo</p><p class="val num-color1"><%= calc_balance(@master_bank.banks, @master_bank.balance) %></p>
+  <p class="numbers num-color1"><%= t('labels.balance') %></p><p class="val num-color1"><%= calc_balance(@master_bank.banks, @master_bank.balance) %></p>
 </div>
 <div class="row">
-  <p class="numbers num-color2">Entradas</p><p class="val num-color2"><%= calc_income(@master_bank.banks) %></p>
+  <p class="numbers num-color2"><%= t('labels.incomes') %></p><p class="val num-color2"><%= calc_income(@master_bank.banks) %></p>
 </div>
 <div class="row">
-  <p class="numbers num-color3">Saídas</p><p class="val num-color3"><%= calc_expense(@master_bank.banks) %></p>
+  <p class="numbers num-color3"><%= t('labels.expenses') %></p><p class="val num-color3"><%= calc_expense(@master_bank.banks) %></p>
 </div>
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
-    <%= link_to 'Voltar', accounting_master_banks_path, class:"btn btn-secondary"%>
+    <%= link_to t('buttons.back'), accounting_master_banks_path, class:"btn btn-secondary"%>
   </div>
-    <%= link_to 'Editar', edit_accounting_master_bank_path(@master_bank), class:"btn btn-primary butt-align2"%>
+    <%= link_to t('buttons.edit'), edit_accounting_master_bank_path(@master_bank), class:"btn btn-primary butt-align2"%>
 </div>
 
 <div class="container-table100">
@@ -30,11 +30,11 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Dia</th>
-            <th class="column3">Entrada</th>
-            <th class="column3">Saída</th>
-            <th class="column3">Descrição</th>
-            <th class="column6">Valor</th>
+            <th class="column1"><%= t('labels.date') %></th>
+            <th class="column3"><%= t('labels.income') %></th>
+            <th class="column3"><%= t('labels.expense') %></th>
+            <th class="column3"><%= t('labels.description') %></th>
+            <th class="column6"><%= t('labels.value') %></th>
           </tr>
         </thead>
         <tbody>

@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div>
-  <%= render partial: 'layouts/navigation' %>
-</div>
+<%= render partial: 'layouts/navigation' %>
 
 <br><br><br>
 
@@ -10,15 +8,15 @@
   <div class="row">
     <div class="col-lg-5">
       <div class="input-group float-left basic-box">
-        <%= text_field_tag :search, params[:search], class:"form-control", placeholder:"Pesquisar por..." %>
+        <%= text_field_tag :search, params[:search], class:"form-control", placeholder: "#{t('placeholder.search_for')}" %>
       <span class="input-group-btn">
-        <%= submit_tag "OK!", class:"btn btn-primary" %>
+        <%= submit_tag t('buttons.ok'), class:"btn btn-primary" %>
       </span>
       </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
 <% end %>
     <div class="d-flex align-items-end">
-      <%= link_to 'Novo', new_product_path, class: "btn btn-primary butt-align" %>
+      <%= link_to t('buttons.new'), new_product_path, class: "btn btn-primary butt-align" %>
     </div>
   </div><!-- /.row -->
 
@@ -30,11 +28,11 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Código</th>
-            <th class="column3">Nome</th>
-            <th class="column5">Custo</th>
-            <th class="column5">Margem</th>
-            <th class="column5">Preço</th>
+            <th class="column1"><%= @products.human_attribute_name("code") %></th>
+            <th class="column3"><%= @products.human_attribute_name("name") %></th>
+            <th class="column5"><%= @products.human_attribute_name("cost") %></th>
+            <th class="column5"><%= @products.human_attribute_name("margin") %></th>
+            <th class="column5"><%= @products.human_attribute_name("calculate_price") %></th>
             <th class="column2"></th>
             <th class="column6"></th>
           </tr>
@@ -53,7 +51,7 @@
                 <% end %>
               </td>
               <td class="column6">
-                <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <%= link_to product, method: :delete, data: { confirm: t('messages.confirm', item: product.name)} do %>
                   <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>

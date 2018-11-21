@@ -1,47 +1,46 @@
-
 <p id="notice"><%= notice %></p>
 
 <%= render partial: 'layouts/navigation' %>
 
 <br><br><br>
 
-<p class="basic-title"><%= "Entradas Diárias - #{@master_sale.month} / #{@master_sale.year}" %></p>
+<p class="basic-title"><%= "#{t('accounting.sale')} - #{@master_sale.month} / #{@master_sale.year}" %></p>
 
 <br>
 <div class="row">
-  <p class="numbers num-color1">Total do Mês</p><p class="val num-color1"><%= sales_total %></p>
+  <p class="numbers num-color1"><%= t('labels.month_total') %></p><p class="val num-color1"><%= sales_total %></p>
 </div>
 
 <div class="data">
   <div class="row">
-    <p class="numbers1 num-color2">Dinheiro Total</p><p class="val1 num-color2"><%= income_total(1) %></p>
-    <p class="numbers1 num-color2">Média</p><p class="val1 num-color2"><%= average(1) %></p>
-    <p class="numbers1 num-color2">Dias</p><p class="val1 num-color2"><%= days_total(1) %></p>
+    <p class="numbers1 num-color2"><%= t('labels.m_total') %></p><p class="val1 num-color2"><%= income_total(1) %></p>
+    <p class="numbers1 num-color2"><%= t('labels.average') %></p><p class="val1 num-color2"><%= average(1) %></p>
+    <p class="numbers1 num-color2"><%= t('labels.days') %></p><p class="val1 num-color2"><%= days_total(1) %></p>
   </div>
 </div>
 
 <div class="data">
   <div class="row">
-    <p class="numbers1 num-color3">Débito Total</p><p class="val1 num-color3"><%= income_total(2) %></p>
-    <p class="numbers1 num-color3">Média</p><p class="val1 num-color3"><%= average(2) %></p>
-    <p class="numbers1 num-color3">Dias</p><p class="val1 num-color3"><%= days_total(2) %></p>
+    <p class="numbers1 num-color3"><%= t('labels.d_total') %></p><p class="val1 num-color3"><%= income_total(2) %></p>
+    <p class="numbers1 num-color3"><%= t('labels.average') %></p><p class="val1 num-color3"><%= average(2) %></p>
+    <p class="numbers1 num-color3"><%= t('labels.days') %></p><p class="val1 num-color3"><%= days_total(2) %></p>
   </div>
 </div>
 
 <div class="data">
   <div class="row">
-    <p class="numbers1 num-color4">Crédito Total</p><p class="val1 num-color4"><%= income_total(3) %></p>
-    <p class="numbers1 num-color4">Média</p><p class="val1 num-color4"><%= average(3) %></p>
-    <p class="numbers1 num-color4">Dias</p><p class="val1 num-color4"><%= days_total(3) %></p>
+    <p class="numbers1 num-color4"><%= t('labels.c_total') %></p><p class="val1 num-color4"><%= income_total(3) %></p>
+    <p class="numbers1 num-color4"><%= t('labels.average') %></p><p class="val1 num-color4"><%= average(3) %></p>
+    <p class="numbers1 num-color4"><%= t('labels.days') %></p><p class="val1 num-color4"><%= days_total(3) %></p>
   </div>
 </div>
 <br>
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
-    <%= link_to 'Voltar',  accounting_master_sales_path, class:"btn btn-secondary"%>
+    <%= link_to t('buttons.back'),  accounting_master_sales_path, class:"btn btn-secondary"%>
   </div>
-    <%= link_to 'Editar', edit_accounting_master_sale_path(@master_sale), class:"btn btn-primary butt-align2"%>
+    <%= link_to t('buttons.edit'), edit_accounting_master_sale_path(@master_sale), class:"btn btn-primary butt-align2"%>
 </div>
 
 <div class="container-table100">
@@ -50,9 +49,9 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Dia</th>
-            <th class="column3">Descrição</th>
-            <th class="column6">Valor</th>
+            <th class="column1"><%= t('labels.date') %></th>
+            <th class="column3"><%= t('labels.description') %></th>
+            <th class="column6"><%= t('labels.value') %></th>
           </tr>
         </thead>
         <tbody>

@@ -4,10 +4,13 @@
 
 <br><br><br>
 
-<p class="basic-title">Controle Bancário</p>
+<%= javascript_include_tag 'application' %>
+
+
+<p class="basic-title"><%= t('accounting.bank') %></p>
 
 <div class="float-right">
-  <%= link_to 'Novo', new_accounting_master_bank_path, class: "btn btn-primary" %>
+  <%= link_to t('buttons.new'), new_accounting_master_bank_path, class: "btn btn-primary" %>
 </div>
 
 <div class="container-table100">
@@ -16,11 +19,11 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Ano</th>
-            <th class="column3">Mês</th>
-            <th class="column5">Mostrar</th>
-            <th class="column5">Editar</th>
-            <th class="column5">Apagar</th>
+            <th class="column1"><%= t('labels.year') %></th>
+            <th class="column3"><%= t('labels.month') %></th>
+            <th class="column5"><%= t('buttons.show') %></th>
+            <th class="column5"><%= t('buttons.edit') %></th>
+            <th class="column5"><%= t('buttons.destroy') %></th>
           </tr>
         </thead>
 
@@ -40,7 +43,7 @@
                 <% end %>
               </td>
               <td class="column5">
-                <%= link_to accounting_master_bank_path(master_bank), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <%= link_to accounting_master_bank_path(master_bank), method: :delete, data: { confirm: t('messages.confirm_with', month: master_bank.month, year: master_bank.year)} do %>
                   <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>
@@ -55,5 +58,7 @@
 <div class="d-flex justify-content-center">
   <%= paginate @master_banks %>
 </div>
+
+
 
 <br>

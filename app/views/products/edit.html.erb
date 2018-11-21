@@ -1,5 +1,5 @@
 <br><br><br>
-<p class="basic-title">Editando produto</p>
+<p class="basic-title"><%= "#{t('messages.editing', model: @product.model_name.human)}" %></p>
 
 <%= render 'form', product: @product %>
 

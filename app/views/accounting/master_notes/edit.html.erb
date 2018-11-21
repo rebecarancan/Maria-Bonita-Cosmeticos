@@ -1,5 +1,5 @@
 <br><br><br>
 
-<p class="basic-title">Editando Planilha</p>
+<p class="basic-title"><%= "#{t('messages.editing', model: @master_note.model_name.human)} - #{@master_note.month} / #{@master_note.year}" %></p>
 
 <%= render 'form', master_note: @master_note %>

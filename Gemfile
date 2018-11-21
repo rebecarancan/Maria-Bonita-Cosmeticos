@@ -46,7 +46,11 @@ gem 'kaminari'
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
 # Dynamic nested forms using jQuery made easy; works with formtastic, simple_form or default forms
-gem "cocoon"
+gem 'cocoon'
+# The simplest way to group temporal data
+gem 'groupdate'
+# Create beautiful JavaScript charts with one line of Ruby
+gem 'chartkick'
 
 source 'https://rails-assets.org' do
   #Typicons

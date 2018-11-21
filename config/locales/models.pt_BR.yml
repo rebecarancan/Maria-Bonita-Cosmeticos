@@ -1,0 +1,66 @@
+"pt-BR":
+  activerecord:
+    models:
+      master_bank: Controle Bancário
+      master_finance: Finanças Diárias
+      master_note: Notas Fiscais
+      master_order: Pedidos e Pagamentos
+      master_sale: Entradas Diárias
+      bank: Controle Bancário
+      finance: Finanças Diárias
+      note: Notas Fiscais
+      order: Pedidos e Pagamentos
+      sale: Entradas Diárias
+      product:
+        one: Produto
+        other: Produtos
+    attributes:
+      master_bank:
+        year: Ano
+        month: Mês
+        balance: Saldo
+      bank:
+        day: Data
+        income_type_id: Entrada
+        expense_type_id: Saída
+        description: Descrição
+        value: Valor
+      master_finance:
+        year: Ano
+        month: Mês
+        balance: Saldo
+      finance:
+        day: Data
+        income_type_id: Entrada
+        expense_type_id: Saída
+        description: Descrição
+        value: Valor
+      master_note:
+        year: Ano
+        month: Mês
+      note:
+        day: Data
+        name: Descrição
+        value: Valor
+      master_order:
+        year: Ano
+        month: Mês
+      order:
+        purchase: Data do pedido
+        expire: Vencimento
+        distributor: Fornecedor
+        value: Valor
+        payment: Tipo de pagamento
+      master_sale:
+        year: Ano
+        month: Mês
+      sale:
+        day: Data
+        income_type_id: Entrada
+        value: Valor
+      product:
+        code: Código
+        name: Nome
+        cost: Custo
+        margin: Margem
+        calculate_price: Preço

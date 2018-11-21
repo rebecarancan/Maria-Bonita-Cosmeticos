@@ -4,18 +4,18 @@
 
 <br><br><br>
 
-<p class="basic-title"><%= "Pedidos e Pagamentos - #{@master_order.month} / #{@master_order.year}" %></p>
+<p class="basic-title"><%= "#{t('accounting.order')} - #{@master_order.month} / #{@master_order.year}" %></p>
 
 <br>
 <div class="row">
-  <p class="numbers num-color1">Total</p><p class="val num-color1"><%= orders_total %></p>
+  <p class="numbers num-color1"><%= t('labels.total') %></p><p class="val num-color1"><%= orders_total %></p>
 </div>
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
-    <%= link_to 'Voltar', accounting_master_orders_path, class:"btn btn-secondary"%>
+    <%= link_to t('buttons.back'), accounting_master_orders_path, class:"btn btn-secondary"%>
   </div>
-    <%= link_to 'Editar', edit_accounting_master_order_path(@master_order), class:"btn btn-primary butt-align2"%>
+    <%= link_to t('buttons.edit'), edit_accounting_master_order_path(@master_order), class:"btn btn-primary butt-align2"%>
 </div>
 
 <div class="container-table100">
@@ -24,11 +24,11 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Data</th>
-            <th class="column3">Vencimento</th>
-            <th class="column3">Distribuidora</th>
-            <th class="column3">Valor</th>
-            <th class="column6">Pagamento</th>
+            <th class="column1"><%= t('labels.date') %></th>
+            <th class="column3"><%= t('labels.expire') %></th>
+            <th class="column3"><%= t('labels.distributor') %></th>
+            <th class="column3"><%= t('labels.value') %></th>
+            <th class="column6"><%= t('labels.payment') %></th>
           </tr>
         </thead>
         <tbody>

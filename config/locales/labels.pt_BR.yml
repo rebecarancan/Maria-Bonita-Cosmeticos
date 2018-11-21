@@ -1,0 +1,25 @@
+'pt-BR':
+  labels:
+    spreadsheets: Planilhas
+    year: Ano
+    month: Mês
+    price: Preço
+    balance: Saldo
+    incomes: Entradas
+    income: Entrada
+    expenses: Saídas
+    expense: Saída
+    date: Data
+    description: Descrição
+    value: Valor
+    total: Total
+    distributor: Fornecedor
+    expire: Vencimento
+    payment: Pagamento
+    month_total: Total do Mês
+    m_total: Dinheiro total
+    average: Média
+    days: Dias
+    d_total: Débito Total
+    c_total: Crédito Total
+

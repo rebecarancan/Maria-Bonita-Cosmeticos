@@ -4,18 +4,18 @@
 
 <br><br><br>
 
-<p class="basic-title"><%= "Notas Fiscais - #{@master_note.month} / #{@master_note.year}" %></p>
+<p class="basic-title"><%= "#{t('accounting.note')} - #{@master_note.month} / #{@master_note.year}" %></p>
 
 <br>
 <div class="row">
-  <p class="numbers num-color1">Total</p><p class="val num-color1"><%= notes_total %></p>
+  <p class="numbers num-color1"><%= t('labels.total') %></p><p class="val num-color1"><%= notes_total %></p>
 </div>
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
-    <%= link_to 'Voltar', accounting_master_notes_path, class:"btn btn-secondary"%>
+    <%= link_to t('buttons.back'), accounting_master_notes_path, class:"btn btn-secondary"%>
   </div>
-    <%= link_to 'Editar', edit_accounting_master_note_path(@master_note), class:"btn btn-primary butt-align2"%>
+    <%= link_to t('buttons.edit'), edit_accounting_master_note_path(@master_note), class:"btn btn-primary butt-align2"%>
 </div>
 
 <div class="container-table100">
@@ -24,9 +24,9 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Data</th>
-            <th class="column3">Distribuidora</th>
-            <th class="column6">Valor</th>
+            <th class="column1"><%= t('labels.date') %></th>
+            <th class="column3"><%= t('labels.distributor') %></th>
+            <th class="column6"><%= t('labels.value') %></th>
           </tr>
         </thead>
         <tbody>

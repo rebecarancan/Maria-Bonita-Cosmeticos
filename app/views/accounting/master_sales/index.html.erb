@@ -4,10 +4,10 @@
 
 <br><br><br>
 
-<p class="basic-title">Entradas Diárias</p>
+<p class="basic-title"><%= t('accounting.sale') %></p>
 
 <div class="float-right">
-  <%= link_to 'Novo', new_accounting_master_sale_path, class: "btn btn-primary", style: "background: #600513" %>
+  <%= link_to t('buttons.new'), new_accounting_master_sale_path, class: "btn btn-primary" %>
 </div>
 
 <div class="container-table100">
@@ -16,11 +16,11 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Ano</th>
-            <th class="column3">Mês</th>
-            <th class="column5">Mostrar</th>
-            <th class="column5">Editar</th>
-            <th class="column5">Apagar</th>
+            <th class="column1"><%= t('labels.year') %></th>
+            <th class="column3"><%= t('labels.month') %></th>
+            <th class="column5"><%= t('buttons.show') %></th>
+            <th class="column5"><%= t('buttons.edit') %></th>
+            <th class="column5"><%= t('buttons.destroy') %></th>
           </tr>
         </thead>
 
@@ -31,17 +31,17 @@
               <td class="column3"><%= master_sale.month %></td>
               <td class="column5">
                 <%= link_to accounting_master_sale_path(master_sale) do %>
-                  <span style="color: #600513" class="typcn typcn-th-list"></span>
+                  <span class="typcn typcn-th-list basic-color"></span>
                 <% end %>
               </td>
               <td class="column5">
                 <%= link_to edit_accounting_master_sale_path(master_sale) do %>
-                  <span style="color: #600513" class="typcn typcn-pencil"></span>
+                  <span class="typcn typcn-pencil basic-color"></span>
                 <% end %>
               </td>
               <td class="column5">
-                <%= link_to accounting_master_sale_path(master_sale), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span style="color: #600513" class="typcn typcn-times""></span>
+                <%= link_to accounting_master_sale_path(master_sale), method: :delete, data: { confirm: t('messages.confirm_with', month: master_sale.month, year: master_sale.year)} do %>
+                  <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>
             </tr>

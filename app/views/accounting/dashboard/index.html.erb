@@ -3,22 +3,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active">Planilhas</a>
+        <a class="nav-link active"><%= t('labels.spreadsheets') %></a>
       </li>
       <li class="nav-item">
-        <%= link_to "Finanças Diárias", accounting_master_finances_path, class:"nav-link js-scroll-trigger" %>
+        <%= link_to t('accounting.finance'), accounting_master_finances_path, class:"nav-link js-scroll-trigger" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Entrada Diária", accounting_master_sales_path, class:"nav-link js-scroll-trigger" %>
+        <%= link_to t('accounting.sale'), accounting_master_sales_path, class:"nav-link js-scroll-trigger" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Pedidos e Pagamentos", accounting_master_orders_path, class:"nav-link js-scroll-trigger" %>
+        <%= link_to t('accounting.order'), accounting_master_orders_path, class:"nav-link js-scroll-trigger" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Notas Fiscais", accounting_master_notes_path, class:"nav-link js-scroll-trigger" %>
+        <%= link_to t('accounting.note'), accounting_master_notes_path, class:"nav-link js-scroll-trigger" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Controle Bancário", accounting_master_banks_path, class:"nav-link js-scroll-trigger" %>
+        <%= link_to t('accounting.bank'), accounting_master_banks_path, class:"nav-link js-scroll-trigger" %>
       </li>
     </ul>
   </div>
