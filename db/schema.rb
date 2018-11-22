@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_174406) do
+ActiveRecord::Schema.define(version: 2018_11_22_185205) do
 
   create_table "banks", force: :cascade do |t|
     t.date "day"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2018_11_19_174406) do
     t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "done", default: false
+    t.integer "total_cents"
   end
 
   create_table "master_notes", force: :cascade do |t|

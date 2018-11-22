@@ -25,9 +25,16 @@
         <%= form.select :month, options_for_month(@master_finance.month), class:"form-control" %>
       </div>
 
+      <% if @master_finance.id === MasterFinance.first.id %>
+        <div class="col-md-2 mb-10">
+          <%= form.label :balance, class:"label" %>
+          <%= form.text_field :balance, class:"form-control" %>
+        </div>
+      <% end %>
+
       <div class="col-md-2 mb-10">
-        <%= form.label :balance, class:"label" %>
-        <%= form.text_field :balance, class:"form-control" %>
+        <%= form.label :done, class:"label" %>
+        <%= form.radio_button :done, class:"form-check-input" %>
       </div>
     </div>
 
