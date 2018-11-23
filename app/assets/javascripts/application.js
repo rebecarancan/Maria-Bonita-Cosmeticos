@@ -15,6 +15,7 @@
 //= require activestorage
 //= require_tree .
 //= require bootstrap
+//= require bootstrap.growl
 //= require cocoon
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-pt-BR

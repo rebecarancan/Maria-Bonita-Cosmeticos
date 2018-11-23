@@ -30,7 +30,7 @@ module Accounting
 
       respond_to do |format|
         if @master_note.save
-          format.html { redirect_to accounting_master_note_path(@master_note), notice: 'Master note was successfully created.' }
+          format.html { redirect_to accounting_master_note_path(@master_note), notice: "Notas Fiscais'#{@master_note.month} / #{@master_note.year}' foi criada com sucesso!" }
           format.json { render :show, status: :created, location: @master_note }
         else
           format.html { render :new }
@@ -44,7 +44,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_note.update(master_note_params)
-          format.html { redirect_to action: :show, notice: 'Master note was successfully updated.' }
+          format.html { redirect_to accounting_master_note_path(@master_note), notice: "Notas Fiscais'#{@master_note.month} / #{@master_note.year}' foi atualizada com sucesso!" }
           format.json { render :show, status: :ok, location: @master_note }
         else
           format.html { render :edit }
@@ -58,7 +58,7 @@ module Accounting
     def destroy
       @master_note.destroy
       respond_to do |format|
-        format.html { redirect_to action: :index, notice: 'Master note was successfully destroyed.' }
+        format.html { redirect_to accounting_master_notes_path, notice: "Notas Fiscais'#{@master_note.month} / #{@master_note.year}' foi excluída com sucesso!" }
         format.json { head :no_content }
       end
     end

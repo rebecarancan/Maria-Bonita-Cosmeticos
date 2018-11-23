@@ -30,7 +30,7 @@ module Accounting
 
       respond_to do |format|
         if @master_order.save
-          format.html { redirect_to accounting_master_order_path(@master_order), notice: 'Master order was successfully created.' }
+          format.html { redirect_to accounting_master_order_path(@master_order), notice: "Pedidos e Pagamentos '#{@master_order.month} / #{@master_order.year}' foi criado com sucesso!" }
           format.json { render :show, status: :created, location: @master_order }
         else
           format.html { render :new }
@@ -44,7 +44,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_order.update(master_order_params)
-          format.html { redirect_to action: :show, notice: 'Master order was successfully updated.' }
+          format.html { redirect_to accounting_master_order_path(@master_order), notice: "Pedidos e Pagamentos '#{@master_order.month} / #{@master_order.year}' foi atualizado com sucesso!" }
           format.json { render :show, status: :ok, location: @master_order }
         else
           format.html { render :edit }
@@ -58,7 +58,7 @@ module Accounting
     def destroy
       @master_order.destroy
       respond_to do |format|
-        format.html { redirect_to action: :index, notice: 'Master order was successfully destroyed.' }
+        format.html { redirect_to accounting_master_orders_path, notice: "Pedidos e Pagamentos '#{@master_order.month} / #{@master_order.year}' foi excluído com sucesso!" }
         format.json { head :no_content }
       end
     end

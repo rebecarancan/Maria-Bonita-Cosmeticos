@@ -1,11 +1,10 @@
-
-<p id="notice"><%= notice %></p>
+<%= render partial: 'layouts/notifications' %>
 
 <%= render partial: 'layouts/navigation' %>
 
 <br><br><br>
 
-<p class="basic-title"><%= t('accounting_menu.finance') %></p>
+<p class="basic-title"><%= t('accounting.finance') %></p>
 
 <div class="float-right">
   <%= link_to t('buttons.new'), new_accounting_master_finance_path, class: "btn btn-primary" %>

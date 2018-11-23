@@ -1,7 +1,7 @@
  'pt-BR':
   messages:
-    confirm: Tem certeza que deseja excluir (%{item})?
-    confirm_with: Você deseja realmente excluir (%{month}/%{year})?
+    confirm: Tem certeza que deseja excluir '%{item}'?
+    confirm_with: Você deseja realmente excluir '%{month}/%{year}'?
     editing: Editando %{model}
     new: Novo %{model}
     new_spreadsheet: Nova Planilha

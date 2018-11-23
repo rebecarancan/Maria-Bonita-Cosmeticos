@@ -160,7 +160,13 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.2.1)
       sprockets-rails (>= 2.0.0)
+    rails-assets-animate.css (3.7.0)
     rails-assets-bootstrap (4.1.3)
+    rails-assets-bootstrap.growl (3.1.3)
+      rails-assets-bootstrap (>= 2.0.0)
+      rails-assets-jquery (>= 1.10.2)
+    rails-assets-jquery (3.3.1)
+    rails-assets-notifyjs (0.4.2)
     rails-assets-typicons (2.0.9)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
@@ -249,7 +255,10 @@ DEPENDENCIES
   money-rails (~> 1.12)
   puma (~> 3.11)
   rails (~> 5.2.1)
+  rails-assets-animate.css!
   rails-assets-bootstrap!
+  rails-assets-bootstrap.growl!
+  rails-assets-notifyjs!
   rails-assets-typicons!
   rails-i18n (~> 5.1)
   sass-rails (~> 5.0)

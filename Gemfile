@@ -53,10 +53,14 @@ gem 'groupdate'
 gem 'chartkick'
 
 source 'https://rails-assets.org' do
-  #Typicons
+  # Typicons
   gem 'rails-assets-typicons'
-  #Bootstrap
-  gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+  # Bootstrap
+  gem 'rails-assets-bootstrap'
+  # Bootstrap Notify
+  gem 'rails-assets-bootstrap.growl'
+  # Animate CSS
+  gem 'rails-assets-animate.css'
 end
 
 group :development, :test do

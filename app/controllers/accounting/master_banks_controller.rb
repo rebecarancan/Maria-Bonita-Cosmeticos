@@ -31,7 +31,7 @@ module Accounting
 
       respond_to do |format|
         if @master_bank.save
-          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: 'Master bank was successfully created.' }
+          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{@master_bank.month} / #{@master_bank.year}' foi criado com sucesso!" }
           format.json { render :show, status: :created, location: @master_bank }
         else
           format.html { render :new }
@@ -45,7 +45,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_bank.update(master_bank_params)
-          format.html { redirect_to action: :show, notice: 'Master bank was successfully updated.' }
+          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{@master_bank.month} / #{@master_bank.year}' foi atualizado com sucesso com sucesso!" }
           format.json { render :show, status: :ok, location: @master_bank }
         else
           format.html { render :edit }
@@ -59,7 +59,7 @@ module Accounting
     def destroy
       @master_bank.destroy
       respond_to do |format|
-        format.html { redirect_to action: :index, notice: 'Master bank was successfully destroyed.' }
+        format.html { redirect_to accounting_master_banks_path, notice: "Controle Bancário '#{@master_bank.month} / #{@master_bank.year}' foi excluído com sucesso com sucesso!" }
         format.json { head :no_content }
       end
     end

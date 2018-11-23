@@ -1,21 +1,12 @@
-
-<p id="notice"><%= notice %></p>
-
-<div>
-  <%= render partial: 'layouts/navigation' %>
-</div>
+<%= render partial: 'layouts/navigation' %>
 
 <%= form_with(model: product, local: true, html: { class: "basic-grey"}) do |form| %>
   <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
       <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <script>
+          $.notify( {message: '<%= message %>'}, { type: 'danger', offset: 80});
+        </script>
       <% end %>
-      </ul>
-    </div>
   <% end %>
   <form>
     <div class="form-row">

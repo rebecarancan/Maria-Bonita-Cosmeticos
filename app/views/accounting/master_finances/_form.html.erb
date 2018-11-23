@@ -2,12 +2,10 @@
 
 <%= form_with(model: [:accounting, master_finance], local: true, html: { class: "basic-grey"}) do |form| %>
   <% if master_finance.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(master_finance.errors.count, "error") %> prohibited this master_finance from being saved:</h2>
-
-      <ul>
       <% master_finance.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <script>
+          $.notify( {message: '<%= message %>'}, { type: 'danger', offset: 80});
+        </script>
       <% end %>
       </ul>
     </div>
