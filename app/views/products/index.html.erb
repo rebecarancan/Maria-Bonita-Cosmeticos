@@ -4,6 +4,10 @@
 
 <br><br><br>
 
+<p class="basic-title"><%= t('app.products') %></p>
+
+<br>
+
 <%= form_tag(products_path, :method => "get", id: "search-form") do %>
   <div class="row">
     <div class="col-lg-5">
@@ -31,8 +35,8 @@
             <th class="column5"><%= @products.human_attribute_name("cost") %></th>
             <th class="column5"><%= @products.human_attribute_name("margin") %></th>
             <th class="column5"><%= @products.human_attribute_name("calculate_price") %></th>
-            <th class="column2"></th>
-            <th class="column6"></th>
+            <th class="column2"><%= t('buttons.edit') %></th>
+            <th class="column2"><%= t('buttons.destroy') %></th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +52,7 @@
                   <span class="typcn typcn-pencil basic-color"></span>
                 <% end %>
               </td>
-              <td class="column6">
+              <td class="column2">
                 <%= link_to product, method: :delete, data: { confirm: t('messages.confirm', item: product.name)} do %>
                   <span class="typcn typcn-times basic-color"></span>
                 <% end %>
