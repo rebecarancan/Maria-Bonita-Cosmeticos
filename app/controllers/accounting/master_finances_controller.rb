@@ -2,7 +2,7 @@ module Accounting
   class MasterFinancesController < ApplicationController
     before_action :set_master_finance, only: [:show, :edit, :update, :destroy]
     before_action :set_options_for_select, only: [:new, :create, :update, :edit]
-    before_action :balance_total, only: [:index, :show]
+    before_action :balance_total, only: [:show, :edit, :update, :destroy]
 
     # GET /master_finances
     # GET /master_finances.json
