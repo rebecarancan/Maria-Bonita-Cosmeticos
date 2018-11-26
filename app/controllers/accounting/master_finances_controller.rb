@@ -2,7 +2,7 @@ module Accounting
   class MasterFinancesController < ApplicationController
     before_action :set_master_finance, only: [:show, :edit, :update, :destroy]
     before_action :set_options_for_select, only: [:new, :create, :update, :edit]
-    before_action :balance_total, only: [:show, :edit, :update, :destroy]
+    before_action :balance_total, only: [:create, :edit, :update, :destroy]
 
     # GET /master_finances
     # GET /master_finances.json
@@ -70,7 +70,7 @@ module Accounting
 
       def balance_total
         if @master_finance.done?
-          @master_finance.total === calc_balance(@master_finance, @master_finance.balance)
+          @master_finance.total = calc_balance(@master_finance, @master_finance.balance)
         end
       end
 

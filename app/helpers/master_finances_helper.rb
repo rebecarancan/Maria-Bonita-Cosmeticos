@@ -1,8 +1,6 @@
 module MasterFinancesHelper
 
   def first_master_finance?(obj)
-    if obj.id === MasterFinance.first.id
-      return true
-    end
+    obj.id == MasterFinance.first.id
   end
 end
