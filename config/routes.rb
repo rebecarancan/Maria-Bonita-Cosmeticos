@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'home/index'
   get 'accounting', to: 'accounting/dashboard#index'
   get 'home', to: 'home#index'

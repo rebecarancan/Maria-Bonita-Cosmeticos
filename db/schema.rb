@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_174406) do
+ActiveRecord::Schema.define(version: 2018_11_26_185432) do
 
   create_table "banks", force: :cascade do |t|
     t.date "day"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2018_11_19_174406) do
     t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "done", default: false
+    t.integer "total_cents"
   end
 
   create_table "master_notes", force: :cascade do |t|
@@ -130,6 +132,18 @@ ActiveRecord::Schema.define(version: 2018_11_19_174406) do
     t.datetime "updated_at", null: false
     t.index ["income_type_id"], name: "index_sales_on_income_type_id"
     t.index ["master_sale_id"], name: "index_sales_on_master_sale_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
