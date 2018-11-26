@@ -31,12 +31,6 @@ module ApplicationHelper
     return balance
   end
 
-  def balance_total
-    if @master_finance.done?
-      @master_finance.total === calc_balance(@master_finance, @master_finance.balance)
-    end
-  end
-
   def calc_income(model)
     income = 0
     model.each do |i|

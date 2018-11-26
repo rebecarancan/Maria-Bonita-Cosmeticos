@@ -2,6 +2,7 @@ module Accounting
   class MasterFinancesController < ApplicationController
     before_action :set_master_finance, only: [:show, :edit, :update, :destroy]
     before_action :set_options_for_select, only: [:new, :create, :update, :edit]
+    before_action :balance_total, only: [:index, :show]
 
     # GET /master_finances
     # GET /master_finances.json
@@ -66,6 +67,12 @@ module Accounting
     end
 
     private
+
+      def balance_total
+        if @master_finance.done?
+          @master_finance.total === calc_balance(@master_finance, @master_finance.balance)
+        end
+      end
 
       def set_options_for_select
         @expense_type_options_for_select = ExpenseType.all
