@@ -8,7 +8,10 @@
           <%= link_to t('app.products'), products_path, class: "nav-link js-scroll-trigger" %>
         </li>
         <li class="nav-item">
-          <%= link_to t('app.accounting'), accounting_dashboard_index_path, class: "nav-link js-scroll-trigger" %>
+          <%= link_to t('app.accounting'), accounting_path, class: "nav-link js-scroll-trigger" %>
+        </li>
+        <li class="nav-item ">
+          <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link js-scroll-trigger" %>
         </li>
       </ul>
     </div>

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'home/index'
   get 'accounting', to: 'accounting/dashboard#index'
   get 'home', to: 'home#index'
   # get "products/new_product" => 'products#new_product', :as => :new_product
+
+  get 'accounting', to: 'accounting/dashboard#index'
 
   namespace :accounting do
     get 'dashboard/index'

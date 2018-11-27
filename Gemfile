@@ -51,6 +51,10 @@ gem 'cocoon'
 gem 'groupdate'
 # Create beautiful JavaScript charts with one line of Ruby
 gem 'chartkick'
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+# Translations for the devise gem
+gem 'devise-i18n'
 
 source 'https://rails-assets.org' do
   # Typicons

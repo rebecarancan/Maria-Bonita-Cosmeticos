@@ -179,6 +179,33 @@ header.masthead .bg-circle-4 {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
 }
 
+.basic-grey2 {
+    margin-left:auto;
+    margin-right:auto;
+    width: 500px;
+    background: #ffaaaa;
+    padding: 20px 10px 3px 20px;
+    border-radius: 10px;
+}
+
+.basic-grey2 input[type="email"], .basic-grey2 input[type="password"] {
+    border: 1px transparent;
+    border-radius: 5px;
+    color: #494949;
+    height: 35px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 16px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #fc4e4e;
+    -moz-box-shadow: inset 0px 1px 4px #fc4e4e;
+    -webkit-box-shadow: inset 0px 1px 4px #fc4e4e;
+}
+
 .basic-grey {
     margin-left:auto;
     margin-right:auto;
@@ -187,6 +214,7 @@ header.masthead .bg-circle-4 {
     padding: 20px 10px 20px 20px;
     border-radius: 10px;
 }
+
 .basic-grey h1 {
     font-size: 25px;
     padding: 0px 0px 10px 40px;
@@ -215,7 +243,7 @@ header.masthead .bg-circle-4 {
     border: 1px transparent;
     border-radius: 5px;
     color: #494949;
-    height: 30px;
+    height: 35px;
     margin-bottom: 16px;
     margin-right: 6px;
     margin-top: 2px;
@@ -264,6 +292,19 @@ header.masthead .bg-circle-4 {
     margin-left:auto;
     margin-right:auto;
     width: 1295px;
+    background: #a53838;
+    padding: 25px 15px 25px 10px;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.basic-title2 {
+    margin-left:auto;
+    margin-right:auto;
+    width: 500px;
     background: #a53838;
     padding: 25px 15px 25px 10px;
     border-radius: 10px;
