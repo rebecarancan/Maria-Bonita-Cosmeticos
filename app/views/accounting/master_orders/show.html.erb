@@ -25,20 +25,25 @@
         <thead>
           <tr class="table100-head">
             <th class="column1"><%= t('labels.date') %></th>
-            <th class="column5"><%= t('labels.expire') %></th>
+            <th class="column3"><%= t('labels.expire') %></th>
             <th class="column3"><%= t('labels.distributor') %></th>
-            <th class="column3"><%= t('labels.value') %></th>
+            <th class="column2"><%= t('labels.value') %></th>
             <th class="column6"><%= t('labels.payment') %></th>
           </tr>
         </thead>
         <tbody>
           <% @master_order.orders.each do |order| %>
 
-            <tr>
+            <tr <% if order.payment == "-" %>
+                  style="background: #d9b3ff"
+                <% else %>
+                  style="background: #ffaaaa"
+                <% end %>
+            >
               <td class="column1"><%= l(order.purchase) %></td>
-              <td class="column5"><%= l(order.expire) %></td>
+              <td class="column3"><%= l(order.expire) %></td>
               <td class="column3"><%= order.distributor %></td>
-              <td class="column3"><%= order.value %></td>
+              <td class="column2"><%= order.value %></td>
               <td class="column6"><%= order.payment %></td>
             </tr>
           <% end %>

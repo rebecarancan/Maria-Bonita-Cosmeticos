@@ -18,7 +18,7 @@
     <div class="col-md-2 mb-3">
       <div class="field">
         <%= f.label :distributor, class:"label" %>
-        <%= f.select :distributor, options_for_distributor(@master_order.orders.map(&:distributor)) %>
+        <%= f.select :distributor, options_for_distributor(f.object.distributor) %>
       </div>
     </div>
 
@@ -32,12 +32,12 @@
     <div class="col-md-2 mb-3">
       <div class="field">
         <%= f.label :payment, class:"label" %>
-        <%= f.select :payment, options_for_payment(@master_order.orders.map(&:payment)) %>
+        <%= f.select :payment, options_for_payment(f.object.payment) %>
       </div>
     </div>
 
     <div class="col-md-1 mb-3">
-      <%= link_to_remove_association("x", f, class: "badge badge-pill badge-secondary", style: "background: #a53838") %>
+      <%= link_to_remove_association("x", f, class: "badge badge-pill badge-secondary", style: "background: #800000") %>
     </div>
   </div>
 

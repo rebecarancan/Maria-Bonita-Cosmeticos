@@ -26,6 +26,7 @@
 
 body {
   font-family: 'Lato';
+  background-color: #600513;
 }
 
 h1,
@@ -75,8 +76,7 @@ header.masthead {
   overflow: hidden;
   padding-top: calc(7rem + 72px);
   padding-bottom: 7rem;
-  background: -webkit-gradient(linear, left bottom, left top, from(#ff6a00), to(#ee0979));
-  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+  background: #800000;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -100,8 +100,8 @@ header.masthead .bg-circle {
   z-index: 0;
   position: absolute;
   border-radius: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(#ee0979), to(#ff6a00));
-  background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#600513), to(#a53838));
+  background: linear-gradient(0deg, #600513 0%, #a53838 100%);
 }
 
 header.masthead .bg-circle-1 {
@@ -183,7 +183,7 @@ header.masthead .bg-circle-4 {
     margin-left:auto;
     margin-right:auto;
     width: 500px;
-    background: #ffaaaa;
+    background: #ff8989;
     padding: 20px 10px 3px 20px;
     border-radius: 10px;
 }
@@ -201,16 +201,16 @@ header.masthead .bg-circle-4 {
     width: 70%;
     font-size: 16px;
     line-height:15px;
-    box-shadow: inset 0px 1px 4px #fc4e4e;
-    -moz-box-shadow: inset 0px 1px 4px #fc4e4e;
-    -webkit-box-shadow: inset 0px 1px 4px #fc4e4e;
+    box-shadow: inset 0px 1px 4px #af3333;
+    -moz-box-shadow: inset 0px 1px 4px #af3333;
+    -webkit-box-shadow: inset 0px 1px 4px #af3333;
 }
 
 .basic-grey {
     margin-left:auto;
     margin-right:auto;
     width: 1295px;
-    background: #ffaaaa;
+    background: #ff8989;
     padding: 20px 10px 20px 20px;
     border-radius: 10px;
 }
@@ -252,9 +252,9 @@ header.masthead .bg-circle-4 {
     width: 70%;
     font-size: 16px;
     line-height:15px;
-    box-shadow: inset 0px 1px 4px #fc4e4e;
-    -moz-box-shadow: inset 0px 1px 4px #fc4e4e;
-    -webkit-box-shadow: inset 0px 1px 4px #fc4e4e;
+    box-shadow: inset 0px 1px 4px #af3333;
+    -moz-box-shadow: inset 0px 1px 4px #af3333;
+    -webkit-box-shadow: inset 0px 1px 4px #af3333;
 }
 .basic-grey textarea{
     padding: 5px 3px 3px 5px;
@@ -292,7 +292,7 @@ header.masthead .bg-circle-4 {
     margin-left:auto;
     margin-right:auto;
     width: 1295px;
-    background: #a53838;
+    background: #800000;
     padding: 25px 15px 25px 10px;
     border-radius: 10px;
     color: #FFF;
@@ -305,7 +305,7 @@ header.masthead .bg-circle-4 {
     margin-left:auto;
     margin-right:auto;
     width: 500px;
-    background: #a53838;
+    background: #800000;
     padding: 25px 15px 25px 10px;
     border-radius: 10px;
     color: #FFF;
@@ -319,7 +319,7 @@ header.masthead .bg-circle-4 {
 }
 
 .label {
-  color: #a53838;
+  color: #800000;
   font-weight: bold;
 }
 

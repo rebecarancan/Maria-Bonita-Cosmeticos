@@ -17,7 +17,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: #616370;
-  background: #26272c;
+  background: #600513;
   height: 100%;
   position: relative;
 }
@@ -167,7 +167,7 @@ img {
 }
 
 .btn.btn-secondary {
-  background: #e55757;
+  background: #af3333;
   color: #fff;
   border: none !important;
   border: 2px solid transparent !important;
@@ -197,7 +197,7 @@ img {
   font-size: 20px;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  background-color: #a53838;
+  background-color: #800000;
   padding-bottom: 30px;
 }
 
@@ -220,6 +220,6 @@ img {
     flex-direction: column;
     width: 1366px;
     height: 100vh;
-    background-color: #a53838;
+    background-color: #800000;
   }
 }

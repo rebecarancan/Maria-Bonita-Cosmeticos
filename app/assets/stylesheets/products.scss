@@ -142,7 +142,7 @@ table td, table th {
 }
 table thead tr {
   height: 60px;
-  background: #a53838;
+  background: #800000;
 }
 table tbody tr {
   height: 50px;
@@ -196,12 +196,12 @@ tbody tr:hover {
 }
 
 .column2 {
-  width: 20px;
+  width: 100px;
   text-align: center;
 }
 
 .column3 {
-  width: 300px;
+  width: 350px;
   text-align: left;
 }
 
@@ -211,13 +211,13 @@ tbody tr:hover {
 }
 
 .column5 {
-  width: 300px;
+  width: 200px;
   text-align: center;
 }
 
 .column6 {
   width: 20px;
-  text-align: right;
+  text-align: center;
   padding-right: 40px;
 }
 
