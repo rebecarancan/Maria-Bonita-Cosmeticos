@@ -1,3 +1,7 @@
+<%= render partial: 'layouts/navigation' %>
+
+<br><br><br>
+
 <p class="basic-title">Gráficos</p>
 
-<%= bar_chart MasterSale.group_by_day(:created_at).count %>
+<%= column_chart @sales_groups %>
