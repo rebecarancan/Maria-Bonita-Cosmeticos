@@ -398,6 +398,18 @@ td {
   background: #ce4040;
 }
 
+.expense-color {
+  background: #ffaaaa;
+}
+
+.income-color {
+  background: #d9b3ff;
+}
+
+.gen-color {
+  background: #ff7f7f;
+}
+
 /*Kaminari Pagination */
 
 .pagination a, .pagination span.current, .pagination span.gap {

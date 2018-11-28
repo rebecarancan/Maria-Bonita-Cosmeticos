@@ -41,7 +41,7 @@ module ApplicationHelper
     return income
   end
 
-    def calc_expense(model)
+  def calc_expense(model)
     expense = 0
     model.each do |i|
       if i.income_type.blank?
@@ -49,6 +49,14 @@ module ApplicationHelper
       end
     end
     return expense
+  end
+
+  def change_color(i)
+    if i.expense_type.blank?
+      "class= income-color style=background:#d9b3ff"
+    else
+      "class= expense-color style=background:#ffaaaa"
+    end
   end
 
 end

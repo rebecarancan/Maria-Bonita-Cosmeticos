@@ -34,12 +34,7 @@
         <tbody>
           <% @master_order.orders.each do |order| %>
 
-            <tr <% if order.payment == "-" %>
-                  style="background: #d9b3ff"
-                <% else %>
-                  style="background: #ffaaaa"
-                <% end %>
-            >
+            <tr <%= order_color(order) %> >
               <td class="column1"><%= l(order.purchase) %></td>
               <td class="column3"><%= l(order.expire) %></td>
               <td class="column3"><%= order.distributor %></td>

@@ -40,12 +40,7 @@
         <tbody>
           <% @master_bank.banks.each do |bank| %>
 
-            <tr <% if bank.expense_type.blank? %>
-                  style="background: #d9b3ff"
-                <% else %>
-                  style="background: #ffaaaa"
-                <% end %>
-            >
+            <tr <%= change_color(bank) %> >
               <td class="column1"><%= l(bank.day) %></td>
               <td class="column3">
                 <% unless bank.income_type.blank? %>

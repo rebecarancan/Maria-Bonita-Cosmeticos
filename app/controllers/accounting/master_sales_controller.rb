@@ -78,7 +78,7 @@ module Accounting
       def master_sale_params
         params.require(:master_sale).permit(:year, :month,
                                             sales_attributes: [
-                                            :day, :value, :income_type_id, :_destroy])
+                                            :id, :day, :value, :income_type_id, :_destroy])
       end
   end
 end

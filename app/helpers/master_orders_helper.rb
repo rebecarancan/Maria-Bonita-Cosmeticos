@@ -8,4 +8,12 @@ module MasterOrdersHelper
     return total
   end
 
+  def order_color(i)
+    if i.payment == "-"
+      "class= income-color style=background:#d9b3ff"
+    else
+      "class= expense-color style=background:#ffaaaa"
+    end
+  end
+
 end

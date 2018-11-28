@@ -57,14 +57,7 @@
         <tbody>
           <% @master_sale.sales.each do |sale| %>
 
-            <tr <% if sale.income_type.name == "Dinheiro" %>
-                  style="background: #d9b3ff"
-                <% elsif sale.income_type.name == "Crédito" %>
-                  style="background: #ff7f7f"
-                <% else %>
-                  style="background: #ffaaaa"
-                <% end %>
-            >
+            <tr <%= sale_color(sale) %> >
               <td class="column1"><%= l(sale.day) %></td>
               <td class="column3"><%= sale.income_type.name %></td>
               <td class="column6"><%= sale.value %></td>
