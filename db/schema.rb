@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2018_11_26_185432) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "banks", force: :cascade do |t|
     t.date "day"
     t.string "description"
     t.integer "value_cents"
-    t.integer "master_bank_id"
-    t.integer "income_type_id"
-    t.integer "expense_type_id"
+    t.bigint "master_bank_id"
+    t.bigint "income_type_id"
+    t.bigint "expense_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["expense_type_id"], name: "index_banks_on_expense_type_id"
@@ -36,9 +39,9 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.date "day"
     t.string "description"
     t.integer "value_cents"
-    t.integer "income_type_id"
-    t.integer "expense_type_id"
-    t.integer "master_finance_id"
+    t.bigint "income_type_id"
+    t.bigint "expense_type_id"
+    t.bigint "master_finance_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["expense_type_id"], name: "index_finances_on_expense_type_id"
@@ -66,8 +69,6 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "done", default: false
-    t.integer "total_cents"
   end
 
   create_table "master_notes", force: :cascade do |t|
@@ -96,7 +97,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.date "day"
     t.string "name"
     t.integer "value_cents"
-    t.integer "master_note_id"
+    t.bigint "master_note_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["master_note_id"], name: "index_notes_on_master_note_id"
@@ -108,7 +109,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.date "expire"
     t.integer "value_cents"
     t.string "payment"
-    t.integer "master_order_id"
+    t.bigint "master_order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["master_order_id"], name: "index_orders_on_master_order_id"
@@ -126,8 +127,8 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
   create_table "sales", force: :cascade do |t|
     t.date "day"
     t.integer "value_cents"
-    t.integer "income_type_id"
-    t.integer "master_sale_id"
+    t.bigint "income_type_id"
+    t.bigint "master_sale_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["income_type_id"], name: "index_sales_on_income_type_id"
@@ -146,4 +147,14 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "banks", "expense_types"
+  add_foreign_key "banks", "income_types"
+  add_foreign_key "banks", "master_banks"
+  add_foreign_key "finances", "expense_types"
+  add_foreign_key "finances", "income_types"
+  add_foreign_key "finances", "master_finances"
+  add_foreign_key "notes", "master_notes"
+  add_foreign_key "orders", "master_orders"
+  add_foreign_key "sales", "income_types"
+  add_foreign_key "sales", "master_sales"
 end

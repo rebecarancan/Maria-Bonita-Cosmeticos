@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :payments
     resources :notes
     resources :orders
+    resources :charts
   end
 
   resources :products

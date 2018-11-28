@@ -22,7 +22,7 @@ MoneyRails.configure do |config|
   # The default value is true
   #
   # config.include_validations = true
-
+  Money.locale_backend = :i18n
   # Default ActiveRecord migration configuration values for columns:
   #
   config.amount_column = { prefix: '',           # column name prefix
