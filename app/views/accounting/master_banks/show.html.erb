@@ -42,16 +42,8 @@
 
             <tr <%= change_color(bank) %> >
               <td class="column1"><%= l(bank.day) %></td>
-              <td class="column3">
-                <% unless bank.income_type.blank? %>
-                  <%= bank.income_type.name %>
-                <% end %>
-                </td>
-              <td class="column3">
-                <% unless bank.expense_type.blank? %>
-                  <%= bank.expense_type.name %>
-                <% end %>
-              </td>
+              <td class="column3"><%= inc_show(bank) %></td>
+              <td class="column3"><%= exp_show(bank) %></td>
               <td class="column3"><%= bank.description %></td>
               <td class="column6"><%= bank.value %></td>
             </tr>

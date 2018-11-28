@@ -59,4 +59,16 @@ module ApplicationHelper
     end
   end
 
+  def inc_show(i)
+    unless i.income_type.blank?
+      i.income_type.name
+    end
+  end
+
+  def exp_show(i)
+    unless i.expense_type.blank?
+      i.expense_type.name
+    end
+  end
+
 end
