@@ -6,8 +6,11 @@
 
 <p class="basic-title"><%= t('accounting.note') %></p>
 
-<div class="float-right">
-  <%= link_to t('buttons.new'), new_accounting_master_note_path, class: "btn btn-primary" %>
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to t('buttons.back'), accounting_path, class:"btn btn-secondary"%>
+  </div>
+    <%= link_to t('buttons.new'), new_accounting_master_note_path, class:"btn btn-primary butt-align2"%>
 </div>
 
 <div class="container-table100">
