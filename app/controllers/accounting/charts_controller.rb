@@ -2,9 +2,13 @@ module Accounting
   class ChartsController < ApplicationController
 
     def index
-      @sales_groups = MasterSales.each do |sale| {
-        sale.income_total(1)
-      }
+      @cansei = MasterSale.order(:created_at)
     end
+
   end
 end
+
+# Coletar todas as MasterSales
+# Agrupar por ano
+# Ordenar por ordem de criação
+# Colocar num hash key: month value: income_total
