@@ -30,6 +30,11 @@ module Accounting
     # POST /master_finances.json
     def create
       @master_finance = MasterFinance.new(master_finance_params)
+      last_master_finance = MasterFinance.last
+
+      if last_master_finance
+        @master_finance.initial_balance = last_master_finance.final_balance
+      end
 
       respond_to do |format|
         if @master_finance.save
@@ -45,8 +50,15 @@ module Accounting
     # PATCH/PUT /master_finances/1
     # PATCH/PUT /master_finances/1.json
     def update
+      @master_finance.assign_attribute(master_finance_params)
+
+      if @master_finance.done?
+        final_balance = calc_balance(@master_finance.finances, @master_finance.initial_balance)
+        @master_finance.final_balance = final_balance
+      end
+
       respond_to do |format|
-        if @master_finance.update(master_finance_params)
+        if @master_finance.save
           format.html { redirect_to action: :show, notice: 'Master finance was successfully updated.' }
           format.json { render :show, status: :ok, location: @master_finance }
         else

@@ -28,7 +28,8 @@ module ApplicationHelper
         balance -= i.value
       end
     end
-    return balance
+
+    balance
   end
 
   def calc_income(model)
