@@ -1,11 +1,7 @@
 module MasterNotesHelper
 
   def notes_total
-    total = 0
-    @master_note.notes.each do |note|
-      total += note.value
-    end
-    return total
+    @master_note.notes.sum(&:value)
   end
 
 end

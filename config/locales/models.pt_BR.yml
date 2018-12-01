@@ -40,7 +40,7 @@
         month: Mês
       note:
         day: Data
-        name: Descrição
+        name: Fornecedor
         value: Valor
       master_order:
         year: Ano

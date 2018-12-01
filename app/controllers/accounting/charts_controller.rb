@@ -2,7 +2,13 @@ module Accounting
   class ChartsController < ApplicationController
 
     def index
-      @cansei = MasterSale.order(:created_at)
+      master_sales =  MasterSale.group_by_month('master_sales.created_at', format: '%b / %y').joins(sales: :income_type).where(sales: { income_types: { name: 'Dinheiro'}}).sum(:value_cents)
+
+      master_sales.each do |key, value|
+        master_sales[key] = value.to_f/100.00
+      end
+
+      @dinheiro = master_sales
     end
 
   end

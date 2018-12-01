@@ -7,7 +7,7 @@ module ApplicationHelper
     options_for_select(MONTHS, selected)
   end
 
-  DISTRIBUTORS = ["Aladim", "Arcon", "Aspa", "Cristal", "GAO", "Glaucia","Marco Boni",
+  DISTRIBUTORS = ["-", "Aladim", "Arcon", "Aspa", "Cristal", "GAO", "Glaucia","Marco Boni",
                   "Make One","Novo Toque", "Real", "Ricosti", "Rio Vermelho", "Wanderley"]
 
   def options_for_distributor(selected)

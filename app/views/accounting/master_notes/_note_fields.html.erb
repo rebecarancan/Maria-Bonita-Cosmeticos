@@ -12,6 +12,8 @@
       <div class="field">
         <%= f.label :name, class:"label" %>
         <%= f.select :name, options_for_distributor(f.object.name) %>
+
+        <%= f.text_field :name %>
       </div>
     </div>
 

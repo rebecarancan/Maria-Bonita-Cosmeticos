@@ -9,6 +9,15 @@ module MasterSalesHelper
     return total
   end
 
+
+  def total_income(type)
+    master_sale.sales.select { |sale| sale.income_typme.name === type }.sum(&:value)
+  end
+
+  def total_money_income
+    total_income('Dinheiro')
+  end
+
   def income_total(type)
     m_total = 0
     d_total = 0
