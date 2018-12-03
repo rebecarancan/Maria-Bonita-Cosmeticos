@@ -11,10 +11,10 @@
   <p class="numbers num-color1"><%= t('labels.balance') %></p><p class="val num-color1"><%= calc_balance(@master_finance.finances, @master_finance.balance)%></p>
 </div>
 <div class="row">
-  <p class="numbers num-color2"><%= t('labels.incomes') %></p><p class="val num-color2"><%= calc_income(@master_finance.finances) %></p>
+  <p class="numbers num-color2"><%= t('labels.incomes') %></p><p class="val num-color2"><%= income_calc(@master_finance.finances) %></p>
 </div>
 <div class="row">
-  <p class="numbers num-color3"><%= t('labels.expenses') %></p><p class="val num-color3"><%= calc_expense(@master_finance.finances) %></p>
+  <p class="numbers num-color3"><%= t('labels.expenses') %></p><p class="val num-color3"><%= expense_calc(@master_finance.finances) %></p>
 </div>
 
 <div class="form-row" style="margin-left: 25px">

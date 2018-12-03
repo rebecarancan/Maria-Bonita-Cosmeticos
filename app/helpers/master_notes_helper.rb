@@ -1,7 +1,7 @@
 module MasterNotesHelper
 
-  def notes_total
-    @master_note.notes.sum(&:value)
+  def notes_total(obj)
+    obj.sum(&:value)
   end
 
 end

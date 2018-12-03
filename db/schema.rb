@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "done", default: false
+    t.integer "total_cents"
   end
 
   create_table "master_notes", force: :cascade do |t|

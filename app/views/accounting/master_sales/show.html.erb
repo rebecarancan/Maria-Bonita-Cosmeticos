@@ -8,35 +8,35 @@
 
 <br>
 <div class="row">
-  <p class="numbers num-color1"><%= t('labels.month_total') %></p><p class="val num-color1"><%= sales_total %></p>
+  <p class="numbers num-color1"><%= t('labels.month_total') %></p><p class="val num-color1"><%= sales_total(@master_sale.sales) %></p>
 </div>
 
 <div class="data">
   <div class="row">
-    <p class="numbers1 num-color2"><%= t('labels.m_total') %></p><p class="val1 num-color2"><%= income_total(1) %></p>
-    <p class="numbers1 num-color2"><%= t('labels.average') %></p><p class="val1 num-color2"><%= average(1) %></p>
-    <p class="numbers1 num-color2"><%= t('labels.days') %></p><p class="val1 num-color2"><%= days_total(1) %></p>
+    <p class="numbers1 num-color2"><%= t('labels.m_total') %></p><p class="val1 num-color2"><%= total_income(@master_sale.sales, 'Dinheiro') %></p>
+    <p class="numbers1 num-color2"><%= t('labels.average') %></p><p class="val1 num-color2"><%= Money.new(income_average(@master_sale.sales, 'Dinheiro'), 'EUR') %></p>
+    <p class="numbers1 num-color2"><%= t('labels.days') %></p><p class="val1 num-color2"><%= total_days(@master_sale.sales, 'Dinheiro') %></p>
   </div>
 </div>
 
 <div class="data">
   <div class="row">
-    <p class="numbers1 num-color3"><%= t('labels.d_total') %></p><p class="val1 num-color3"><%= income_total(2) %></p>
-    <p class="numbers1 num-color3"><%= t('labels.average') %></p><p class="val1 num-color3"><%= average(2) %></p>
-    <p class="numbers1 num-color3"><%= t('labels.days') %></p><p class="val1 num-color3"><%= days_total(2) %></p>
+    <p class="numbers1 num-color3"><%= t('labels.d_total') %></p><p class="val1 num-color3"><%= total_income(@master_sale.sales, 'Débito') %></p>
+    <p class="numbers1 num-color3"><%= t('labels.average') %></p><p class="val1 num-color3"><%= Money.new(income_average(@master_sale.sales, 'Débito'), 'EUR') %></p>
+    <p class="numbers1 num-color3"><%= t('labels.days') %></p><p class="val1 num-color3"><%= total_days(@master_sale.sales, 'Débito') %></p>
   </div>
 </div>
 
 <div class="data">
   <div class="row">
-    <p class="numbers1 num-color4"><%= t('labels.c_total') %></p><p class="val1 num-color4"><%= income_total(3) %></p>
-    <p class="numbers1 num-color4"><%= t('labels.average') %></p><p class="val1 num-color4"><%= average(3) %></p>
-    <p class="numbers1 num-color4"><%= t('labels.days') %></p><p class="val1 num-color4"><%= days_total(3) %></p>
+    <p class="numbers1 num-color4"><%= t('labels.c_total') %></p><p class="val1 num-color4"><%= total_income(@master_sale.sales, 'Crédito') %></p>
+    <p class="numbers1 num-color4"><%= t('labels.average') %></p><p class="val1 num-color4"><%= Money.new(income_average(@master_sale.sales, 'Débito'), 'EUR') %></p>
+    <p class="numbers1 num-color4"><%= t('labels.days') %></p><p class="val1 num-color4"><%= total_days(@master_sale.sales, 'Crédito') %></p>
   </div>
 </div>
 <br>
 
-<% chart_group = { Dinheiro: income_total(1).to_f, Débito: income_total(2).to_f, Crédito: income_total(3).to_f} %>
+<% chart_group = { Dinheiro: total_income(@master_sale.sales, 'Dinheiro').to_f, Débito: total_income(@master_sale.sales, 'Débito').to_f, Crédito: total_income(@master_sale.sales, 'Crédito').to_f} %>
 
 <%= column_chart chart_group, prefix: "R$", colors: ["#b00", "#666"] %>
 

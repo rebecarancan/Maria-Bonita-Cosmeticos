@@ -4,4 +4,5 @@
 
 <p class="basic-title">Gráficos</p>
 
-<%= column_chart @dinheiro %>
+<%= column_chart @money, prefix: "R$", colors: ["#e94245", "#e94245"] %>
+<%= column_chart @testetotal, prefix: "R$", colors: ["#e94245", "#e94245"] %>

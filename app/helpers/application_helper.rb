@@ -20,35 +20,23 @@ module ApplicationHelper
     options_for_select(PAYMENTS, selected)
   end
 
-  def calc_balance(model, balance)
-    model.each do |i|
+  def calc_balance(obj, balance)
+    obj.each do |i|
       if i.expense_type.blank?
         balance += i.value
       else
         balance -= i.value
       end
     end
-    return balance
+    balance
   end
 
-  def calc_income(model)
-    income = 0
-    model.each do |i|
-      if i.expense_type.blank?
-        income += i.value
-      end
-    end
-    return income
+  def income_calc(obj)
+    obj.select { |sale| sale.expense_type.blank? }.sum(&:value)
   end
 
-  def calc_expense(model)
-    expense = 0
-    model.each do |i|
-      if i.income_type.blank?
-        expense += i.value
-      end
-    end
-    return expense
+  def expense_calc(obj)
+    obj.select { |sale| sale.income_type.blank? }.sum(&:value)
   end
 
   def change_color(i)

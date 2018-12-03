@@ -6,4 +6,7 @@ class Sale < ApplicationRecord
 
   # Rails Money
   monetize :value_cents
+
+  scope :from_type, -> (kind) {joins(:income_type).where(income_types: {name: kind})}
+
 end
