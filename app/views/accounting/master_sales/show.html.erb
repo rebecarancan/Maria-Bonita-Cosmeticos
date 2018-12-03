@@ -36,10 +36,6 @@
 </div>
 <br>
 
-<% chart_group = { Dinheiro: total_income(@master_sale.sales, 'Dinheiro').to_f, Débito: total_income(@master_sale.sales, 'Débito').to_f, Crédito: total_income(@master_sale.sales, 'Crédito').to_f} %>
-
-<%= column_chart chart_group, prefix: "R$", colors: ["#b00", "#666"] %>
-
 <br>
 
 <div class="form-row" style="margin-left: 25px">
