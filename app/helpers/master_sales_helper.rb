@@ -11,11 +11,19 @@ module MasterSalesHelper
 
 
   def total_income(type)
-    master_sale.sales.select { |sale| sale.income_typme.name === type }.sum(&:value)
+    master_sale.sales.select { |sale| sale.income_type.name === type }.sum(&:value)
   end
 
   def total_money_income
     total_income('Dinheiro')
+  end
+
+  def total_debit_income
+    total_income('Débito')
+  end
+
+  def total_credit_income
+    total_income('Crédito')
   end
 
   def income_total(type)
