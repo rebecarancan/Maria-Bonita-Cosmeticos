@@ -13,7 +13,6 @@ module Accounting
     # GET /master_finances/1
     # GET /master_finances/1.json
     def show
-      @master_finance.finances.order('master_finance.finances.created_at DESC')
     end
 
     # GET /master_finances/new
