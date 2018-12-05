@@ -32,7 +32,7 @@ module Accounting
 
       respond_to do |format|
         if @master_finance.save
-          format.html { redirect_to accounting_master_finance_path(@master_finance), notice: "Finanças Diárias '#{@master_finance.month} / #{@master_finance.year}' foi criada com sucesso!" }
+          format.html { redirect_to accounting_master_finance_path(@master_finance), notice: "Finanças Diárias '#{l(@master_finance.date, format: :short)}' foi criada com sucesso!" }
           format.json { render :show, status: :created, location: @master_finance }
         else
           format.html { render :new }
@@ -46,7 +46,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_finance.update(master_finance_params)
-          format.html { redirect_to accounting_master_finance_path(@master_finance), notice: "Finanças Diárias '#{@master_finance.month} / #{@master_finance.year}' foi atualizada com sucesso!" }
+          format.html { redirect_to accounting_master_finance_path(@master_finance), notice: "Finanças Diárias '#{l(@master_finance.date, format: :short)}' foi atualizada com sucesso!" }
           format.json { render :show, status: :ok, location: @master_finance }
         else
           format.html { render :edit }
@@ -60,7 +60,7 @@ module Accounting
     def destroy
       @master_finance.destroy
       respond_to do |format|
-        format.html { redirect_to accounting_master_finances_path, notice: "Finanças Diárias '#{@master_finance.month} / #{@master_finance.year}' foi excluída com sucesso!" }
+        format.html { redirect_to accounting_master_finances_path, notice: "Finanças Diárias '#{l(@master_finance.date, format: :short)}' foi excluída com sucesso!" }
         format.json { head :no_content }
       end
     end
@@ -78,7 +78,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_finance_params
-        params.require(:master_finance).permit(:month, :year, :balance,
+        params.require(:master_finance).permit(:date, :balance,
                                         finances_attributes: [
                                         :id, :day, :description, :value, :expense_type_id,
                                         :income_type_id, :_destroy])

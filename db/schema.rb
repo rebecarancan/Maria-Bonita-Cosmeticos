@@ -56,31 +56,27 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
   end
 
   create_table "master_banks", force: :cascade do |t|
-    t.integer "year"
-    t.string "month"
+    t.date "date"
     t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "master_finances", force: :cascade do |t|
-    t.string "month"
-    t.integer "year"
+    t.date "date"
     t.integer "balance_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "master_notes", force: :cascade do |t|
-    t.integer "year"
-    t.string "month"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "master_orders", force: :cascade do |t|
-    t.integer "year"
-    t.string "month"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

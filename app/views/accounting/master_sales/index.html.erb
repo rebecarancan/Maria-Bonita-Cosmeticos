@@ -41,7 +41,7 @@
                 <% end %>
               </td>
               <td class="column5">
-                <%= link_to accounting_master_sale_path(master_sale), method: :delete, data: { confirm: t('messages.confirm_with', )} do %>
+                <%= link_to accounting_master_sale_path(master_sale), method: :delete, data: { confirm: t('messages.confirm_with', date: l(master_sale.date, format: :short))} do %>
                   <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>

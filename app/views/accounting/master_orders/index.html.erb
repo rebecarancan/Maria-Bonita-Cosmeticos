@@ -19,8 +19,7 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1"><%= t('labels.year') %></th>
-            <th class="column3"><%= t('labels.month') %></th>
+            <th class="column1"><%= t('labels.date') %></th>
             <th class="column5"><%= t('buttons.show') %></th>
             <th class="column5"><%= t('buttons.edit') %></th>
             <th class="column5"><%= t('buttons.destroy') %></th>
@@ -30,8 +29,7 @@
         <tbody>
           <% @master_orders.each do |master_order| %>
             <tr>
-              <td class="column1"><%= master_order.year %></td>
-              <td class="column3"><%= master_order.month %></td>
+              <td class="column1"><%= l(master_order.date, format: :short) %></td>
               <td class="column5">
                 <%= link_to accounting_master_order_path(master_order) do %>
                   <span class="typcn typcn-th-list basic-color"></span>
@@ -43,7 +41,7 @@
                 <% end %>
               </td>
               <td class="column5">
-                <%= link_to accounting_master_order_path(master_order), method: :delete, data: { confirm: t('messages.confirm_with', month: master_order.month, year: master_order.year)} do %>
+                <%= link_to accounting_master_order_path(master_order), method: :delete, data: { confirm: t('messages.confirm_with', date: l(master_order.date, format: :short))} do %>
                   <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>

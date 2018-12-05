@@ -30,7 +30,7 @@ module Accounting
 
       respond_to do |format|
         if @master_order.save
-          format.html { redirect_to accounting_master_order_path(@master_order), notice: "Pedidos e Pagamentos '#{@master_order.month} / #{@master_order.year}' foi criado com sucesso!" }
+          format.html { redirect_to accounting_master_order_path(@master_order), notice: "Pedidos e Pagamentos '#{l(@master_order.date, format: :short)}' foi criado com sucesso!" }
           format.json { render :show, status: :created, location: @master_order }
         else
           format.html { render :new }
@@ -44,7 +44,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_order.update(master_order_params)
-          format.html { redirect_to accounting_master_order_path(@master_order), notice: "Pedidos e Pagamentos '#{@master_order.month} / #{@master_order.year}' foi atualizado com sucesso!" }
+          format.html { redirect_to accounting_master_order_path(@master_order), notice: "Pedidos e Pagamentos '#{l(@master_order.date, format: :short)}' foi atualizado com sucesso!" }
           format.json { render :show, status: :ok, location: @master_order }
         else
           format.html { render :edit }
@@ -58,7 +58,7 @@ module Accounting
     def destroy
       @master_order.destroy
       respond_to do |format|
-        format.html { redirect_to accounting_master_orders_path, notice: "Pedidos e Pagamentos '#{@master_order.month} / #{@master_order.year}' foi excluído com sucesso!" }
+        format.html { redirect_to accounting_master_orders_path, notice: "Pedidos e Pagamentos '#{l(@master_order.date, format: :short)}' foi excluído com sucesso!" }
         format.json { head :no_content }
       end
     end
@@ -71,7 +71,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_order_params
-        params.require(:master_order).permit(:year, :month,
+        params.require(:master_order).permit(:date,
                                             orders_attributes: [
                                             :id, :purchase, :distributor, :expire, :value, :payment, :_destroy])
       end

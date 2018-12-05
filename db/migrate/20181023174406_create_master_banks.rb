@@ -1,8 +1,7 @@
 class CreateMasterBanks < ActiveRecord::Migration[5.2]
   def change
     create_table :master_banks do |t|
-      t.integer :year
-      t.string :month
+      t.date :date
       t.integer :balance_cents
 
       t.timestamps

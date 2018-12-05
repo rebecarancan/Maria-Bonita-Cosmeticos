@@ -30,7 +30,7 @@ module Accounting
 
       respond_to do |format|
         if @master_note.save
-          format.html { redirect_to accounting_master_note_path(@master_note), notice: "Notas Fiscais'#{@master_note.month} / #{@master_note.year}' foi criada com sucesso!" }
+          format.html { redirect_to accounting_master_note_path(@master_note), notice: "Notas Fiscais '#{l(@master_note.date, format: :short)}' foi criada com sucesso!" }
           format.json { render :show, status: :created, location: @master_note }
         else
           format.html { render :new }
@@ -44,7 +44,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_note.update(master_note_params)
-          format.html { redirect_to accounting_master_note_path(@master_note), notice: "Notas Fiscais'#{@master_note.month} / #{@master_note.year}' foi atualizada com sucesso!" }
+          format.html { redirect_to accounting_master_note_path(@master_note), notice: "Notas Fiscais '#{l(@master_note.date, format: :short)}' foi atualizada com sucesso!" }
           format.json { render :show, status: :ok, location: @master_note }
         else
           format.html { render :edit }
@@ -58,7 +58,7 @@ module Accounting
     def destroy
       @master_note.destroy
       respond_to do |format|
-        format.html { redirect_to accounting_master_notes_path, notice: "Notas Fiscais'#{@master_note.month} / #{@master_note.year}' foi excluída com sucesso!" }
+        format.html { redirect_to accounting_master_notes_path, notice: "Notas Fiscais'#{l(@master_note.date, format: :short)}' foi excluída com sucesso!" }
         format.json { head :no_content }
       end
     end
@@ -71,7 +71,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_note_params
-        params.require(:master_note).permit(:year, :month,
+        params.require(:master_note).permit(:date,
                                             notes_attributes: [
                                             :id, :day, :name, :value, :_destroy])
       end

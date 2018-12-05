@@ -31,7 +31,7 @@ module Accounting
 
       respond_to do |format|
         if @master_bank.save
-          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{@master_bank.month} / #{@master_bank.year}' foi criado com sucesso!" }
+          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi criado com sucesso!" }
           format.json { render :show, status: :created, location: @master_bank }
         else
           format.html { render :new }
@@ -45,7 +45,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_bank.update(master_bank_params)
-          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{@master_bank.month} / #{@master_bank.year}' foi atualizado com sucesso com sucesso!" }
+          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi atualizado com sucesso com sucesso!" }
           format.json { render :show, status: :ok, location: @master_bank }
         else
           format.html { render :edit }
@@ -59,7 +59,7 @@ module Accounting
     def destroy
       @master_bank.destroy
       respond_to do |format|
-        format.html { redirect_to accounting_master_banks_path, notice: "Controle Bancário '#{@master_bank.month} / #{@master_bank.year}' foi excluído com sucesso com sucesso!" }
+        format.html { redirect_to accounting_master_banks_path, notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi excluído com sucesso com sucesso!" }
         format.json { head :no_content }
       end
     end
@@ -78,7 +78,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_bank_params
-        params.require(:master_bank).permit(:year, :month, :balance,
+        params.require(:master_bank).permit(:date, :balance,
                                             banks_attributes: [
                                             :id, :day, :description, :value,
                                             :expense_type_id, :income_type_id, :_destroy])

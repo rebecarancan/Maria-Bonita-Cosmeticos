@@ -17,11 +17,12 @@ namespace :dev do
     end
     puts "PRODUTOS gerados com sucesso!"
 
+#############################################################
+
     puts "Gerando as FINANÇAS DIÁRIAS..."
     12.times do
       MasterFinance.create!(
-        year: "2018",
-        month: MONTHS.sample,
+        date: Date.today - Random.rand(330),
         balance: "#{Random.rand(500)},#{Random.rand(99)}"
       )
     end
@@ -55,10 +56,12 @@ namespace :dev do
     end
     puts "SAÍDAS FINANÇAS DIÁRIAS geradas com sucesso!"
 
+################################################################
+
     puts "Gerando as ENTRADAS DIÁRIAS..."
     24.times do
       MasterSale.create!(
-        date: Date.today - Random.rand(90),
+        date: Date.today - Random.rand(330)
       )
     end
     puts "ENTRADAS DIÁRIAS geradas com sucesso!"
@@ -76,11 +79,12 @@ namespace :dev do
     end
     puts "LANÇAMENTOS ENTRADAS DIÁRIAS gerados com sucesso!"
 
+###################################################################
+
     puts "Gerando os PEDIDOS E PAGAMENTOS..."
     15.times do
       MasterOrder.create!(
-        year: "2018",
-        month: MONTHS.sample
+        date: Date.today - Random.rand(330)
       )
     end
     puts "PEDIDOS E PAGAMENTOS gerados com sucesso!"
@@ -100,11 +104,12 @@ namespace :dev do
     end
     puts "LANÇAMENTOS PEDIDOS E PAGAMENTOS gerados com sucesso!"
 
+#####################################################################
+
     puts "Gerando as NOTAS FISCAIS..."
     15.times do
       MasterNote.create!(
-        year: "2018",
-        month: MONTHS.sample
+        date: Date.today - Random.rand(330)
       )
     end
     puts "NOTAS FISCAIS geradas com sucesso!"
@@ -122,17 +127,18 @@ namespace :dev do
     end
     puts "LANÇAMENTOS NOTAS FISCAIS gerados com sucesso!"
 
+#####################################################################
+
     puts "Gerando o CONTROLE BANCÁRIO..."
     15.times do
       MasterBank.create!(
-        year: "2018",
-        month: MONTHS.sample,
+        date: Date.today - Random.rand(330),
         balance: "#{Random.rand(500)},#{Random.rand(99)}"
       )
     end
     puts "CONTROLE BANCÁRIO geradas com sucesso!"
 
-    puts "Gerando as ENTRADAS FINANÇAS DIÁRIAS..."
+    puts "Gerando as ENTRADAS CONTROLE BANCÁRIO..."
     MasterBank.all.each do |bank|
       Random.rand(5..15).times do |i|
         Bank.create!(
@@ -144,9 +150,9 @@ namespace :dev do
         )
       end
     end
-    puts "ENTRADAS FINANÇAS DIÁRIAS geradas com sucesso!"
+    puts "ENTRADAS CONTROLE BANCÁRIO geradas com sucesso!"
 
-    puts "Gerando as SAÍDAS FINANÇAS DIÁRIAS..."
+    puts "Gerando as SAÍDAS CONTROLE BANCÁRIO..."
     MasterBank.all.each do |bank|
       Random.rand(5..15).times do |i|
         Bank.create!(
@@ -158,7 +164,7 @@ namespace :dev do
         )
       end
     end
-    puts "SAÍDAS FINANÇAS DIÁRIAS geradas com sucesso!"
+    puts "SAÍDAS CONTROLE BANCÁRIO geradas com sucesso!"
 
   end
 end

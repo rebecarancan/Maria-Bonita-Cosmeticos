@@ -4,7 +4,7 @@
 
 <br><br><br>
 
-<p class="basic-title"><%= "#{t('accounting.finance')} - #{@master_finance.month} / #{@master_finance.year}" %></p>
+<p class="basic-title"><%= "#{t('accounting.finance')} - #{l(@master_finance.date, format: :short)}" %></p>
 
 <br>
 <div class="row">

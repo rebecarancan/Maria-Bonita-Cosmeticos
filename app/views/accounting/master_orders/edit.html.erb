@@ -1,5 +1,5 @@
 <br><br><br>
 
-<p class="basic-title"><%= "#{t('messages.editing', model: @master_order.model_name.human)} - #{@master_order.month} / #{@master_order.year}" %></p>
+<p class="basic-title"><%= "#{t('messages.editing', model: @master_order.model_name.human)} - #{l(@master_order.date, format: :short)}" %></p>
 
 <%= render 'form', master_order: @master_order %>
