@@ -11,7 +11,7 @@ module MariaBonita
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-    config.time_zone = 'Brasilia'
+    config.time_zone = 'UTC'
     config.i18n.default_locale = "pt-BR"
 
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }

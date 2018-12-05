@@ -31,7 +31,7 @@ module Accounting
 
       respond_to do |format|
         if @master_sale.save
-          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '#{@master_sale.month} / #{@master_sale.year}' foi criada com sucesso!" }
+          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '-' foi criada com sucesso!" }
           format.json { render :show, status: :created, location: @master_sale }
         else
           format.html { render :new }
@@ -45,7 +45,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_sale.update(master_sale_params)
-          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '#{@master_sale.month} / #{@master_sale.year}' foi atualizada com sucesso!" }
+          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '-' foi atualizada com sucesso!" }
           format.json { render :show, status: :ok, location: @master_sale }
         else
           format.html { render :edit }
@@ -76,7 +76,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_sale_params
-        params.require(:master_sale).permit(:year, :month,
+        params.require(:master_sale).permit(:date,
                                             sales_attributes: [
                                             :id, :day, :value, :income_type_id, :_destroy])
       end

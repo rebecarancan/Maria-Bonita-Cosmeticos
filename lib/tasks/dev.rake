@@ -56,10 +56,9 @@ namespace :dev do
     puts "SAÍDAS FINANÇAS DIÁRIAS geradas com sucesso!"
 
     puts "Gerando as ENTRADAS DIÁRIAS..."
-    15.times do
+    24.times do
       MasterSale.create!(
-        year: "2018",
-        month: MONTHS.sample
+        date: Date.today - Random.rand(90),
       )
     end
     puts "ENTRADAS DIÁRIAS geradas com sucesso!"
