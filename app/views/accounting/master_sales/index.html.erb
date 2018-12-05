@@ -19,7 +19,7 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">data</th>
+            <th class="column1"><%= t('labels.date') %></th>
             <th class="column5"><%= t('buttons.show') %></th>
             <th class="column5"><%= t('buttons.edit') %></th>
             <th class="column5"><%= t('buttons.destroy') %></th>
@@ -29,7 +29,7 @@
         <tbody>
           <% @master_sales.each do |master_sale| %>
             <tr>
-              <td class="column1"><%= master_sale.date.strftime("%B - %Y") %></td>
+              <td class="column1"><%= l(master_sale.date, format: :short) %></td>
               <td class="column5">
                 <%= link_to accounting_master_sale_path(master_sale) do %>
                   <span class="typcn typcn-th-list basic-color"></span>

@@ -1,5 +1,5 @@
 <br><br><br>
 
-<p class="basic-title"><%= "#{t('messages.editing', model: @master_sale.model_name.human)} -}" %></p>
+<p class="basic-title"><%= "#{t('messages.editing', model: @master_sale.model_name.human)} - #{l(@master_sale.date, format: :short)}" %></p>
 
 <%= render 'form', master_sale: @master_sale %>

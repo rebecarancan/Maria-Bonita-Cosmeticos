@@ -16,8 +16,7 @@
         other: Produtos
     attributes:
       master_bank:
-        year: Ano
-        month: Mês
+        date: Data
         balance: Saldo
       bank:
         day: Data
@@ -26,8 +25,7 @@
         description: Descrição
         value: Valor
       master_finance:
-        year: Ano
-        month: Mês
+        date: Data
         balance: Saldo
       finance:
         day: Data
@@ -36,15 +34,13 @@
         description: Descrição
         value: Valor
       master_note:
-        year: Ano
-        month: Mês
+        date: Data
       note:
         day: Data
         name: Fornecedor
         value: Valor
       master_order:
-        year: Ano
-        month: Mês
+        date: Data
       order:
         purchase: Data do pedido
         expire: Vencimento
@@ -52,8 +48,7 @@
         value: Valor
         payment: Tipo de pagamento
       master_sale:
-        year: Ano
-        month: Mês
+        date: Data
       sale:
         day: Data
         income_type_id: Entrada

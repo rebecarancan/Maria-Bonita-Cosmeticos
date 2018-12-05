@@ -8,18 +8,18 @@
 
 <p class="basic-title2">Entradas em Dinheiro</p>
 
-<%= column_chart @money, prefix: "R$", colors: ["#ce0202", "#63007a", "#0cff00"] %>
+<%= column_chart chart('Dinheiro'), prefix: "R$", colors: ["#ce0202", "#63007a", "#0cff00"] %>
 
 <br><br><br>
 
 <p class="basic-title2">Entradas em Débito</p>
 
-<%= column_chart @debit, prefix: "R$", colors: ["#ce0202", "#63007a"] %>
+<%= column_chart chart('Débito'), prefix: "R$", colors: ["#ce0202", "#63007a", "#0cff00"] %>
 
 <br><br><br>
 
 <p class="basic-title2">Entradas em Crédito</p>
 
-<%= column_chart @debit, prefix: "R$", colors: ["#ce0202", "#63007a"] %>
+<%= column_chart chart('Crédito'), prefix: "R$", colors: ["#ce0202", "#63007a", "#0cff00"] %>
 
 <br><br>

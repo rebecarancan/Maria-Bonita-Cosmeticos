@@ -1,8 +1,7 @@
 'pt-BR':
   labels:
     spreadsheets: Planilhas
-    year: Ano
-    month: Mês
+    date: Data
     price: Preço
     balance: Saldo
     incomes: Entradas

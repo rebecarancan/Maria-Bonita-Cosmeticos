@@ -59,4 +59,14 @@ module ApplicationHelper
     end
   end
 
+  def chart(type)
+    master_sales = MasterSale.group_by_year(:date, format: '%Y').group_by_month_of_year(:date, format: '%B').joins(sales: :income_type).where(sales: { income_types: { name: type}}).sum(:value_cents)
+
+    master_sales.each do |key, value|
+      master_sales[key] = Money.new(value, 'BRL').to_f
+    end
+
+    @income = master_sales
+  end
+
 end

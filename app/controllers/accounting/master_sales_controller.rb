@@ -31,7 +31,7 @@ module Accounting
 
       respond_to do |format|
         if @master_sale.save
-          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '-' foi criada com sucesso!" }
+          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '#{l(@master_sale.date, format: :short)}' foi criada com sucesso!" }
           format.json { render :show, status: :created, location: @master_sale }
         else
           format.html { render :new }
@@ -45,7 +45,7 @@ module Accounting
     def update
       respond_to do |format|
         if @master_sale.update(master_sale_params)
-          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '-' foi atualizada com sucesso!" }
+          format.html { redirect_to accounting_master_sale_path(@master_sale), notice: "Entradas Diárias '#{l(@master_sale.date, format: :short)}' foi atualizada com sucesso!" }
           format.json { render :show, status: :ok, location: @master_sale }
         else
           format.html { render :edit }
@@ -59,7 +59,7 @@ module Accounting
     def destroy
       @master_sale.destroy
       respond_to do |format|
-        format.html { redirect_to accounting_master_sales_path, notice: "Entradas Diárias '#{@master_sale.month} / #{@master_sale.year}' foi excluída com sucesso!" }
+        format.html { redirect_to accounting_master_sales_path, notice: "Entradas Diárias '#{l(@master_sale.date, format: :short)}' foi excluída com sucesso!" }
         format.json { head :no_content }
       end
     end
