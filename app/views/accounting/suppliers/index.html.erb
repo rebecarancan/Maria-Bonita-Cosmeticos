@@ -1,0 +1,54 @@
+<%= render partial: 'layouts/notifications' %>
+
+<%= render partial: 'layouts/navigation' %>
+
+<br><br><br>
+
+<p class="basic-title">Fornecedores</p>
+
+<div class="form-row" style="margin-left: 25px">
+  <div class="col-md-1 mb-10">
+    <%= link_to t('buttons.back'), accounting_path, class:"btn btn-secondary"%>
+  </div>
+    <%= link_to t('buttons.new'), new_accounting_supplier_path, class:"btn btn-primary butt-align2"%>
+</div>
+
+<div class="container-table100">
+  <div class="wrap-table100">
+    <div class="table100">
+      <table>
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Nome</th>
+            <th class="column5"><%= t('buttons.edit') %></th>
+            <th class="column5"><%= t('buttons.destroy') %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @suppliers.each do |supplier| %>
+            <tr>
+              <td class="column1"><%= supplier.name %></td>
+              <td class="column5">
+                <%= link_to edit_accounting_supplier_path(supplier) do %>
+                  <span class="typcn typcn-pencil basic-color"></span>
+                <% end %>
+              </td>
+              <td class="column5">
+                <%= link_to accounting_supplier_path(supplier), method: :delete, data: { confirm: t('messages.confirm_with')} do %>
+                  <span class="typcn typcn-times basic-color"></span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <%= paginate @suppliers %>
+</div>
+
+<br>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_185432) do
+ActiveRecord::Schema.define(version: 2018_12_06_120833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,7 +95,9 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.bigint "master_note_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "supplier_id"
     t.index ["master_note_id"], name: "index_notes_on_master_note_id"
+    t.index ["supplier_id"], name: "index_notes_on_supplier_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -107,7 +109,9 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.bigint "master_order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "supplier_id"
     t.index ["master_order_id"], name: "index_orders_on_master_order_id"
+    t.index ["supplier_id"], name: "index_orders_on_supplier_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -130,6 +134,12 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
     t.index ["master_sale_id"], name: "index_sales_on_master_sale_id"
   end
 
+  create_table "suppliers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -149,7 +159,9 @@ ActiveRecord::Schema.define(version: 2018_11_26_185432) do
   add_foreign_key "finances", "income_types"
   add_foreign_key "finances", "master_finances"
   add_foreign_key "notes", "master_notes"
+  add_foreign_key "notes", "suppliers"
   add_foreign_key "orders", "master_orders"
+  add_foreign_key "orders", "suppliers"
   add_foreign_key "sales", "income_types"
   add_foreign_key "sales", "master_sales"
 end

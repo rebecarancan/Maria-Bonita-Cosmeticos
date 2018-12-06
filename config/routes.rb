@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :notes
     resources :orders
     resources :charts
+    resources :suppliers
   end
 
   resources :products
