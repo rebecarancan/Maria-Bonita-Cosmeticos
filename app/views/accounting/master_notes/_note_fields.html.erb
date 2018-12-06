@@ -10,8 +10,8 @@
 
     <div class="col-md-2 mb-3">
       <div class="field">
-        <%= f.label :name, class:"label" %>
-        <%= f.select :name, options_for_distributor(f.object.name) %>
+        <%= f.label :supplier_id, class:"label" %>
+        <%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name) %>
       </div>
     </div>
 

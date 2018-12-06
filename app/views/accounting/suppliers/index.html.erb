@@ -20,8 +20,8 @@
         <thead>
           <tr class="table100-head">
             <th class="column1">Nome</th>
-            <th class="column5"><%= t('buttons.edit') %></th>
-            <th class="column5"><%= t('buttons.destroy') %></th>
+            <th class="column4"><%= t('buttons.edit') %></th>
+            <th class="column6"><%= t('buttons.destroy') %></th>
           </tr>
         </thead>
 
@@ -29,12 +29,12 @@
           <% @suppliers.each do |supplier| %>
             <tr>
               <td class="column1"><%= supplier.name %></td>
-              <td class="column5">
+              <td class="column4">
                 <%= link_to edit_accounting_supplier_path(supplier) do %>
                   <span class="typcn typcn-pencil basic-color"></span>
                 <% end %>
               </td>
-              <td class="column5">
+              <td class="column6">
                 <%= link_to accounting_supplier_path(supplier), method: :delete, data: { confirm: t('messages.confirm_with')} do %>
                   <span class="typcn typcn-times basic-color"></span>
                 <% end %>

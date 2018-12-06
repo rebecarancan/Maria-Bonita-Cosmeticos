@@ -14,6 +14,26 @@ User.create!(
   )
 puts "Usuário padrão cadastrado... [OK]"
 
+###############################################################
+
+puts "Gerando os Fornecedores (Supplier)..."
+Supplier.create!([{name: "Aladim"},
+      {name: "Arcon"},
+      {name: "Aspa"},
+      {name: "Cristal"},
+      {name: "GAO"},
+      {name: "Glaucia"},
+      {name: "Marco Boni"},
+      {name: "Make One"},
+      {name: "Novo Toque"},
+      {name: "Real"},
+      {name: "Ricosti"},
+      {name: "Rio Vermelho"},
+      {name: "Wanderley"}])
+puts "Gerando os Fornecedores (Supplier)... [OK]"
+
+###############################################################
+
 puts "Gerando os tipos de entrada (IncomeType)..."
 IncomeType.create!([{name: "Dinheiro"},
       {name: "Débito"},
@@ -21,6 +41,8 @@ IncomeType.create!([{name: "Dinheiro"},
       {name: "Caixa"},
       {name: "Banco/Loja"}])
 puts "Gerando os tipos de entrada (IncomeType)... [OK]"
+
+###############################################################
 
 puts "Gerando os tipos de saída (ExpenseType)..."
 ExpenseType.create!([{name: "Acerto"},
