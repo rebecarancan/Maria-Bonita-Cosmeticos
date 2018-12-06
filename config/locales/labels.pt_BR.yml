@@ -21,4 +21,9 @@
     days: Dias
     d_total: Débito Total
     c_total: Crédito Total
+    code: Código
+    name: Nome
+    cost: Custo
+    margin: Margem
+    price: Preço
 

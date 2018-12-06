@@ -55,6 +55,8 @@ gem 'chartkick'
 gem 'devise'
 # Translations for the devise gem
 gem 'devise-i18n'
+# pg_search builds ActiveRecord named scopes that take advantage of PostgreSQL’s full text search
+gem 'pg_search'
 
 source 'https://rails-assets.org' do
   # Typicons

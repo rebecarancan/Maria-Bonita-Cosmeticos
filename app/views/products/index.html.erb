@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-lg-5">
       <div class="input-group float-left basic-box">
-        <%= text_field_tag :search, params[:search], class:"form-control", placeholder: "#{t('placeholder.search_for')}" %>
+        <%= text_field_tag 'term', params[:term], class:"form-control", placeholder: "#{t('placeholder.search_for')}" %>
       <span class="input-group-btn">
         <%= submit_tag t('buttons.ok'), class:"btn btn-primary" %>
       </span>
@@ -30,11 +30,11 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1"><%= @products.human_attribute_name("code") %></th>
-            <th class="column3"><%= @products.human_attribute_name("name") %></th>
-            <th class="column5"><%= @products.human_attribute_name("cost") %></th>
-            <th class="column5"><%= @products.human_attribute_name("margin") %></th>
-            <th class="column5"><%= @products.human_attribute_name("calculate_price") %></th>
+            <th class="column1"><%= t('labels.code') %></th>
+            <th class="column3"><%= t('labels.name') %></th>
+            <th class="column5"><%= t('labels.cost') %></th>
+            <th class="column5"><%= t('labels.margin') %></th>
+            <th class="column5"><%= t('labels.price') %></th>
             <th class="column2"><%= t('buttons.edit') %></th>
             <th class="column6"><%= t('buttons.destroy') %></th>
           </tr>
