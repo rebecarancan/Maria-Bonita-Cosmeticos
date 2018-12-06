@@ -4,12 +4,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    def index
-      if params[:term].present?
-        @products = Product.search_by_text(params[:term]).page(params[:page]).per(15)
-      else
-        @products = Product.all.order(:name).page(params[:page]).per(20)
-      end
+    if params[:term].present?
+      @products = Product.search_by_text(params[:term]).page(params[:page]).per(15)
+    else
+      @products = Product.all.order(:name).page(params[:page]).per(20)
     end
   end
 
