@@ -3,9 +3,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active"><%= t('labels.spreadsheets') %></a>
-      </li>
-      <li class="nav-item">
         <%= link_to t('accounting.finance'), accounting_master_finances_path, class:"nav-link js-scroll-trigger" %>
       </li>
       <li class="nav-item">
@@ -21,11 +18,11 @@
         <%= link_to t('accounting.bank'), accounting_master_banks_path, class:"nav-link js-scroll-trigger" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Gráficos", accounting_charts_path, class:"nav-link js-scroll-trigger" %>
+        <%= link_to t('accounting.chart'), accounting_charts_path, class:"nav-link js-scroll-trigger" %>
       </li>
       </li>
       <li class="nav-item">
-        <%= link_to "Cadastro fornecedores", accounting_suppliers_path, class:"nav-link js-scroll-trigger" %>
+        <%= link_to t('accounting.supplier'), accounting_suppliers_path, class:"nav-link js-scroll-trigger" %>
       </li>
     </ul>
   </div>

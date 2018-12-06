@@ -29,7 +29,7 @@ module Accounting
 
       respond_to do |format|
         if @supplier.save
-          format.html { redirect_to accounting_suppliers_path, notice: 'Supplier was successfully created.' }
+          format.html { redirect_to accounting_suppliers_path, notice: "O fornecedor '#{@supplier.name}' foi criado com sucesso!" }
           format.json { render :show, status: :created, location: @supplier }
         else
           format.html { render :new }
@@ -43,7 +43,7 @@ module Accounting
     def update
       respond_to do |format|
         if @supplier.update(supplier_params)
-          format.html { redirect_to accounting_suppliers_path, notice: 'Supplier was successfully updated.' }
+          format.html { redirect_to accounting_suppliers_path, notice: "O fornecedor '#{@supplier.name}' foi atualizado com sucesso!" }
           format.json { render :show, status: :ok, location: @supplier }
         else
           format.html { render :edit }
@@ -57,7 +57,7 @@ module Accounting
     def destroy
       @supplier.destroy
       respond_to do |format|
-        format.html { redirect_to accounting_suppliers_path, notice: 'Supplier was successfully destroyed.' }
+        format.html { redirect_to accounting_suppliers_path, notice: "O fornecedor '#{@supplier.name}' foi excluído com sucesso!" }
         format.json { head :no_content }
       end
     end

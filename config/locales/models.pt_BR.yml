@@ -11,6 +11,9 @@
       note: Notas Fiscais
       order: Pedidos e Pagamentos
       sale: Entradas Diárias
+      supplier:
+        one: Fornecedor
+        other: Fornecedores
       product:
         one: Produto
         other: Produtos
@@ -37,14 +40,14 @@
         date: Data
       note:
         day: Data
-        name: Fornecedor
+        supplier_id: Fornecedor
         value: Valor
       master_order:
         date: Data
       order:
         purchase: Data do pedido
         expire: Vencimento
-        distributor: Fornecedor
+        supplier_id: Fornecedor
         value: Valor
         payment: Tipo de pagamento
       master_sale:
@@ -53,6 +56,8 @@
         day: Data
         income_type_id: Entrada
         value: Valor
+      supplier:
+        name: Nome
       product:
         code: Código
         name: Nome

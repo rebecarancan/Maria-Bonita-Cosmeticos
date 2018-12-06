@@ -4,7 +4,7 @@
 
 <br><br><br>
 
-<p class="basic-title">Fornecedores</p>
+<p class="basic-title"><%= t('accounting.supplier') %></p>
 
 <div class="form-row" style="margin-left: 25px">
   <div class="col-md-1 mb-10">
@@ -19,7 +19,7 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1">Nome</th>
+            <th class="column1"><%= t('labels.supplier') %></th>
             <th class="column4"><%= t('buttons.edit') %></th>
             <th class="column6"><%= t('buttons.destroy') %></th>
           </tr>
@@ -35,7 +35,7 @@
                 <% end %>
               </td>
               <td class="column6">
-                <%= link_to accounting_supplier_path(supplier), method: :delete, data: { confirm: t('messages.confirm_with')} do %>
+                <%= link_to accounting_supplier_path(supplier), method: :delete, data: { confirm: t('messages.confirm', item: supplier.name)} do %>
                   <span class="typcn typcn-times basic-color"></span>
                 <% end %>
               </td>

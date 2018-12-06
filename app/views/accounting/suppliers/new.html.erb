@@ -1,5 +1,5 @@
 <br><br><br>
 
-<p class="basic-title">Novo Fornecedor</p>
+<p class="basic-title"><%= "#{t('messages.new', model: @supplier.model_name.human)}" %></p>
 
 <%= render 'form', supplier: @supplier %>

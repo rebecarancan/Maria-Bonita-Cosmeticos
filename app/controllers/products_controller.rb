@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "O produto '#{@product.name}' foi apagado com sucesso!" }
+      format.html { redirect_to products_url, notice: "O produto '#{@product.name}' foi excluído com sucesso!" }
       format.json { head :no_content }
     end
   end

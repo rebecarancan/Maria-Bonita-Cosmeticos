@@ -1,5 +1,5 @@
 <br><br><br>
 
-<p class="basic-title">Editando Fornecedor</p>
+<p class="basic-title"><%= "#{t('messages.editing', model: @supplier.model_name.human)}" %></p>
 
 <%= render 'form', supplier: @supplier %>

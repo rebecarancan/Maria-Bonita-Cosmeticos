@@ -95,7 +95,7 @@ namespace :dev do
         Order.create!(
         purchase: Date.today - Random.rand(90),
         expire: Date.today - Random.rand(90),
-        distributor: DISTRIBUTORS.sample,
+        supplier: Supplier.all.sample,
         value: "#{Random.rand(500)},#{Random.rand(99)}",
         payment: PAYMENTS.sample,
         master_order: order
@@ -119,7 +119,7 @@ namespace :dev do
       Random.rand(5..15).times do |i|
         Note.create!(
         day: Date.today - Random.rand(90),
-        name: DISTRIBUTORS.sample,
+        supplier: Supplier.all.sample,
         value: "#{Random.rand(500)},#{Random.rand(99)}",
         master_note: note
         )

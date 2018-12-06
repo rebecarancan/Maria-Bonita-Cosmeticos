@@ -12,7 +12,7 @@
     description: Descrição
     value: Valor
     total: Total
-    distributor: Fornecedor
+    supplier: Fornecedor
     expire: Vencimento
     payment: Pagamento
     month_total: Total do Mês
