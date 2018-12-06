@@ -17,8 +17,8 @@
 
     <div class="col-md-2 mb-3">
       <div class="field">
-        <%= f.label :distributor, class:"label" %>
-        <%= f.select :distributor, options_for_distributor(f.object.distributor) %>
+        <%= f.label :supplier_id, class:"label" %>
+        <%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name) %>
       </div>
     </div>
 

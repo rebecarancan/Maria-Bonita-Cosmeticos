@@ -1,6 +1,7 @@
 module Accounting
   class MasterOrdersController < ApplicationController
     before_action :set_master_order, only: [:show, :edit, :update, :destroy]
+    before_action :set_options_for_select, only: [:new, :create, :update, :edit]
 
     # GET /master_orders
     # GET /master_orders.json
@@ -64,6 +65,10 @@ module Accounting
     end
 
     private
+
+      def set_options_for_select
+        @supplier_options_for_select = Supplier.all
+      end
       # Use callbacks to share common setup or constraints between actions.
       def set_master_order
         @master_order = MasterOrder.find(params[:id])
@@ -73,7 +78,7 @@ module Accounting
       def master_order_params
         params.require(:master_order).permit(:date,
                                             orders_attributes: [
-                                            :id, :purchase, :distributor, :expire, :value, :payment, :_destroy])
+                                            :id, :purchase, :supplier_id, :expire, :value, :payment, :_destroy])
       end
   end
 end

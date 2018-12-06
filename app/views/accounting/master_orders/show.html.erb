@@ -37,7 +37,7 @@
             <tr <%= order_color(order) %> >
               <td class="column1"><%= l(order.purchase) %></td>
               <td class="column3"><%= l(order.expire) %></td>
-              <td class="column3"><%= order.distributor %></td>
+              <td class="column3"><%= order.supplier.name %></td>
               <td class="column2"><%= order.value %></td>
               <td class="column6"><%= order.payment %></td>
             </tr>
