@@ -19,8 +19,8 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1"><%= t('labels.supplier') %></th>
-            <th class="column4"><%= t('buttons.edit') %></th>
+            <th class="column7"><%= t('labels.supplier') %></th>
+            <th class="column5"><%= t('buttons.edit') %></th>
             <th class="column6"><%= t('buttons.destroy') %></th>
           </tr>
         </thead>
@@ -28,8 +28,8 @@
         <tbody>
           <% @suppliers.each do |supplier| %>
             <tr>
-              <td class="column1"><%= supplier.name %></td>
-              <td class="column4">
+              <td class="column7"><%= supplier.name %></td>
+              <td class="column5">
                 <%= link_to edit_accounting_supplier_path(supplier) do %>
                   <span class="typcn typcn-pencil basic-color"></span>
                 <% end %>

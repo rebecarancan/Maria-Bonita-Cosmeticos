@@ -30,10 +30,10 @@
       <table>
         <thead>
           <tr class="table100-head">
-            <th class="column1"><%= t('labels.date') %></th>
+            <th class="column8"><%= t('labels.date') %></th>
             <th class="column3"><%= t('labels.income') %></th>
             <th class="column3"><%= t('labels.expense') %></th>
-            <th class="column3"><%= t('labels.description') %></th>
+            <th class="column7"><%= t('labels.description') %></th>
             <th class="column6"><%= t('labels.value') %></th>
           </tr>
         </thead>
@@ -41,10 +41,10 @@
           <% @master_bank.banks.each do |bank| %>
 
             <tr <%= change_color(bank) %> >
-              <td class="column1"><%= l(bank.day) %></td>
+              <td class="column8"><%= l(bank.day) %></td>
               <td class="column3"><%= inc_show(bank) %></td>
               <td class="column3"><%= exp_show(bank) %></td>
-              <td class="column3"><%= bank.description %></td>
+              <td class="column7"><%= bank.description %></td>
               <td class="column6"><%= bank.value %></td>
             </tr>
           <% end %>
