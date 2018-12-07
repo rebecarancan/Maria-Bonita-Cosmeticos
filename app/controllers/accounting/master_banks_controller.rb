@@ -78,7 +78,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_bank_params
-        params.require(:master_bank).permit(:date, :balance,
+        params.require(:master_bank).permit(:date, :initial_balance, :final_balance,
                                             banks_attributes: [
                                             :id, :day, :description, :value,
                                             :expense_type_id, :income_type_id, :_destroy])

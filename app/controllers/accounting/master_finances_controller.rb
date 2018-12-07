@@ -28,6 +28,11 @@ module Accounting
     # POST /master_finances.json
     def create
       @master_finance = MasterFinance.new(master_finance_params)
+      last_master_finance = MasterFinance.last
+
+      if last_master_finance
+        @master_finance.initial_balance = last_master_finance.final_balance
+      end
 
       respond_to do |format|
         if @master_finance.save
@@ -43,8 +48,14 @@ module Accounting
     # PATCH/PUT /master_finances/1
     # PATCH/PUT /master_finances/1.json
     def update
+      @master_finance.assign_attribute(master_finance_params)
+      if @master_finance.done?
+        final_balance = calc_balance(@master_finance.finances, @master_finance.initial_balance)
+        @master_finance.final_balance = final_balance
+      end
+
       respond_to do |format|
-        if @master_finance.update(master_finance_params)
+        if @master_finance.save
           format.html { redirect_to accounting_master_finance_path(@master_finance), notice: "Finanças Diárias '#{l(@master_finance.date, format: :short)}' foi atualizada com sucesso!" }
           format.json { render :show, status: :ok, location: @master_finance }
         else
@@ -77,7 +88,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_finance_params
-        params.require(:master_finance).permit(:date, :balance,
+        params.require(:master_finance).permit(:date, :initial_balance, :final_balance,
                                         finances_attributes: [
                                         :id, :day, :description, :value, :expense_type_id,
                                         :income_type_id, :_destroy])
