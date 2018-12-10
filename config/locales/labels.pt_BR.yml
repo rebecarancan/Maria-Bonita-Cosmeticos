@@ -2,6 +2,7 @@
   labels:
     spreadsheets: Planilhas
     date: Data
+    balance: Saldo
     price: Preço
     incomes: Entradas
     income: Entrada
@@ -25,4 +26,5 @@
     cost: Custo
     margin: Margem
     price: Preço
+    done: Fechar mês
 

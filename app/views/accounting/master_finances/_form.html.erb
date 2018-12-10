@@ -20,12 +20,18 @@
 
       <div class="col-md-2 mb-10">
         <%= form.label :initial_balance, class:"label" %>
-        <%= form.text_field :initial_balance, class:"form-control" %>
+        <% if first_master_finance?(master_finance) %>
+          <%= form.text_field :initial_balance, class:"form-control" %>
+        <% else %>
+          <%= form.text_field :initial_balance, class:"form-control", disabled: "disabled" %>
+        <% end %>
       </div>
 
       <div class="col-md-2 mb-10">
-        <%= form.label :done, class:"label" %>
-        <%= form.radio_button :done, class:"form-check-input" %>
+        <%= form.label :done, class:"label" do %>
+          <%= form.check_box :done, class:"form-check-input" %>
+          <%= t('labels.done') %>
+        <% end %>
       </div>
     </div>
 
