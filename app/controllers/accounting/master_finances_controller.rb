@@ -48,7 +48,7 @@ module Accounting
     # PATCH/PUT /master_finances/1
     # PATCH/PUT /master_finances/1.json
     def update
-      @master_finance.assign_attribute(master_finance_params)
+      @master_finance.assign_attributes(master_finance_params)
       if @master_finance.done?
         final_balance = calc_balance(@master_finance.finances, @master_finance.initial_balance)
         @master_finance.final_balance = final_balance
@@ -77,6 +77,17 @@ module Accounting
 
     private
 
+      def calc_balance(obj, balance)
+        obj.each do |i|
+          if i.expense_type.blank?
+            balance += i.value
+          else
+            balance -= i.value
+          end
+        end
+        balance
+      end
+
       def set_options_for_select
         @expense_type_options_for_select = ExpenseType.all
         @income_type_options_for_select = IncomeType.all
@@ -88,7 +99,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_finance_params
-        params.require(:master_finance).permit(:date, :initial_balance, :final_balance,
+        params.require(:master_finance).permit(:date, :initial_balance, :final_balance, :done,
                                         finances_attributes: [
                                         :id, :day, :description, :value, :expense_type_id,
                                         :income_type_id, :_destroy])

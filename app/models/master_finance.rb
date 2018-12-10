@@ -7,6 +7,6 @@ class MasterFinance < ApplicationRecord
 
   # Rails Money
   monetize :initial_balance_cents
-  monetize :final_balance_cents
+  monetize :final_balance_cents, allow_nil: true
 
 end

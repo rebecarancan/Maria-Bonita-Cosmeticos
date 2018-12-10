@@ -28,6 +28,11 @@ module Accounting
     # POST /master_banks.json
     def create
       @master_bank = MasterBank.new(master_bank_params)
+      last_master_bank = MasterBank.last
+
+      if last_master_bank
+        @master_bank.initial_balance = last_master_bank.final_balance
+      end
 
       respond_to do |format|
         if @master_bank.save
@@ -43,8 +48,14 @@ module Accounting
     # PATCH/PUT /master_banks/1
     # PATCH/PUT /master_banks/1.json
     def update
+      @master_bank.assign_attributes(master_bank_params)
+      if @master_bank.done?
+        final_balance = calc_balance(@master_bank.banks, @master_bank.initial_balance)
+        @master_bank.final_balance = final_balance
+      end
+
       respond_to do |format|
-        if @master_bank.update(master_bank_params)
+        if @master_bank.save
           format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi atualizado com sucesso com sucesso!" }
           format.json { render :show, status: :ok, location: @master_bank }
         else
@@ -66,6 +77,17 @@ module Accounting
 
     private
 
+      def calc_balance(obj, balance)
+        obj.each do |i|
+          if i.expense_type.blank?
+            balance += i.value
+          else
+            balance -= i.value
+          end
+        end
+        balance
+      end
+
       def set_options_for_select
         @expense_type_options_for_select = ExpenseType.all
         @income_type_options_for_select = IncomeType.all
@@ -78,7 +100,7 @@ module Accounting
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def master_bank_params
-        params.require(:master_bank).permit(:date, :initial_balance, :final_balance,
+        params.require(:master_bank).permit(:date, :initial_balance, :final_balance, :done,
                                             banks_attributes: [
                                             :id, :day, :description, :value,
                                             :expense_type_id, :income_type_id, :_destroy])

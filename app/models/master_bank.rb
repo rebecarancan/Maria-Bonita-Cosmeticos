@@ -6,6 +6,7 @@ class MasterBank < ApplicationRecord
   accepts_nested_attributes_for :banks, allow_destroy: true
 
   # Rails Money
-  monetize :balance_cents
+  monetize :initial_balance_cents
+  monetize :final_balance_cents, allow_nil: true
 
 end

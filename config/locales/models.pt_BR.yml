@@ -20,7 +20,9 @@
     attributes:
       master_bank:
         date: Data
-        balance: Saldo
+        initial_balance: Saldo Inicial
+        final_balance: Saldo Final
+        done: Fechar mês
       bank:
         day: Data
         income_type_id: Entrada
@@ -29,7 +31,9 @@
         value: Valor
       master_finance:
         date: Data
-        balance: Saldo
+        initial_balance: Saldo Inicial
+        final_balance: Saldo Final
+        done: Fechar mês
       finance:
         day: Data
         income_type_id: Entrada

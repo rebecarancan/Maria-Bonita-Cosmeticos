@@ -19,8 +19,13 @@
       </div>
 
       <div class="col-md-2 mb-10">
-        <%= form.label :balance, class:"label" %>
-        <%= form.text_field :balance, class:"form-control" %>
+        <%= form.label :initial_balance, class:"label" %>
+        <%= form.text_field :initial_balance, class:"form-control" %>
+      </div>
+
+      <div class="col-md-2 mb-10">
+        <%= form.label :done, class:"label" %>
+        <%= form.radio_button :done, class:"form-check-input" %>
       </div>
     </div>
 
