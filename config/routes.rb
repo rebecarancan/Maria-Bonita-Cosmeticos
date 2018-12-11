@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'search/index'
   devise_for :users
   get 'home/index'
-  get 'accounting', to: 'accounting/dashboard#index'
-  get 'home', to: 'home#index'
+  root 'home#index'
   # get "products/new_product" => 'products#new_product', :as => :new_product
 
   get 'accounting', to: 'accounting/dashboard#index'
@@ -16,18 +14,12 @@ Rails.application.routes.draw do
     resources :master_orders
     resources :master_notes
     resources :master_banks
-    resources :banks
-    resources :sales
-    resources :payments
-    resources :notes
-    resources :orders
     resources :charts
     resources :suppliers
   end
 
   resources :products
 
-  root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 

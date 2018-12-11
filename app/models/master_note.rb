@@ -1,5 +1,8 @@
 class MasterNote < ApplicationRecord
 
+  # Validations
+  validates :date, presence: true
+
   #Associations
   has_many :notes, -> { order('day DESC') }, dependent: :destroy
 

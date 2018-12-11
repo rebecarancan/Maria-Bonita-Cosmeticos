@@ -1,5 +1,8 @@
 class MasterSale < ApplicationRecord
 
+  # Validations
+  validates :date, presence: true
+
   #Associations
   has_many :sales, -> { order('day DESC') }, dependent: :destroy
 

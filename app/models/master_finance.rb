@@ -1,5 +1,8 @@
 class MasterFinance < ApplicationRecord
 
+  # Validations
+  validates :date, presence: true
+
   #Associations
   has_many :finances, -> { order('day DESC') }, dependent: :destroy
 

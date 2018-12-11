@@ -1,5 +1,8 @@
 class MasterBank < ApplicationRecord
 
+  # Validations
+  validates :date, presence: true
+
   #Associations
   has_many :banks, -> { order('day DESC') }, dependent: :destroy
 
