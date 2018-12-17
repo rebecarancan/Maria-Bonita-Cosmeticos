@@ -1,9 +1,7 @@
 class Product < ApplicationRecord
 
   # Validations
-  validates :code, presence: true
-  validates :name, presence: true
-
+  validates :code, :name, presence: true
   # Rails Money
   monetize :cost_cents
 
