@@ -78,6 +78,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   # Factory Bot ♥ Rails
   gem 'factory_bot_rails'
+  # Simple one-liner tests for common Rails functionality
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
 end
 
 group :development do

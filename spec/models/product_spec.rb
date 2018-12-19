@@ -5,4 +5,9 @@ RSpec.describe Product, type: :model do
     product = create(:product)
     expect(product).to be_valid
   end
+
+  context 'Validations' do
+    it { is_expected.to validate_presence_of(:code) }
+    it { is_expected.to validate_presence_of(:name) }
+  end
 end
