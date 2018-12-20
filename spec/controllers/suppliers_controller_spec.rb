@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe ProductsController, type: :controller do
+RSpec.describe Accounting::SuppliersController, type: :controller do
   describe 'as Logged User' do
     before do
       @user = create(:user)
-      @product = create(:product)
+      @supplier = create(:supplier)
     end
 
     it 'Route' do
-      is_expected.to route(:get, '/products').to(action: :index)
+      is_expected.to route(:get, '/accounting/suppliers').to(action: :index)
     end
 
     it 'responds successfully' do
@@ -18,23 +18,23 @@ RSpec.describe ProductsController, type: :controller do
     end
 
     it 'Creates successfully' do
-      product_params = attributes_for(:product)
+      supplier_params = attributes_for(:supplier)
       sign_in @user
 
-      post :create, params: { product: product_params }
+      post :create, params: { supplier: supplier_params }
       expect(response).to have_http_status(200)
     end
 
     it 'Destroys successfully' do
       sign_in @user
 
-      delete :destroy, params: { id: @product.id }
+      delete :destroy, params: { id: @supplier.id }
       expect(response).to have_http_status(200)
     end
 
     it 'responds successfully to edit' do
       sign_in @user
-      get :edit, params: { id: @product.id }
+      get :edit, params: { id: @supplier.id }
       expect(response).to have_http_status(200)
     end
   end
