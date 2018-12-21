@@ -30,7 +30,7 @@
 <div class="data">
   <div class="row">
     <p class="numbers1 num-color4"><%= t('labels.c_total') %></p><p class="val1 num-color4"><%= total_income(@master_sale.sales, 'Crédito') %></p>
-    <p class="numbers1 num-color4"><%= t('labels.average') %></p><p class="val1 num-color4"><%= Money.new(income_average(@master_sale.sales, 'Débito'), 'BRL') %></p>
+    <p class="numbers1 num-color4"><%= t('labels.average') %></p><p class="val1 num-color4"><%= Money.new(income_average(@master_sale.sales, 'Crédito'), 'BRL') %></p>
     <p class="numbers1 num-color4"><%= t('labels.days') %></p><p class="val1 num-color4"><%= total_days(@master_sale.sales, 'Crédito') %></p>
   </div>
 </div>
