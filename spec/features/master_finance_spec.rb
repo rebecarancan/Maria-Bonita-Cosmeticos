@@ -40,6 +40,13 @@ feature "MasterFinances", type: :feature, js: true do
   #   fill_in('Valor', with: Faker::Commerce.price)
   #   click_button('Salvar')
 
+  #   find(:xpath, "/html/body/form[@class='basic-grey']/div[@id='finances']/div[@class='links']/a[@class='badge badge-pill badge-secondary add_fields']").click
+  #   fill_in('Data', with: Faker::Date.backward(150))
+  #   select('Limpeza', from: 'Saída')
+  #   fill_in('Descrição', with: Faker::Lorem.words(3) )
+  #   fill_in('Valor', with: Faker::Commerce.price)
+  #   click_button('Salvar')
+
   #   expect(page).to have_content("criada com sucesso!")
   # end
 

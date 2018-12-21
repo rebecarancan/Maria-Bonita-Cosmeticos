@@ -56,7 +56,7 @@ module Accounting
 
       respond_to do |format|
         if @master_bank.save
-          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi atualizado com sucesso com sucesso!" }
+          format.html { redirect_to accounting_master_bank_path(@master_bank), notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi atualizado com sucesso!" }
           format.json { render :show, status: :ok, location: @master_bank }
         else
           format.html { render :edit }
@@ -70,7 +70,7 @@ module Accounting
     def destroy
       @master_bank.destroy
       respond_to do |format|
-        format.html { redirect_to accounting_master_banks_path, notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi excluído com sucesso com sucesso!" }
+        format.html { redirect_to accounting_master_banks_path, notice: "Controle Bancário '#{l(@master_bank.date, format: :short)}' foi excluído com sucesso!" }
         format.json { head :no_content }
       end
     end
