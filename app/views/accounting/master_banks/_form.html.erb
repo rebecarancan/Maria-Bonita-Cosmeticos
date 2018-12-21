@@ -20,11 +20,7 @@
 
       <div class="col-md-2 mb-10">
         <%= form.label :initial_balance, class:"label" %>
-        <% if first_master_bank?(master_bank) %>
-          <%= form.text_field :initial_balance, class:"form-control" %>
-        <% else %>
-          <%= form.text_field :initial_balance, class:"form-control", disabled: "disabled" %>
-        <% end %>
+        <%= form.text_field :initial_balance, class:"form-control" %>
       </div>
 
       <div class="col-md-2 mb-10">
