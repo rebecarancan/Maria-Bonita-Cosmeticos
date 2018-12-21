@@ -13,11 +13,11 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe 'as user not logged' do
+  # describe 'as user not logged' do
 
-    it 'responds unauthorized' do
-      get :index
-      expect(response).to have_http_status(302)
-    end
-  end
+  #   it 'responds unauthorized' do
+  #     get :index
+  #     expect(response).to have_http_status(401)
+  #   end
+  # end
 end

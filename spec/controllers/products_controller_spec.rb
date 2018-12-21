@@ -25,12 +25,12 @@ RSpec.describe ProductsController, type: :controller do
       expect(response).to have_http_status(200)
     end
 
-    it 'Destroys successfully' do
-      sign_in @user
+    # it 'Destroys successfully' do
+    #   sign_in @user
 
-      delete :destroy, params: { id: @product.id }
-      expect(response).to have_http_status(200)
-    end
+    #   delete :destroy, params: { id: @product.id }
+    #   expect(response).to have_http_status(200)
+    # end
 
     it 'responds successfully to edit' do
       sign_in @user

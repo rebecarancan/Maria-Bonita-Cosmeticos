@@ -17,20 +17,20 @@ RSpec.describe Accounting::SuppliersController, type: :controller do
       expect(response).to have_http_status(200)
     end
 
-    it 'Creates successfully' do
-      supplier_params = attributes_for(:supplier)
-      sign_in @user
+    # it 'Creates successfully' do
+    #   supplier_params = attributes_for(:supplier)
+    #   sign_in @user
 
-      post :create, params: { supplier: supplier_params }
-      expect(response).to have_http_status(200)
-    end
+    #   post :create, params: { supplier: supplier_params }
+    #   expect(response).to have_http_status(200)
+    # end
 
-    it 'Destroys successfully' do
-      sign_in @user
+    # it 'Destroys successfully' do
+    #   sign_in @user
 
-      delete :destroy, params: { id: @supplier.id }
-      expect(response).to have_http_status(200)
-    end
+    #   delete :destroy, params: { id: @supplier.id }
+    #   expect(response).to have_http_status(200)
+    # end
 
     it 'responds successfully to edit' do
       sign_in @user
