@@ -1,9 +1,5 @@
 module MasterSalesHelper
 
-  def sales_total(obj)
-    obj.all.sum(&:value)
-  end
-
   def total_income(obj, type)
     obj.select { |sale| sale.income_type.name == type }.sum(&:value)
   end

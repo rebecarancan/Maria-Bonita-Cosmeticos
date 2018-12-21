@@ -6,6 +6,10 @@ module ApplicationHelper
     options_for_select(PAYMENTS, selected)
   end
 
+  def value_total(obj)
+    obj.sum(&:value)
+  end
+
   def calc_balance(obj, balance)
     obj.each do |i|
       if i.expense_type.blank?
