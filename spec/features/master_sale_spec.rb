@@ -22,7 +22,6 @@ feature "MasterSales", type: :feature, js: true do
   #   find(:xpath, "/html/body/form[@class='basic-grey']/div[@class='form-row'][1]/div[@class='col-md-2 mb-10']/select[@id='master_sale_date_2i']").select('Fevereiro')
   #   find(:xpath, "/html/body/form[@class='basic-grey']/div[@id='sales']/div[@class='links']/a[@class='badge badge-pill badge-secondary add_fields']").click
   #   fill_in('Data', with: Faker::Date.backward(150))
-  #   fill_in('Data', with: Faker::Date.backward(150))
   #   select('Dinheiro', from: 'Entrada')
   #   fill_in('Valor', with: Faker::Commerce.price)
   #   click_button('Salvar')
