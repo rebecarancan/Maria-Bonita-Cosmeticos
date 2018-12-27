@@ -1,5 +1,9 @@
 module MasterFinancesHelper
-  def first_master_finance?(obj)
-    obj.id == MasterFinance.first.id
+  def first_master_finance?
+    if MasterFinance.first == nil
+      true
+    else
+      false
+    end
   end
 end

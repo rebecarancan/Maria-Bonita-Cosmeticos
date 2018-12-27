@@ -19,42 +19,42 @@ namespace :dev do
 
 #############################################################
 
-    puts "Gerando as FINANÇAS DIÁRIAS..."
-    12.times do
-      MasterFinance.create!(
-        date: Date.today - Random.rand(330),
-        balance: "#{Random.rand(500)},#{Random.rand(99)}"
-      )
-    end
-    puts "FINANÇAS DIÁRIAS geradas com sucesso!"
+    # puts "Gerando as FINANÇAS DIÁRIAS..."
+    # 12.times do
+    #   MasterFinance.create!(
+    #     date: Date.today - Random.rand(330),
+    #     balance: "#{Random.rand(500)},#{Random.rand(99)}"
+    #   )
+    # end
+    # puts "FINANÇAS DIÁRIAS geradas com sucesso!"
 
-    puts "Gerando as ENTRADAS FINANÇAS DIÁRIAS..."
-    MasterFinance.all.each do |finance|
-      Random.rand(5..15).times do |i|
-        Finance.create!(
-        day: Date.today - Random.rand(90),
-        income_type: IncomeType.all.sample,
-        description: Faker::Lorem.sentence(3),
-        value: "#{Random.rand(500)},#{Random.rand(99)}",
-        master_finance: finance
-        )
-      end
-    end
-    puts "ENTRADAS FINANÇAS DIÁRIAS geradas com sucesso!"
+    # puts "Gerando as ENTRADAS FINANÇAS DIÁRIAS..."
+    # MasterFinance.all.each do |finance|
+    #   Random.rand(5..15).times do |i|
+    #     Finance.create!(
+    #     day: Date.today - Random.rand(90),
+    #     income_type: IncomeType.all.sample,
+    #     description: Faker::Lorem.sentence(3),
+    #     value: "#{Random.rand(500)},#{Random.rand(99)}",
+    #     master_finance: finance
+    #     )
+    #   end
+    # end
+    # puts "ENTRADAS FINANÇAS DIÁRIAS geradas com sucesso!"
 
-    puts "Gerando as SAÍDAS FINANÇAS DIÁRIAS..."
-    MasterFinance.all.each do |finance|
-      Random.rand(5..15).times do |i|
-        Finance.create!(
-        day: Date.today - Random.rand(90),
-        expense_type: ExpenseType.all.sample,
-        description: Faker::Lorem.sentence(3),
-        value: "#{Random.rand(500)},#{Random.rand(99)}",
-        master_finance: finance
-        )
-      end
-    end
-    puts "SAÍDAS FINANÇAS DIÁRIAS geradas com sucesso!"
+    # puts "Gerando as SAÍDAS FINANÇAS DIÁRIAS..."
+    # MasterFinance.all.each do |finance|
+    #   Random.rand(5..15).times do |i|
+    #     Finance.create!(
+    #     day: Date.today - Random.rand(90),
+    #     expense_type: ExpenseType.all.sample,
+    #     description: Faker::Lorem.sentence(3),
+    #     value: "#{Random.rand(500)},#{Random.rand(99)}",
+    #     master_finance: finance
+    #     )
+    #   end
+    # end
+    # puts "SAÍDAS FINANÇAS DIÁRIAS geradas com sucesso!"
 
 ################################################################
 
@@ -129,42 +129,42 @@ namespace :dev do
 
 #####################################################################
 
-    puts "Gerando o CONTROLE BANCÁRIO..."
-    15.times do
-      MasterBank.create!(
-        date: Date.today - Random.rand(330),
-        balance: "#{Random.rand(500)},#{Random.rand(99)}"
-      )
-    end
-    puts "CONTROLE BANCÁRIO geradas com sucesso!"
+    # puts "Gerando o CONTROLE BANCÁRIO..."
+    # 15.times do
+    #   MasterBank.create!(
+    #     date: Date.today - Random.rand(330),
+    #     balance: "#{Random.rand(500)},#{Random.rand(99)}"
+    #   )
+    # end
+    # puts "CONTROLE BANCÁRIO geradas com sucesso!"
 
-    puts "Gerando as ENTRADAS CONTROLE BANCÁRIO..."
-    MasterBank.all.each do |bank|
-      Random.rand(5..15).times do |i|
-        Bank.create!(
-        day: Date.today - Random.rand(90),
-        income_type: IncomeType.all.sample,
-        description: Faker::Lorem.sentence(3),
-        value: "#{Random.rand(500)},#{Random.rand(99)}",
-        master_bank: bank
-        )
-      end
-    end
-    puts "ENTRADAS CONTROLE BANCÁRIO geradas com sucesso!"
+    # puts "Gerando as ENTRADAS CONTROLE BANCÁRIO..."
+    # MasterBank.all.each do |bank|
+    #   Random.rand(5..15).times do |i|
+    #     Bank.create!(
+    #     day: Date.today - Random.rand(90),
+    #     income_type: IncomeType.all.sample,
+    #     description: Faker::Lorem.sentence(3),
+    #     value: "#{Random.rand(500)},#{Random.rand(99)}",
+    #     master_bank: bank
+    #     )
+    #   end
+    # end
+    # puts "ENTRADAS CONTROLE BANCÁRIO geradas com sucesso!"
 
-    puts "Gerando as SAÍDAS CONTROLE BANCÁRIO..."
-    MasterBank.all.each do |bank|
-      Random.rand(5..15).times do |i|
-        Bank.create!(
-        day: Date.today - Random.rand(90),
-        expense_type: ExpenseType.all.sample,
-        description: Faker::Lorem.sentence(3),
-        value: "#{Random.rand(500)},#{Random.rand(99)}",
-        master_bank: bank
-        )
-      end
-    end
-    puts "SAÍDAS CONTROLE BANCÁRIO geradas com sucesso!"
+    # puts "Gerando as SAÍDAS CONTROLE BANCÁRIO..."
+    # MasterBank.all.each do |bank|
+    #   Random.rand(5..15).times do |i|
+    #     Bank.create!(
+    #     day: Date.today - Random.rand(90),
+    #     expense_type: ExpenseType.all.sample,
+    #     description: Faker::Lorem.sentence(3),
+    #     value: "#{Random.rand(500)},#{Random.rand(99)}",
+    #     master_bank: bank
+    #     )
+    #   end
+    # end
+    # puts "SAÍDAS CONTROLE BANCÁRIO geradas com sucesso!"
 
   end
 end
