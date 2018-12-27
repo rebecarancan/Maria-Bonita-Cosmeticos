@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature "Home", type: :feature, js: true do
+  let!(:user) { create :user }
 
   scenario 'Verify log in form' do
     visit(home_index_path)
@@ -8,7 +9,6 @@ feature "Home", type: :feature, js: true do
   end
 
   scenario 'Valid log in', js: true do
-    user = create(:user)
     visit(home_index_path)
 
     fill_in('Email', with: 'admin@admin.com')
@@ -19,8 +19,7 @@ feature "Home", type: :feature, js: true do
     # expect(page).to have_content('Login efetuado com sucesso')
   end
 
-  scenario 'Invalid log in' do
-    user = create(:user)
+  scenario 'Invalid login' do
     visit(home_index_path)
 
     fill_in('Email', with: 'user@user.com')

@@ -1,7 +1,7 @@
 class Sale < ApplicationRecord
 
   # Associations
-  belongs_to :master_sale
+  belongs_to :master_sale, inverse_of: :sales
   belongs_to :income_type
 
   # Rails Money

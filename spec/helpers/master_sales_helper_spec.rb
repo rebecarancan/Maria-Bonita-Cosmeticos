@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe MasterSalesHelper, type: :helper do
-  describe '#sales_total(obj)' do
-    it 'Calculates the total value of sales' do
-      master_sale = create(:master_sale_with_sales)
-      expect(sales_total(master_sale.sales)).to eq(master_sale.sales.all.sum(&:value))
-    end
-  end
 
   describe '#total_income(obj, type)' do
     it "Calculates the total value of 'Dinheiro'" do
@@ -22,11 +16,11 @@ RSpec.describe MasterSalesHelper, type: :helper do
     end
   end
 
-  # describe '#income_average(obj, kind)' do
-  #   it "Calculates the average for 'Dinheiro'" do
-  #     master_sale = create(:master_sale_with_sales)
-  #     expect(total_days(master_sale.sales, 'Dinheiro')).to eq(master_sale.sales.from_type('Dinheiro').average(:value_cents))
-  #   end
-  # end
+  describe '#income_average(obj, kind)' do
+    it "Calculates the average for 'Dinheiro'" do
+      master_sale = create(:master_sale_with_sales)
+      expect(income_average(master_sale.sales, 'Dinheiro')).to eq(master_sale.sales.from_type('Dinheiro').average(:value_cents))
+    end
+  end
 
 end

@@ -4,7 +4,7 @@ class MasterFinance < ApplicationRecord
   validates :date, presence: true
 
   #Associations
-  has_many :finances, -> { order('day DESC') }, dependent: :destroy
+  has_many :finances, -> { order('day DESC') }, inverse_of: :master_finance, dependent: :destroy
 
   accepts_nested_attributes_for :finances, allow_destroy: true
 

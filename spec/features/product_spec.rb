@@ -2,27 +2,26 @@ require 'rails_helper'
 
 feature "Products", type: :feature, js: true do
 
-  before do
-    user = create(:user)
-    login_as(user, :scope => :user)
-  end
+  let!(:user) { create :user }
+  let! (:login) { login_as(user, :scope => :user) }
+  let!(:product1) { create :product }
+  let!(:product2) { create :product }
 
   scenario 'Test index' do
-    product1 = create(:product)
-
-    product2 = create(:product)
 
     visit(products_path)
     expect(page).to have_content(product1.name).and have_content(product2.name)
   end
 
-  # scenario 'Verify search' do
-  #   visit(products_path)
-  #   fill_in 'Pesquisar por...', with: 'teste'
-  #   click_on('Ok!')
+  scenario 'Verify search' do
 
-  #   expect(page).to have_content('teste')
-  # end
+    visit(products_path)
+    fill_in 'Pesquisar por...', with: product1.name
+    click_on('Ok!')
+
+    expect(page).to have_content(product1.name)
+    expect(page).not_to have_content(product2.name)
+  end
 
   scenario 'Verify new product link' do
     visit(products_path)
@@ -37,30 +36,29 @@ feature "Products", type: :feature, js: true do
     expect(page).to have_link('Voltar')
   end
 
-  # scenario 'Creates a new product' do # Happy Path
-  #   visit(new_product_path)
-  #   product_name = Faker::Commerce.product_name
+  scenario 'Creates a new product' do
+    visit(new_product_path)
+    product_name = Faker::Commerce.product_name
 
-  #   fill_in('Código', with: Faker::Number.number(6))
-  #   fill_in('Nome', with: product_name)
-  #   fill_in('Custo', with: Faker::Commerce.price)
-  #   fill_in('Margem', with: Faker::Number.between(45, 80))
-  #   click_button('Salvar')
+    fill_in('Código', with: Faker::Number.number(6))
+    fill_in('Nome', with: product_name)
+    fill_in('Custo', with: '100,00')
+    fill_in('Margem', with: Faker::Number.between(45, 80))
+    click_button('Salvar')
 
-  #   expect(Product.last.name).to eq(product_name)
-  #   # expect(page).to have_content('criado com sucesso!')
-  # end
+    expect(Product.last.name).to eq(product_name)
+    expect(page).to have_content('criado com sucesso!')
+  end
 
-  scenario 'Creates an invalid product' do # Sad Path
+  scenario 'Creates an invalid product' do
     visit(new_product_path)
     click_on('Salvar')
     expect(page).to have_content('não pode ficar em branco')
   end
 
-  scenario 'Edits a product' do # Happy Path
-    product = create(:product)
+  scenario 'Edits a product' do
     new_name = Faker::Commerce.product_name
-    visit(edit_product_path(product.id))
+    visit(edit_product_path(product1.id))
 
     fill_in('Nome', with: new_name)
     click_button('Salvar')
@@ -70,10 +68,9 @@ feature "Products", type: :feature, js: true do
   end
 
   scenario 'Destroy a product', js: true do
-    product = create(:product)
 
     visit(products_path)
-    find(:xpath, "/html/body/div[@class='container-table100']/div[@class='wrap-table100']/div[@class='table100']/table/tbody/tr[1]/td[@class='column6']/a/span[@class='typcn typcn-times basic-color']").click
+    find('.typcn.typcn-times.basic-color', match: :first).click
     1.second
     page.driver.browser.switch_to.alert.accept
 
