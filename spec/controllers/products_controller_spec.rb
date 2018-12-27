@@ -19,8 +19,7 @@ RSpec.describe ProductsController, type: :controller do
       product_params = attributes_for(:product)
       sign_in user
 
-      post :create, params: { product: product_params }
-      expect(response).to have_http_status(200)
+      expect{post :create, params: { product: product_params }}.to change{Product.count}.by(1)
     end
 
     it 'Destroys successfully' do

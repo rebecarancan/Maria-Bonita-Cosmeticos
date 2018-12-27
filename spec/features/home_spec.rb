@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature "Home", type: :feature, js: true do
+
   let!(:user) { create :user }
 
   scenario 'Verify log in form' do
