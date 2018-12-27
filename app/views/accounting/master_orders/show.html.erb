@@ -34,7 +34,7 @@
         <tbody>
           <% @master_order.orders.each do |order| %>
 
-            <tr <%= order_color(order) %> >
+            <tr <%= order_color(order.payment) %> >
               <td class="column1"><%= l(order.purchase) %></td>
               <td class="column3"><%= l(order.expire) %></td>
               <td class="column3"><%= order.supplier.name %></td>
