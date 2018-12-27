@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :master_bank do
     date { Faker::Date.backward(150) }
-    initial_balance { Faker::Commerce.price }
-    final_balance { Faker::Commerce.price }
+    initial_balance { '150,00' }
+    final_balance { '150,00' }
 
     factory :master_bank_with_banks do
       transient do
