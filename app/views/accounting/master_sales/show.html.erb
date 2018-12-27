@@ -59,7 +59,7 @@
         <tbody>
           <% @master_sale.sales.each do |sale| %>
 
-            <tr <%= sale_color(sale) %> >
+            <tr <%= sale_color(sale.income_type.name) %> >
               <td class="column1"><%= l(sale.day) %></td>
               <td class="column3"><%= sale.income_type.name %></td>
               <td class="column6"><%= sale.value %></td>

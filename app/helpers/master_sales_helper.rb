@@ -13,9 +13,10 @@ module MasterSalesHelper
   end
 
   def sale_color(sale)
-    if sale.income_type.name == "Dinheiro"
+    case sale
+    when "Dinheiro"
       "class= income-color style=background:#d9b3ff"
-    elsif sale.income_type.name == "Crédito"
+    when "Crédito"
       "class= gen-color style=background:#ff7f7f"
     else
       "class= expense-color style=background:#ffaaaa"
