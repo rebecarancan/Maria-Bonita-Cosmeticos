@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Financial and stock control app for a small business
 
-Things you may want to cover:
+Maria Bonita Cosméticos was developed to meet the needs of a small business, all the records are separate by month. The functionalities are:
 
-* Ruby version
+* Finanças Diárias: records of incomes and expenses, with reports and month balance;
 
-* System dependencies
+* Entradas Diárias: records of daily incomes, in cash, debit card and credit card, with reports;
 
-* Configuration
+* Pedidos e Pagamentos: records of orders and payments to make;
 
-* Database creation
+* Notas Fiscais: records of the invoices;
 
-* Database initialization
+* Controle Bancário: records of bank transactions and month balance;
 
-* How to run the test suite
+* Gráficos: charts based on Entradas Diárias, with monthly incomes in cash, debit card, credit card and the total of monthly sales;
 
-* Services (job queues, cache servers, search engines, etc.)
+* Fornecedores: register of suppliers;
 
-* Deployment instructions
+## Ruby on Rails
 
-* ...
+* Ruby version: 2.5.0
+
+* Rails version: 5.2.1
