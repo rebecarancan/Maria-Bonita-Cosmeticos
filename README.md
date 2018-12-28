@@ -4,19 +4,25 @@
 
 Maria Bonita Cosméticos was developed to meet the needs of a small business, all the records are separate by month. The functionalities are:
 
-* Finanças Diárias: records of incomes and expenses, with reports and month balance;
+### Produtos (Products):
 
-* Entradas Diárias: records of daily incomes, in cash, debit card and credit card, with reports;
+* register of products and prices;
 
-* Pedidos e Pagamentos: records of orders and payments to make;
+### Contabilidade (Accounting):
 
-* Notas Fiscais: records of the invoices;
+* **Finanças Diárias:** records of incomes and expenses, with reports and month balance;
 
-* Controle Bancário: records of bank transactions and month balance;
+* **Entradas Diárias:** records of daily incomes, in cash, debit card and credit card, with reports;
 
-* Gráficos: charts based on Entradas Diárias, with monthly incomes in cash, debit card, credit card and the total of monthly sales;
+* **Pedidos e Pagamentos:** records of orders and payments to make;
 
-* Fornecedores: register of suppliers;
+* **Notas Fiscais:** records of the invoices;
+
+* **Controle Bancário:** records of bank transactions and month balance;
+
+* **Gráficos:** charts based on Entradas Diárias, with monthly incomes in cash, debit card, credit card and the total of monthly sales;
+
+* **Fornecedores:** register of suppliers;
 
 ## Ruby on Rails
 
