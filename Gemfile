@@ -57,6 +57,8 @@ gem 'devise'
 gem 'devise-i18n'
 # pg_search builds ActiveRecord named scopes that take advantage of PostgreSQL’s full text search
 gem 'pg_search'
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
 
 source 'https://rails-assets.org' do
   # Typicons
@@ -72,8 +74,6 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker'
   # RSpec for Rails-3+
   gem 'rspec-rails', '~> 3.8'
   # Factory Bot ♥ Rails

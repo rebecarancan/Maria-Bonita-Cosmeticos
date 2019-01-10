@@ -5,6 +5,7 @@ namespace :dev do
 
   desc "Popular Banco de Dados"
   task setup: :environment do
+    require 'faker'
 
     puts "Gerando os PRODUTOS..."
     50.times do
