@@ -37,5 +37,5 @@ After downloading the repository:
     $ cd maria-bonita-cosmeticos
     $ bundle install
     $ rails db:create db:migrate db:seed
-    $ rails 'user:login[email, password]'
+    $ rails 'user:login[email, password, password_confirmation]'
     $ rails s
