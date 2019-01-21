@@ -24,8 +24,18 @@ Maria Bonita Cosméticos was developed to meet the needs of a small business, al
 
 * **Fornecedores:** register of suppliers;
 
-## Ruby on Rails
+## Requeriments
 
 * Ruby version: 2.5.0
 
 * Rails version: 5.2.1
+
+## Set up the app
+
+After downloading the repository:
+
+    $ cd maria-bonita-cosmeticos
+    $ bundle install
+    $ rails db:create db:migrate db:seed
+    $ rails 'user:login[email, password]'
+    $ rails s
