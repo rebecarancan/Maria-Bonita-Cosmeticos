@@ -256,6 +256,26 @@ header.masthead .bg-circle-4 {
     -moz-box-shadow: inset 0px 1px 4px #af3333;
     -webkit-box-shadow: inset 0px 1px 4px #af3333;
 }
+.date-field {
+    border: 1px transparent;
+    border-radius: 5px;
+    color: #494949;
+    height: 35px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 16px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #af3333;
+    -moz-box-shadow: inset 0px 1px 4px #af3333;
+    -webkit-box-shadow: inset 0px 1px 4px #af3333;
+}
+.coluna {
+  column-width: 210px;
+}
 .basic-grey textarea{
     padding: 5px 3px 3px 5px;
 }

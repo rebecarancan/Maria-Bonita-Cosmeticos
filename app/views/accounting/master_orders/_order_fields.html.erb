@@ -1,42 +1,42 @@
 <div class="nested-fields">
 
   <div class="form-row">
-    <div class="col-md-2 mb-3">
+    <div class="coluna">
       <div class="field">
         <%= f.label :purchase, class:"label" %>
-        <%= f.date_field :purchase, class: "form-control", value: (f.object.purchase)%>
+        <%= f.date_field :purchase, class: "date-field", value: (f.object.purchase)%>
       </div>
     </div>
 
-    <div class="col-md-2 mb-3">
+    <div class="coluna">
       <div class="field">
         <%= f.label :expire, class:"label" %>
-        <%= f.date_field :expire, class: "form-control", value: (f.object.expire)%>
+        <%= f.date_field :expire, class: "date-field", value: (f.object.expire)%>
       </div>
     </div>
 
-    <div class="col-md-2 mb-3">
+    <div class="col-md-2 mb-1">
       <div class="field">
         <%= f.label :supplier_id, class:"label" %>
         <%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name) %>
       </div>
     </div>
 
-    <div class="col-md-2 mb-3">
+    <div class="col-md-2 mb-1">
       <div class="field">
         <%= f.label :value, class:"label" %>
         <%= f.text_field :value %>
       </div>
     </div>
 
-    <div class="col-md-2 mb-3">
+    <div class="col-md-2 mb-1">
       <div class="field">
         <%= f.label :payment, class:"label" %>
         <%= f.select :payment, options_for_payment(f.object.payment) %>
       </div>
     </div>
 
-    <div class="col-md-1 mb-3">
+    <div class="col-md-1 mb-5">
       <%= link_to_remove_association("x", f, class: "badge badge-pill badge-secondary", style: "background: #800000") %>
     </div>
   </div>
