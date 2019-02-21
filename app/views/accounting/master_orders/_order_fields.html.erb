@@ -11,7 +11,7 @@
     <div class="col-md-3 mb-3">
       <div class="field">
         <%= f.label :expire, class:"label" %>
-        <%= f.text_field :expire, class: "form-control datepicker", value: (l(f.object.expire) unless (f.object.expire.blank?)) %>
+        <%= f.date_field :expire, class: "form-control", value: (f.object.expire)%>
       </div>
     </div>
 
