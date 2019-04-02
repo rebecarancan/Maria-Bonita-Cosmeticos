@@ -37,15 +37,39 @@
 
     <br><br>
 
-    <div id='finances'>
-      <%= form.fields_for :finances do |finances_fields| %>
-        <%= render 'finance_fields', f: finances_fields %>
-      <% end %>
-      <div class='links'>
-        <%= link_to_add_association('+', form, :finances, class: "badge badge-pill badge-secondary", style: "background: #800000") %>
+    <div class="row">
+      <div class="col-md-12">
+        <div id='finances'>
+          <div class='links'>
+            <%= link_to_add_association('Adicionar', form, :finances, 'data-association-insertion-node' => "#finances-items",
+                  'data-association-insertion-method' => "prepend", class: "btn btn-secondary") %>
+          </div>
+        </div>
       </div>
     </div>
+    <br>
 
+    <div class="row">
+      <div class="col-md-12">
+        <table>
+          <thead>
+            <tr class="table100-head">
+              <th class="column1"><%= t('labels.date') %></th>
+              <th class="column5"><%= t('labels.income') %></th>
+              <th class="column5"><%= t('labels.expense') %></th>
+              <th class="column3"><%= t('labels.description') %></th>
+              <th class="column5"><%= t('labels.value') %></th>
+              <th class="column6"><%= t('buttons.destroy') %></th>
+            </tr>
+          </thead>
+          <tbody id="finances-items">
+            <%= form.fields_for :finances do |finances_fields| %>
+              <%= render 'finance_fields', f: finances_fields %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <br><br><br>
 
     <div class="form-row">

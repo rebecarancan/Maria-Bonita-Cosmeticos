@@ -1,42 +1,11 @@
-<div class="nested-fields">
-
-  <div class="form-row">
-    <div class="coluna">
-      <div class="field">
-        <%= f.label :day, class:"label" %>
-        <%= f.date_field :day, class: "date-field", value: (f.object.day)%>
-      </div>
-    </div>
-    <div class="col-md-2 mb-3">
-      <div class="field">
-        <%= f.label :income_type_id, class:"label" %>
-        <%= f.collection_select(:income_type_id, @income_type_options_for_select, :id, :name, {include_blank: true}) %>
-      </div>
-    </div>
-
-    <div class="col-md-2 mb-3">
-      <div class="field">
-        <%= f.label :expense_type_id, class:"label" %>
-        <%= f.collection_select(:expense_type_id, @expense_type_options_for_select, :id, :name, {include_blank: true}) %>
-      </div>
-    </div>
-
-    <div class="col-md-3 mb-3">
-      <div class="field">
-        <%= f.label :description, class:"label" %>
-        <%= f.text_field :description %>
-      </div>
-    </div>
-
-    <div class="col-md-2 mb-3">
-      <div class="field">
-        <%= f.label :value, class:"label" %>
-        <%= f.text_field :value %>
-      </div>
-    </div>
-    <div class="col-md-1 mb-3">
-      <%= link_to_remove_association("x", f, class: "badge badge-pill badge-secondary", style: "background: #800000") %>
-    </div>
-  </div>
-
-</div>
+<tr class="nested-fields">
+  <th class="column1"><%= f.date_field :day, class: "date-field", value: (f.object.day), style: "margin-top: 20px" %></th>
+  <th class="column5"><%= f.collection_select(:income_type_id, @income_type_options_for_select, :id, :name, {include_blank: true}) %></th>
+  <th class="column5"><%= f.collection_select(:expense_type_id, @expense_type_options_for_select, :id, :name, {include_blank: true}) %></th>
+  <th class="column3"><%= f.text_field :description %></th>
+  <th class="column5"><%= f.text_field :value %></th>
+  <th class="column6"><%= link_to_remove_association(f) do %>
+  <i class="typcn typcn-times" style="color: #800000"></i>
+  <% end %>
+  </th>
+</tr>
