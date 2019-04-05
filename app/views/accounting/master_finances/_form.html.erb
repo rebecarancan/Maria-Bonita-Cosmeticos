@@ -38,13 +38,17 @@
     <br><br>
 
     <div class="row">
-      <div class="col-md-12">
         <div id='finances'>
-          <div class='links'>
+          <div class='col-md-11'>
             <%= link_to_add_association('Adicionar', form, :finances, 'data-association-insertion-node' => "#finances-items",
                   'data-association-insertion-method' => "prepend", class: "btn btn-secondary") %>
           </div>
         </div>
+      <div class="col-md-1">
+        <%= form.submit t('buttons.save'), class:"btn btn-primary" %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to t('buttons.back'), accounting_master_finances_path, class:"btn btn-secondary"%>
       </div>
     </div>
     <br>
@@ -54,9 +58,9 @@
         <table>
           <thead>
             <tr class="table100-head">
-              <th class="column1"><%= t('labels.date') %></th>
+              <th class="column8"><%= t('labels.date') %></th>
               <th class="column5"><%= t('labels.income') %></th>
-              <th class="column5"><%= t('labels.expense') %></th>
+              <th class="column3"><%= t('labels.expense') %></th>
               <th class="column3"><%= t('labels.description') %></th>
               <th class="column5"><%= t('labels.value') %></th>
               <th class="column6"><%= t('buttons.destroy') %></th>
@@ -72,14 +76,6 @@
     </div>
     <br><br><br>
 
-    <div class="form-row">
-      <div class="col-md-1 mb-10">
-        <%= form.submit t('buttons.save'), class:"btn btn-primary" %>
-      </div>
-      <div class="col-md-1 mb-10">
-        <%= link_to t('buttons.back'), accounting_master_finances_path, class:"btn btn-secondary"%>
-      </div>
-    </div>
   </form>
 <% end %>
 

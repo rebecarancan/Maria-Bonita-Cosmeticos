@@ -1,9 +1,9 @@
 <tr class="nested-fields">
-  <th class="column1"><%= f.date_field :day, class: "date-field", value: (f.object.day), style: "margin-top: 20px" %></th>
-  <th class="column5"><%= f.collection_select(:income_type_id, @income_type_options_for_select, :id, :name, {include_blank: true}) %></th>
-  <th class="column5"><%= f.collection_select(:expense_type_id, @expense_type_options_for_select, :id, :name, {include_blank: true}) %></th>
-  <th class="column3"><%= f.text_field :description %></th>
-  <th class="column5"><%= f.text_field :value %></th>
+  <th class="column8"><%= f.date_field :day, class: "date-field", value: (f.object.day), style: "margin-top: 20px", required: true %></th>
+  <th class="column5"><%= f.collection_select(:income_type_id, @income_type_options_for_select, :id, :name, {include_blank: true}, style: "margin-top: 20px") %></th>
+  <th class="column3"><%= f.collection_select(:expense_type_id, @expense_type_options_for_select, :id, :name, {include_blank: true}, style: "margin-top: 20px") %></th>
+  <th class="column3"><%= f.text_field :description, style: "margin-top: 20px", required: true %></th>
+  <th class="column5"><%= f.text_field :value, style: "margin-top: 20px", required: true %></th>
   <th class="column6"><%= link_to_remove_association(f) do %>
   <i class="typcn typcn-times" style="color: #800000"></i>
   <% end %>
