@@ -52,13 +52,15 @@ gem 'groupdate'
 # Create beautiful JavaScript charts with one line of Ruby
 gem 'chartkick'
 # Flexible authentication solution for Rails with Warden.
-gem 'devise'
+gem 'devise', '>= 4.6.0'
 # Translations for the devise gem
 gem 'devise-i18n'
 # pg_search builds ActiveRecord named scopes that take advantage of PostgreSQL’s full text search
 gem 'pg_search'
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
+gem 'actionview', '>= 5.2.2.1'
+gem 'railties', '>= 5.2.2.1'
 
 source 'https://rails-assets.org' do
   # Typicons
