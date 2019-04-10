@@ -430,6 +430,10 @@ td {
   background: #ff7f7f;
 }
 
+.form-button {
+  margin-left: 915px;
+}
+
 /*Kaminari Pagination */
 
 .pagination a, .pagination span.current, .pagination span.gap {
