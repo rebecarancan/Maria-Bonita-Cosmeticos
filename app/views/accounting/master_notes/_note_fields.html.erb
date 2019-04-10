@@ -1,4 +1,3 @@
-
 <tr class="nested-fields">
   <th class="column1"><%= f.date_field :day, class: "date-field", value: (f.object.day), style: "margin-top: 20px", required: true %></th>
   <th class="column5"><%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name, {include_blank: true}, style: "margin-top: 20px") %></th>
