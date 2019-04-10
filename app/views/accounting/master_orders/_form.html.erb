@@ -21,25 +21,44 @@
 
     <br><br>
 
-    <div id='orders'>
-      <%= form.fields_for :orders do |orders_fields| %>
-        <%= render 'order_fields', f: orders_fields %>
-      <% end %>
-      <div class='links'>
-        <%= link_to_add_association('+', form, :orders, class: "badge badge-pill badge-secondary", style: "background: #800000") %>
+    <div class="row">
+        <div id='orders'>
+          <div class='col-md-11'>
+            <%= link_to_add_association('Adicionar', form, :orders, 'data-association-insertion-node' => "#orders-items",
+                  'data-association-insertion-method' => "prepend", class: "btn btn-secondary") %>
+          </div>
+        </div>
+      <div class="col-md-1">
+        <%= form.submit t('buttons.save'), class:"btn btn-primary form-button" %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to t('buttons.back'), accounting_master_orders_path, class:"btn btn-secondary form-button"%>
       </div>
     </div>
+    <br>
 
-    <br><br><br>
-
-    <div class="form-row">
-      <div class="col-md-1 mb-10">
-        <%= form.submit t('buttons.save'), class:"btn btn-primary" %>
-      </div>
-      <div class="col-md-1 mb-10">
-        <%= link_to t('buttons.back'), accounting_master_orders_path, class:"btn btn-secondary"%>
+    <div class="row">
+      <div class="col-md-12">
+        <table>
+          <thead>
+            <tr class="table100-head">
+              <th class="column8"><%= t('labels.date') %></th>
+              <th class="column8"><%= t('labels.expire') %></th>
+              <th class="column3"><%= t('labels.supplier') %></th>
+              <th class="column5"><%= t('labels.value') %></th>
+              <th class="column3"><%= t('labels.payment') %></th>
+              <th class="column6"><%= t('buttons.destroy') %></th>
+            </tr>
+          </thead>
+          <tbody id="orders-items">
+            <%= form.fields_for :orders do |orders_fields| %>
+              <%= render 'order_fields', f: orders_fields %>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
+    <br>
   </form>
 <% end %>
 
