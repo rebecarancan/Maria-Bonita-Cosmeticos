@@ -50,7 +50,7 @@ gem 'cocoon'
 # The simplest way to group temporal data
 gem 'groupdate'
 # Create beautiful JavaScript charts with one line of Ruby
-gem 'chartkick'
+gem 'chartkick', '>= 3.2.0'
 # Flexible authentication solution for Rails with Warden.
 gem 'devise', '>= 4.6.0'
 # Translations for the devise gem
