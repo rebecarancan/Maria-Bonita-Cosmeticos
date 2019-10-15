@@ -52,7 +52,7 @@ gem 'groupdate'
 # Create beautiful JavaScript charts with one line of Ruby
 gem 'chartkick', '>= 3.2.0'
 # Flexible authentication solution for Rails with Warden.
-gem 'devise', '>= 4.6.0'
+gem 'devise', '>= 4.7.1'
 # Translations for the devise gem
 gem 'devise-i18n'
 # pg_search builds ActiveRecord named scopes that take advantage of PostgreSQL’s full text search
