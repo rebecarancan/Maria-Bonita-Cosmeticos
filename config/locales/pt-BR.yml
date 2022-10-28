@@ -1,4 +1,4 @@
 'pt-BR':
   date:
-      formats:
-        short: "%B - %Y"
+    formats:
+      short: "%B - %Y"
