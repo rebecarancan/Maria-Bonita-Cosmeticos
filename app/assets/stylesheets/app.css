@@ -218,7 +218,7 @@ img {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 1366px;
+    width: 100%;
     height: 100vh;
     background-color: #800000;
   }
