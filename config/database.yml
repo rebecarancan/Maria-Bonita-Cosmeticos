@@ -1,11 +1,5 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
@@ -13,25 +7,27 @@ development:
   adapter: postgresql
   encoding: utf8
   database: mariabonita_development
+  host: localhost
   pool: 5
-  username:
-  password:
+  username: <%= ENV["DATABASE_USER"] || "postgres" %>
+  password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
 
 test: &TEST
   adapter: postgresql
   encoding: utf8
   database: mariabonita_test
   pool: 5
-  username:
-  password:
+  host: localhost
+  username: <%= ENV["DATABASE_USER"] || "postgres" %>
+  password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
 
 production:
   adapter: postgresql
   encoding: utf8
   database: mariabonita_production
   pool: 5
-  username:
-  password:
+  username: <%= ENV["DATABASE_USER"] || "postgres" %>
+  password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
 
 cucumber:
   <<: *TEST
