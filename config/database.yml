@@ -26,8 +26,6 @@ production:
   encoding: utf8
   database: mariabonita_production
   pool: 5
-  username: <%= ENV["DATABASE_USER"] || "postgres" %>
-  password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
 
 cucumber:
   <<: *TEST

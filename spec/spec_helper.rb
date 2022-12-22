@@ -13,6 +13,7 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'capybara/rspec'
 
 # Capybara Chrome Headless
 Capybara.register_driver :chrome do |app|
