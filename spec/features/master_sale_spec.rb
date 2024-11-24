@@ -13,21 +13,21 @@ feature "MasterSales", type: :feature, js: true do
     select('Abril', from: 'master_sale_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content("criada com sucesso!")
+    expect(page).to have_content(:all, "criada com sucesso!")
   end
 
   scenario 'Creates a master_sale_with_sales' do
     visit(new_accounting_master_sale_path)
 
     select('Abril', from: 'master_sale_date_2i')
-    click_link('+')
+    click_link('Adicionar')
     within('.nested-fields') do
       fill_in('Data', with: Faker::Date.backward(150))
       select('Dinheiro', from: 'Entrada')
       fill_in('Valor', with: '125,00')
     end
 
-    click_link('+')
+    click_link('Adicionar')
     within('.nested-fields:nth-child(2)') do
       fill_in('Data', with: Faker::Date.backward(50))
       select('Dinheiro', from: 'Entrada')
@@ -35,7 +35,7 @@ feature "MasterSales", type: :feature, js: true do
     end
     click_button('Salvar')
 
-    expect(page).to have_content("criada com sucesso!")
+    expect(page).to have_content(:all, "criada com sucesso!")
   end
 
   scenario 'Edits a master_sale' do
@@ -44,7 +44,7 @@ feature "MasterSales", type: :feature, js: true do
     select('Abril', from: 'master_sale_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content('atualizada com sucesso!')
+    expect(page).to have_content(:all, 'atualizada com sucesso!')
   end
 
   scenario 'Destroy a master_sale', js: true do
@@ -54,7 +54,7 @@ feature "MasterSales", type: :feature, js: true do
     1.second
     page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content("excluída com sucesso!")
+    expect(page).to have_content(:all, "excluída com sucesso!")
   end
 
 end

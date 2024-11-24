@@ -16,7 +16,7 @@ feature "MasterFinances", type: :feature, js: true do
 
     click_button('Salvar')
 
-    expect(page).to have_content("criada com sucesso!")
+    expect(page).to have_content(:all, "criada com sucesso!")
   end
 
   scenario 'Creates a new master_finance' do
@@ -27,7 +27,7 @@ feature "MasterFinances", type: :feature, js: true do
 
     click_button('Salvar')
 
-    expect(page).to have_content("criada com sucesso!")
+    expect(page).to have_content(:all, "criada com sucesso!")
   end
 
   scenario 'Creates a master_finance_with_finances' do
@@ -35,7 +35,7 @@ feature "MasterFinances", type: :feature, js: true do
     visit(new_accounting_master_finance_path)
 
     select('Fevereiro', from: 'master_finance_date_2i')
-    click_link('+')
+    click_link('Adicionar')
     within('.nested-fields') do
       fill_in('Data', with: Faker::Date.backward(150))
       select('Dinheiro', from: 'Entrada')
@@ -43,7 +43,7 @@ feature "MasterFinances", type: :feature, js: true do
       fill_in('Valor', with: '100,00')
     end
 
-    click_link('+')
+    click_link('Adicionar')
     within('.nested-fields:nth-child(2)') do
       fill_in('Data', with: Faker::Date.backward(150))
       select('Limpeza', from: 'Saída')
@@ -52,7 +52,7 @@ feature "MasterFinances", type: :feature, js: true do
     end
     click_button('Salvar')
 
-    expect(page).to have_content("criada com sucesso!")
+    expect(page).to have_content(:all, "criada com sucesso!")
   end
 
   scenario 'Edits a master_finance' do
@@ -61,7 +61,7 @@ feature "MasterFinances", type: :feature, js: true do
     select('Fevereiro', from: 'master_finance_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content('atualizada com sucesso!')
+    expect(page).to have_content(:all, 'atualizada com sucesso!')
   end
 
   scenario 'Destroy a master_finance', js: true do
@@ -72,7 +72,7 @@ feature "MasterFinances", type: :feature, js: true do
     1.second
     page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content("excluída com sucesso!")
+    expect(page).to have_content(:all, "excluída com sucesso!")
   end
 
 end

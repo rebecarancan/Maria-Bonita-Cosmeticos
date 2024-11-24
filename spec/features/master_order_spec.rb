@@ -13,14 +13,14 @@ feature "MasterOrders", type: :feature, js: true do
     select('Março', from: 'master_order_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content("criado com sucesso!")
+    expect(page).to have_content(:all, "criado com sucesso!")
   end
 
   scenario 'Creates a master_order_with_orders' do # Happy Path
     visit(new_accounting_master_order_path)
 
     select('Março', from: 'master_order_date_2i')
-    click_link('+')
+    click_link('Adicionar')
     within('.nested-fields') do
       fill_in('Data do pedido', with: Faker::Date.backward(150))
       fill_in('Vencimento', with: Faker::Date.backward(100))
@@ -29,7 +29,7 @@ feature "MasterOrders", type: :feature, js: true do
       select('Dinheiro', from: 'Tipo de pagamento')
     end
 
-    click_link('+')
+    click_link('Adicionar')
     within('.nested-fields:nth-child(2)') do
       fill_in('Data do pedido', with: Faker::Date.backward(150))
       fill_in('Vencimento', with: Faker::Date.backward(100))
@@ -39,7 +39,7 @@ feature "MasterOrders", type: :feature, js: true do
     end
     click_button('Salvar')
 
-    expect(page).to have_content("criado com sucesso!")
+    expect(page).to have_content(:all, "criado com sucesso!")
   end
 
   scenario 'Edits a master_order' do # Happy Path
@@ -49,7 +49,7 @@ feature "MasterOrders", type: :feature, js: true do
     select('Março', from: 'master_order_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content('atualizado com sucesso!')
+    expect(page).to have_content(:all, 'atualizado com sucesso!')
   end
 
   scenario 'Destroy a master_order', js: true do
@@ -60,7 +60,7 @@ feature "MasterOrders", type: :feature, js: true do
     1.second
     page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content("excluído com sucesso!")
+    expect(page).to have_content(:all, "excluído com sucesso!")
   end
 
 end
