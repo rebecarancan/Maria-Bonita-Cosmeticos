@@ -1,7 +1,7 @@
 <tr class="nested-fields">
   <th class="column1"><%= f.date_field :day, class: "date-field", value: (f.object.day), style: "margin-top: 20px", required: true %></th>
-  <th class="column5"><%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name, {include_blank: true}, style: "margin-top: 20px") %></th>
-  <th class="column2"><%= f.text_field :value, style: "margin-top: 20px", required: true %></th>
+  <th class="column5"><%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name, {include_blank: true}, { class: "supplier-field", style: "margin-top: 20px" }) %></th>
+  <th class="column2"><%= f.text_field :value, class: "value-field", style: "margin-top: 20px", required: true %></th>
   <th class="column6"><%= link_to_remove_association(f) do %>
   <i class="typcn typcn-times" style="color: #800000"></i>
   <% end %>

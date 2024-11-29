@@ -1,9 +1,9 @@
 <tr class="nested-fields">
-  <th class="column8"><%= f.date_field :purchase, class: "date-field", value: (f.object.purchase), style: "margin-top: 20px", required: true %></th>
-  <th class="column8"><%= f.date_field :expire, class: "date-field", value: (f.object.expire), style: "margin-top: 20px", required: true %></th>
-  <th class="column3"><%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name, {include_blank: true}, style: "margin-top: 20px") %></th>
-  <th class="column5"><%= f.text_field :value, style: "margin-top: 20px", required: true %></th>
-  <th class="column3"><%= f.select :payment, options_for_payment(f.object.payment), style: "margin-top: 20px", required: true %></th>
+  <th class="column8"><%= f.date_field :purchase, class: "purchase-field date-field", value: (f.object.purchase), style: "margin-top: 20px", required: true %></th>
+  <th class="column8"><%= f.date_field :expire, class: "expire-field date-field", value: (f.object.expire), style: "margin-top: 20px", required: true %></th>
+  <th class="column3"><%= f.collection_select(:supplier_id, @supplier_options_for_select, :id, :name, {include_blank: true}, { class: "supplier-field", style: "margin-top: 20px" }) %></th>
+  <th class="column5"><%= f.text_field :value, class: "value-field", style: "margin-top: 20px", required: true %></th>
+  <th class="column3"><%= f.select :payment, options_for_payment(f.object.payment), {}, { class: "payment-field", style: "margin-top: 20px", required: true }%></th>
   <th class="column6"><%= link_to_remove_association(f) do %>
   <i class="typcn typcn-times" style="color: #800000"></i>
   <% end %>

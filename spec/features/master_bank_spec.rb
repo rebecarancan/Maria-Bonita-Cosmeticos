@@ -36,20 +36,13 @@ feature "MasterBanks", type: :feature, js: true do
 
     select('Fevereiro', from: 'master_bank_date_2i')
     click_link('Adicionar')
-    within('.nested-fields') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('Dinheiro', from: 'Entrada')
-      fill_in('Descrição', with: 'teste' )
-      fill_in('Valor', with: '100,00')
+    within('.nested-fields:nth-child(1)') do
+      fill_in(with: Faker::Date.backward(150), class: 'date-field')
+      find('select.income-field').find(:option, text: 'Dinheiro').select_option
+      fill_in(with: 'teste', class: 'description-field' )
+      fill_in(with: '100,00', class: 'value-field')
     end
 
-    click_link('Adicionar')
-    within('.nested-fields:nth-child(2)') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('Limpeza', from: 'Saída')
-      fill_in('Descrição', with: 'teste2' )
-      fill_in('Valor', with: '150,00')
-    end
     click_button('Salvar')
 
     expect(page).to have_content(:all, "criado com sucesso!")

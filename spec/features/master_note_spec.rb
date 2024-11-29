@@ -22,17 +22,11 @@ feature "MasterNotes", type: :feature, js: true do
     select('Fevereiro', from: 'master_note_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('GAO', from: 'Fornecedor')
-      fill_in('Valor', with: '100,00')
+      fill_in(with: Faker::Date.backward(150), class: 'date-field')
+      find('select.supplier-field').find(:option, text: 'GAO').select_option
+      fill_in(with: '100,00', class: 'value-field')
     end
 
-    click_link('Adicionar')
-    within('.nested-fields:nth-child(2)') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('GAO', from: 'Fornecedor')
-      fill_in('Valor', with: '150,00')
-    end
     click_button('Salvar')
 
     expect(page).to have_content(:all, "criada com sucesso!")

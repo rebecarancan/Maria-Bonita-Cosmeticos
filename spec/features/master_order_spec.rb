@@ -22,21 +22,13 @@ feature "MasterOrders", type: :feature, js: true do
     select('Março', from: 'master_order_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
-      fill_in('Data do pedido', with: Faker::Date.backward(150))
-      fill_in('Vencimento', with: Faker::Date.backward(100))
-      select('GAO', from: 'Fornecedor')
-      fill_in('Valor', with: '250,00')
-      select('Dinheiro', from: 'Tipo de pagamento')
+      fill_in(with: Faker::Date.backward(150), class: 'purchase-field')
+      fill_in(with: Faker::Date.backward(100), class: 'expire-field')
+      find('select.supplier-field').find(:option, text: 'GAO').select_option
+      fill_in(with: '250,00', class: 'value-field' )
+      find('select.payment-field').find(:option, exact_text: 'Dinheiro').select_option
     end
 
-    click_link('Adicionar')
-    within('.nested-fields:nth-child(2)') do
-      fill_in('Data do pedido', with: Faker::Date.backward(150))
-      fill_in('Vencimento', with: Faker::Date.backward(100))
-      select('GAO', from: 'Fornecedor')
-      fill_in('Valor', with: '230,00')
-      select('Cheque', from: 'Tipo de pagamento')
-    end
     click_button('Salvar')
 
     expect(page).to have_content(:all, "criado com sucesso!")
