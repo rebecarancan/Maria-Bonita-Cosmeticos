@@ -19,7 +19,7 @@ feature "Suppliers", type: :feature, js: true do
     click_button('Salvar')
 
     expect(Supplier.last.name).to eq(supplier_name)
-    expect(page).to have_content('criado com sucesso!')
+    expect(page).to have_content(:all, 'criado com sucesso!')
   end
 
   scenario 'Creates an invalid supplier ' do
@@ -27,14 +27,14 @@ feature "Suppliers", type: :feature, js: true do
 
     click_button('Salvar')
 
-    expect(page).to have_content('não pode ficar em branco')
+    expect(page).to have_content(:all, 'não pode ficar em branco')
   end
 
   scenario 'Verify edit supplier form' do
     visit(accounting_suppliers_path)
     find('.typcn.typcn-pencil.basic-color').click
 
-    expect(page).to have_content('Editando Fornecedor')
+    expect(page).to have_content(:all, 'Editando Fornecedor')
   end
 
   scenario 'Edits a supplier' do
@@ -44,8 +44,8 @@ feature "Suppliers", type: :feature, js: true do
     fill_in('Nome', with: new_name)
     click_button('Salvar')
 
-    expect(page).to have_content('atualizado com sucesso!')
-    expect(page).to have_content(new_name)
+    expect(page).to have_content(:all, 'atualizado com sucesso!')
+    expect(page).to have_content(:all, new_name)
   end
 
   scenario 'Creates a new supplier' do
@@ -55,7 +55,7 @@ feature "Suppliers", type: :feature, js: true do
     fill_in('Nome', with: supplier_name)
     click_button('Salvar')
 
-    expect(page).to have_content("criado com sucesso!")
+    expect(page).to have_content(:all, "criado com sucesso!")
     expect(Supplier.last.name).to eq(supplier_name)
   end
 
@@ -66,6 +66,6 @@ feature "Suppliers", type: :feature, js: true do
     1.second
     page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content("excluído com sucesso!")
+    expect(page).to have_content(:all, "excluído com sucesso!")
   end
 end

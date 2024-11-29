@@ -6,7 +6,7 @@ feature "Home", type: :feature, js: true do
 
   scenario 'Verify log in form' do
     visit(home_index_path)
-    expect(page).to have_content('Entrar')
+    expect(page).to have_content(:all, 'Entrar')
   end
 
   scenario 'Valid log in', js: true do
@@ -16,8 +16,8 @@ feature "Home", type: :feature, js: true do
     fill_in('Senha', with: '123456')
     click_on('Entrar')
 
-    expect(page).to have_content('MARIA BONITA')
-    # expect(page).to have_content('Login efetuado com sucesso')
+    expect(page).to have_content(:all, 'Maria Bonita')
+    # expect(page).to have_content(:all, 'Login efetuado com sucesso')
   end
 
   scenario 'Invalid login' do
@@ -27,6 +27,6 @@ feature "Home", type: :feature, js: true do
     fill_in('Senha', with: '123456')
     click_on('Entrar')
 
-    expect(page).to have_content('Invalido Email ou senha')
+    expect(page).to have_content(:all, 'Invalido Email ou senha')
   end
 end

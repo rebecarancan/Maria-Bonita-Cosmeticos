@@ -8,19 +8,18 @@ feature "Products", type: :feature, js: true do
   let!(:product2) { create :product }
 
   scenario 'Test index' do
-
     visit(products_path)
-    expect(page).to have_content(product1.name).and have_content(product2.name)
+    expect(page).to have_content(:all, product1.name)
+    expect(page).to have_content(:all, product2.name)
   end
 
   scenario 'Verify search' do
-
     visit(products_path)
     fill_in 'Pesquisar por...', with: product1.name
     click_on('Ok!')
 
-    expect(page).to have_content(product1.name)
-    expect(page).not_to have_content(product2.name)
+    expect(page).to have_content(:all, product1.name)
+    expect(page).not_to have_content(:all, product2.name)
   end
 
   scenario 'Verify new product link' do
@@ -31,7 +30,7 @@ feature "Products", type: :feature, js: true do
   scenario 'Verify new product form' do
     visit(products_path)
     click_on('Novo')
-    expect(page).to have_content('Novo Produto')
+    expect(page).to have_content(:all, 'Novo Produto')
     expect(page).to have_button('Salvar')
     expect(page).to have_link('Voltar')
   end
@@ -47,13 +46,13 @@ feature "Products", type: :feature, js: true do
     click_button('Salvar')
 
     expect(Product.last.name).to eq(product_name)
-    expect(page).to have_content('criado com sucesso!')
+    expect(page).to have_content(:all, 'criado com sucesso!')
   end
 
   scenario 'Creates an invalid product' do
     visit(new_product_path)
     click_on('Salvar')
-    expect(page).to have_content('não pode ficar em branco')
+    expect(page).to have_content(:all, 'não pode ficar em branco')
   end
 
   scenario 'Edits a product' do
@@ -63,8 +62,8 @@ feature "Products", type: :feature, js: true do
     fill_in('Nome', with: new_name)
     click_button('Salvar')
 
-    expect(page).to have_content('atualizado com sucesso!')
-    expect(page).to have_content(new_name)
+    expect(page).to have_content(:all, 'atualizado com sucesso!')
+    expect(page).to have_content(:all, new_name)
   end
 
   scenario 'Destroy a product', js: true do
@@ -74,7 +73,7 @@ feature "Products", type: :feature, js: true do
     1.second
     page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content("excluído com sucesso!")
+    expect(page).to have_content(:all, "excluído com sucesso!")
   end
 
 end

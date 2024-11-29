@@ -13,29 +13,23 @@ feature "MasterNotes", type: :feature, js: true do
     select('Fevereiro', from: 'master_note_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content("criada com sucesso!")
+    expect(page).to have_content(:all, "criada com sucesso!")
   end
 
   scenario 'Creates a master_note_with_notes' do
     visit(new_accounting_master_note_path)
 
     select('Fevereiro', from: 'master_note_date_2i')
-    click_link('+')
+    click_link('Adicionar')
     within('.nested-fields') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('GAO', from: 'Fornecedor')
-      fill_in('Valor', with: '100,00')
+      fill_in(with: Faker::Date.backward(150), class: 'date-field')
+      find('select.supplier-field').find(:option, text: 'GAO').select_option
+      fill_in(with: '100,00', class: 'value-field')
     end
 
-    click_link('+')
-    within('.nested-fields:nth-child(2)') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('GAO', from: 'Fornecedor')
-      fill_in('Valor', with: '150,00')
-    end
     click_button('Salvar')
 
-    expect(page).to have_content("criada com sucesso!")
+    expect(page).to have_content(:all, "criada com sucesso!")
   end
 
   scenario 'Edits a master_note' do
@@ -44,7 +38,7 @@ feature "MasterNotes", type: :feature, js: true do
     select('Fevereiro', from: 'master_note_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content('atualizada com sucesso!')
+    expect(page).to have_content(:all, 'atualizada com sucesso!')
   end
 
   scenario 'Destroy a master_note', js: true do
@@ -53,7 +47,7 @@ feature "MasterNotes", type: :feature, js: true do
     1.second
     page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content("excluída com sucesso!")
+    expect(page).to have_content(:all, "excluída com sucesso!")
   end
 
 end

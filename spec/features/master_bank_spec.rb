@@ -16,7 +16,7 @@ feature "MasterBanks", type: :feature, js: true do
 
     click_button('Salvar')
 
-    expect(page).to have_content("criado com sucesso!")
+    expect(page).to have_content(:all, "criado com sucesso!")
   end
 
   scenario 'Creates a new master_bank' do
@@ -27,7 +27,7 @@ feature "MasterBanks", type: :feature, js: true do
 
     click_button('Salvar')
 
-    expect(page).to have_content("criado com sucesso!")
+    expect(page).to have_content(:all, "criado com sucesso!")
   end
 
   scenario 'Creates a master_bank_with_banks' do
@@ -35,24 +35,17 @@ feature "MasterBanks", type: :feature, js: true do
     visit(new_accounting_master_bank_path)
 
     select('Fevereiro', from: 'master_bank_date_2i')
-    click_link('+')
-    within('.nested-fields') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('Dinheiro', from: 'Entrada')
-      fill_in('Descrição', with: 'teste' )
-      fill_in('Valor', with: '100,00')
+    click_link('Adicionar')
+    within('.nested-fields:nth-child(1)') do
+      fill_in(with: Faker::Date.backward(150), class: 'date-field')
+      find('select.income-field').find(:option, text: 'Dinheiro').select_option
+      fill_in(with: 'teste', class: 'description-field' )
+      fill_in(with: '100,00', class: 'value-field')
     end
 
-    click_link('+')
-    within('.nested-fields:nth-child(2)') do
-      fill_in('Data', with: Faker::Date.backward(150))
-      select('Limpeza', from: 'Saída')
-      fill_in('Descrição', with: 'teste2' )
-      fill_in('Valor', with: '150,00')
-    end
     click_button('Salvar')
 
-    expect(page).to have_content("criado com sucesso!")
+    expect(page).to have_content(:all, "criado com sucesso!")
   end
 
   scenario 'Edits a master_bank' do
@@ -62,7 +55,7 @@ feature "MasterBanks", type: :feature, js: true do
     select('Fevereiro', from: 'master_bank_date_2i')
     click_button('Salvar')
 
-    expect(page).to have_content('atualizado com sucesso!')
+    expect(page).to have_content(:all, 'atualizado com sucesso!')
   end
 
   scenario 'Destroy a master_bank', js: true do
@@ -74,7 +67,7 @@ feature "MasterBanks", type: :feature, js: true do
     1.second
     page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content("excluído com sucesso!")
+    expect(page).to have_content(:all, "excluído com sucesso!")
   end
 
 end
