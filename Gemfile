@@ -22,6 +22,7 @@ gem 'devise', '>= 4.7.1'
 gem 'devise-i18n'
 gem 'pg_search'
 gem 'faker'
+gem 'rails-i18n', '~> 6.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-typicons'
