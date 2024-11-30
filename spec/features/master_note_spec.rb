@@ -10,7 +10,7 @@ feature "MasterNotes", type: :feature, js: true do
   scenario 'Creates a new master_note' do
     visit(new_accounting_master_note_path)
 
-    select('Fevereiro', from: 'master_note_date_2i')
+    select('fevereiro', from: 'master_note_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, "criada com sucesso!")
@@ -19,7 +19,7 @@ feature "MasterNotes", type: :feature, js: true do
   scenario 'Creates a master_note_with_notes' do
     visit(new_accounting_master_note_path)
 
-    select('Fevereiro', from: 'master_note_date_2i')
+    select('fevereiro', from: 'master_note_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
       fill_in(with: Faker::Date.backward(150), class: 'date-field')
@@ -35,7 +35,7 @@ feature "MasterNotes", type: :feature, js: true do
   scenario 'Edits a master_note' do
     visit(edit_accounting_master_note_path(master_note.id))
 
-    select('Fevereiro', from: 'master_note_date_2i')
+    select('fevereiro', from: 'master_note_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, 'atualizada com sucesso!')

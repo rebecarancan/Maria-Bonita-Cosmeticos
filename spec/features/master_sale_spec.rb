@@ -10,7 +10,7 @@ feature "MasterSales", type: :feature, js: true do
   scenario 'Creates a new master_sale' do
     visit(new_accounting_master_sale_path)
 
-    select('Abril', from: 'master_sale_date_2i')
+    select('abril', from: 'master_sale_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, "criada com sucesso!")
@@ -19,7 +19,7 @@ feature "MasterSales", type: :feature, js: true do
   scenario 'Creates a master_sale_with_sales' do
     visit(new_accounting_master_sale_path)
 
-    select('Abril', from: 'master_sale_date_2i')
+    select('abril', from: 'master_sale_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
       fill_in(with: Faker::Date.backward(150), class: 'date-field')
@@ -35,7 +35,7 @@ feature "MasterSales", type: :feature, js: true do
   scenario 'Edits a master_sale' do
     visit(edit_accounting_master_sale_path(master_sale.id))
 
-    select('Abril', from: 'master_sale_date_2i')
+    select('abril', from: 'master_sale_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, 'atualizada com sucesso!')
