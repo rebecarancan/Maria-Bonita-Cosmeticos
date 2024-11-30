@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.7.6'
 
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 6.0'
 gem 'pg'
 gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
@@ -22,9 +22,6 @@ gem 'devise', '>= 4.7.1'
 gem 'devise-i18n'
 gem 'pg_search'
 gem 'faker'
-gem 'actionview', '>= 5.2.2.1'
-gem 'railties', '>= 5.2.2.1'
-gem 'rails-i18n', '~> 5.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-typicons'
