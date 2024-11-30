@@ -33,7 +33,7 @@ end
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 6'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'rails-controller-testing'
