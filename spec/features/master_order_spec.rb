@@ -10,7 +10,7 @@ feature "MasterOrders", type: :feature, js: true do
   scenario 'Creates a new master_order' do # Happy Path
     visit(new_accounting_master_order_path)
 
-    select('Março', from: 'master_order_date_2i')
+    select('março', from: 'master_order_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, "criado com sucesso!")
@@ -19,7 +19,7 @@ feature "MasterOrders", type: :feature, js: true do
   scenario 'Creates a master_order_with_orders' do # Happy Path
     visit(new_accounting_master_order_path)
 
-    select('Março', from: 'master_order_date_2i')
+    select('março', from: 'master_order_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
       fill_in(with: Faker::Date.backward(150), class: 'purchase-field')
@@ -38,7 +38,7 @@ feature "MasterOrders", type: :feature, js: true do
     master_order
     visit(edit_accounting_master_order_path(master_order.id))
 
-    select('Março', from: 'master_order_date_2i')
+    select('março', from: 'master_order_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, 'atualizado com sucesso!')

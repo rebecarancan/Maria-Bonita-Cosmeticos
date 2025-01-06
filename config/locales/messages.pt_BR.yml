@@ -1,4 +1,4 @@
- 'pt-BR':
+'pt-BR':
   messages:
     confirm: Tem certeza que deseja excluir '%{item}'?
     confirm_with: Você deseja realmente excluir '%{date}'?

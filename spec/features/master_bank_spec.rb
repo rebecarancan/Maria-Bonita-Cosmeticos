@@ -11,7 +11,7 @@ feature "MasterBanks", type: :feature, js: true do
   scenario 'Creates the first master_bank' do
     visit(new_accounting_master_bank_path)
 
-    select('Fevereiro', from: 'master_bank_date_2i')
+    select('fevereiro', from: 'master_bank_date_2i')
     fill_in('Saldo Inicial', with: '100,00')
 
     click_button('Salvar')
@@ -23,7 +23,7 @@ feature "MasterBanks", type: :feature, js: true do
     master_bank
     visit(new_accounting_master_bank_path)
 
-    select('Fevereiro', from: 'master_bank_date_2i')
+    select('fevereiro', from: 'master_bank_date_2i')
 
     click_button('Salvar')
 
@@ -34,7 +34,7 @@ feature "MasterBanks", type: :feature, js: true do
     master_bank
     visit(new_accounting_master_bank_path)
 
-    select('Fevereiro', from: 'master_bank_date_2i')
+    select('fevereiro', from: 'master_bank_date_2i')
     click_link('Adicionar')
     within('.nested-fields:nth-child(1)') do
       fill_in(with: Faker::Date.backward(150), class: 'date-field')
@@ -52,7 +52,7 @@ feature "MasterBanks", type: :feature, js: true do
     master_bank
     visit(edit_accounting_master_bank_path(master_bank.id))
 
-    select('Fevereiro', from: 'master_bank_date_2i')
+    select('fevereiro', from: 'master_bank_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, 'atualizado com sucesso!')

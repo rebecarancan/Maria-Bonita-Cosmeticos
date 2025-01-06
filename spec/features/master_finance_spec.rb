@@ -11,7 +11,7 @@ feature "MasterFinances", type: :feature, js: true do
   scenario 'Creates the first master_finance' do
     visit(new_accounting_master_finance_path)
 
-    select('Fevereiro', from: 'master_finance_date_2i')
+    select('fevereiro', from: 'master_finance_date_2i')
     fill_in('Saldo Inicial', with: '100,00')
 
     click_button('Salvar')
@@ -23,7 +23,7 @@ feature "MasterFinances", type: :feature, js: true do
     master_finance
     visit(new_accounting_master_finance_path)
 
-    select('Fevereiro', from: 'master_finance_date_2i')
+    select('fevereiro', from: 'master_finance_date_2i')
 
     click_button('Salvar')
 
@@ -34,7 +34,7 @@ feature "MasterFinances", type: :feature, js: true do
     master_finance
     visit(new_accounting_master_finance_path)
 
-    select('Fevereiro', from: 'master_finance_date_2i')
+    select('fevereiro', from: 'master_finance_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
       fill_in(with: Faker::Date.backward(150), class: 'date-field')
@@ -51,7 +51,7 @@ feature "MasterFinances", type: :feature, js: true do
   scenario 'Edits a master_finance' do
     visit(edit_accounting_master_finance_path(master_finance.id))
 
-    select('Fevereiro', from: 'master_finance_date_2i')
+    select('fevereiro', from: 'master_finance_date_2i')
     click_button('Salvar')
 
     expect(page).to have_content(:all, 'atualizada com sucesso!')
