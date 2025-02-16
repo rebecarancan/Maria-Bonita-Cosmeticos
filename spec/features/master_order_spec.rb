@@ -22,8 +22,8 @@ feature "MasterOrders", type: :feature, js: true do
     select('março', from: 'master_order_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
-      fill_in(with: Faker::Date.backward(150), class: 'purchase-field')
-      fill_in(with: Faker::Date.backward(100), class: 'expire-field')
+      fill_in(with: Faker::Date.backward(days: 150), class: 'purchase-field')
+      fill_in(with: Faker::Date.backward(days: 100), class: 'expire-field')
       find('select.supplier-field').find(:option, text: 'GAO').select_option
       fill_in(with: '250,00', class: 'value-field' )
       find('select.payment-field').find(:option, exact_text: 'Dinheiro').select_option

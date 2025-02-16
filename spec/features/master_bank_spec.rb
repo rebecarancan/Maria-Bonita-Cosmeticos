@@ -37,7 +37,7 @@ feature "MasterBanks", type: :feature, js: true do
     select('fevereiro', from: 'master_bank_date_2i')
     click_link('Adicionar')
     within('.nested-fields:nth-child(1)') do
-      fill_in(with: Faker::Date.backward(150), class: 'date-field')
+      fill_in(with: Faker::Date.backward(days: 150), class: 'date-field')
       find('select.income-field').find(:option, text: 'Dinheiro').select_option
       fill_in(with: 'teste', class: 'description-field' )
       fill_in(with: '100,00', class: 'value-field')

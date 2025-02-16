@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :master_bank do
-    date { Faker::Date.backward(150) }
+    date { Faker::Date.backward(days: 150) }
     initial_balance { '150,00' }
     final_balance { '150,00' }
 

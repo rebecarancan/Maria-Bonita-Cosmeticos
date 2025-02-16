@@ -22,7 +22,7 @@ feature "MasterSales", type: :feature, js: true do
     select('abril', from: 'master_sale_date_2i')
     click_link('Adicionar')
     within('.nested-fields') do
-      fill_in(with: Faker::Date.backward(150), class: 'date-field')
+      fill_in(with: Faker::Date.backward(days: 150), class: 'date-field')
       find('select.income-field').find(:option, text: 'Dinheiro').select_option
       fill_in(with: '150,00', class: 'value-field')
     end

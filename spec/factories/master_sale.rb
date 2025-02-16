@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :master_sale do
-    date { Faker::Date.backward(150) }
+    date { Faker::Date.backward(days: 150) }
 
     factory :master_sale_with_sales do
       transient do

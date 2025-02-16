@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :master_note do
-    date { Faker::Date.backward(150) }
+    date { Faker::Date.backward(days: 150) }
 
     factory :master_note_with_notes do
       transient do
