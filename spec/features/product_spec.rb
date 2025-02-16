@@ -39,10 +39,10 @@ feature "Products", type: :feature, js: true do
     visit(new_product_path)
     product_name = Faker::Commerce.product_name
 
-    fill_in('Código', with: Faker::Number.number(6))
+    fill_in('Código', with: Faker::Number.number(digits: 6))
     fill_in('Nome', with: product_name)
     fill_in('Custo', with: '100,00')
-    fill_in('Margem', with: Faker::Number.between(45, 80))
+    fill_in('Margem', with: Faker::Number.between(from: 45, to: 80))
     click_button('Salvar')
 
     expect(Product.last.name).to eq(product_name)

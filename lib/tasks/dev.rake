@@ -10,10 +10,10 @@ namespace :dev do
     puts "Gerando os PRODUTOS..."
     50.times do
       Product.create!(
-        code: Faker::Number.number(6),
+        code: Faker::Number.number(digits: 6),
         name: Faker::Commerce.product_name,
         cost: Faker::Commerce.price,
-        margin: Faker::Number.between(45, 80)
+        margin: Faker::Number.between(from: 45, to: 80)
       )
     end
     puts "PRODUTOS gerados com sucesso!"
