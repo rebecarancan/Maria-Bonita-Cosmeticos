@@ -9,10 +9,11 @@ Bundler.require(*Rails.groups)
 module MariaBonita
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 7.1
 
     config.time_zone = 'UTC'
     config.i18n.default_locale = "pt-BR"
+    config.autoload_lib(ignore: %w(assets tasks))
 
     config.generators do |g|
       g.test_framework :rspec,
