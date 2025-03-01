@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '3.1.6'
 
-gem 'rails', '~> 6.0'
+gem 'rails', '7.0.8.7'
 gem 'pg'
 gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
@@ -22,7 +22,7 @@ gem 'devise', '~> 4.7'
 gem 'devise-i18n'
 gem 'pg_search'
 gem 'faker', '~> 2.16'
-gem 'rails-i18n', '~> 6.0'
+gem 'rails-i18n', '~> 7.0.0'
 gem 'concurrent-ruby', '1.3.4'
 
 source 'https://rails-assets.org' do
