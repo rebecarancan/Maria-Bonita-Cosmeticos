@@ -207,7 +207,7 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.1.4)
+    pg (1.5.9)
     pg_search (2.1.5)
       activerecord (>= 4.2)
       activesupport (>= 4.2)
@@ -367,7 +367,7 @@ DEPENDENCIES
   kaminari-i18n
   listen (~> 3.8)
   money-rails (~> 1.12)
-  pg
+  pg (= 1.5.9)
   pg_search
   pry-rails
   puma (~> 3.12)
@@ -391,7 +391,7 @@ DEPENDENCIES
   webdrivers (~> 5.0)
 
 RUBY VERSION
-   ruby 3.1.6p260
+   ruby 3.2.6p234
 
 BUNDLED WITH
    2.6.5
