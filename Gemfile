@@ -40,7 +40,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '~> 4'
   gem 'listen', '~> 3.8'
   gem 'dotenv-rails'
 end
