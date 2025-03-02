@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.2.6'
+ruby '3.3.7'
 
 gem 'rails', '~> 8'
 gem 'pg', '1.5.9'
@@ -33,7 +33,6 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
-  gem 'pry-rails'
   gem 'rspec-rails', '~> 6'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers', '4.0.0.rc1'
