@@ -6,7 +6,7 @@ RSpec.describe HomeController, type: :controller do
   describe 'as Logged User' do
     it 'responds successfully' do
       sign_in user
-      get :index, params: { id: user.id }
+      get :index
       expect(response).to have_http_status(200)
     end
   end
