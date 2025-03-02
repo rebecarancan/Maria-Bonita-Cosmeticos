@@ -24,6 +24,7 @@ gem 'pg_search'
 gem 'faker', '~> 2.16'
 gem 'rails-i18n', '~> 8.0.0'
 gem 'concurrent-ruby', '1.3.4'
+gem 'debug'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-typicons'
