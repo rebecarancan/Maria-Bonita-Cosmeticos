@@ -39,6 +39,11 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, :type => :controller
   config.include Warden::Test::Helpers
 
+  # TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
+  config.before(:each, type: :controller) do
+    Rails.application.reload_routes_unless_loaded
+  end
+
   # Shoulda Matcher
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
