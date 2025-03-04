@@ -8,24 +8,24 @@
 
 <p class="basic-title2">Entradas Totais</p>
 
-<%= column_chart chart_total, prefix: "R$" %>
+<%= column_chart chart_total, prefix: "R$", library: { interaction: { mode: "point", axis: "xy" } } %>
 
 <br><br><br>
 
 <p class="basic-title2">Entradas em Dinheiro</p>
 
-<%= column_chart chart('Dinheiro'), prefix: "R$" %>
+<%= column_chart chart('Dinheiro'), prefix: "R$", library: { interaction: { mode: "point", axis: "xy" } } %>
 
 <br><br><br>
 
 <p class="basic-title2">Entradas em Débito</p>
 
-<%= column_chart chart('Débito'), prefix: "R$" %>
+<%= column_chart chart('Débito'), prefix: "R$", library: { interaction: { mode: "point", axis: "xy" } } %>
 
 <br><br><br>
 
 <p class="basic-title2">Entradas em Crédito</p>
 
-<%= column_chart chart('Crédito'), prefix: "R$" %>
+<%= column_chart chart('Crédito'), prefix: "R$", library: { interaction: { mode: "point", axis: "xy" } } %>
 
 <br><br>
