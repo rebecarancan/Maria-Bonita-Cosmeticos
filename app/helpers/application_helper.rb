@@ -1,9 +1,7 @@
 module ApplicationHelper
 
-  PAYMENTS = ["-", "Dinheiro", "Boleto/Dinheiro", "Boleto/Banco", "Cheque"]
-
   def options_for_payment(selected)
-    options_for_select(PAYMENTS, selected)
+    options_for_select(Order::PAYMENTS, selected)
   end
 
   def value_total(obj)
