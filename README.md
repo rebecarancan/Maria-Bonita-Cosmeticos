@@ -6,36 +6,67 @@ Maria Bonita Cosméticos was developed to meet the needs of a small business, al
 
 ### Produtos (Products):
 
-* register of products and prices;
+- register of products and prices;
 
 ### Contabilidade (Accounting):
 
-* **Finanças Diárias:** records of incomes and expenses, with reports and month balance;
+- **Finanças Diárias:** records of incomes and expenses, with reports and month balance;
 
-* **Entradas Diárias:** records of daily incomes, in cash, debit card and credit card, with reports;
+- **Entradas Diárias:** records of daily incomes, in cash, debit card and credit card, with reports;
 
-* **Pedidos e Pagamentos:** records of orders and payments to make;
+- **Pedidos e Pagamentos:** records of orders and payments to make;
 
-* **Notas Fiscais:** records of the invoices;
+- **Notas Fiscais:** records of the invoices;
 
-* **Controle Bancário:** records of bank transactions and month balance;
+- **Controle Bancário:** records of bank transactions and month balance;
 
-* **Gráficos:** charts based on Entradas Diárias, with monthly incomes in cash, debit card, credit card and the total of monthly sales;
+- **Gráficos:** charts based on Entradas Diárias, with monthly incomes in cash, debit card, credit card and the total of monthly sales;
 
-* **Fornecedores:** register of suppliers;
+- **Fornecedores:** register of suppliers;
 
-## Requeriments
+## 📋 Requirements
 
-* Ruby version: 2.5.0
+- Ruby version: **3.3.7**
+- Rails version: **~> 8.0**
+- PostgreSQL: **16** (via Docker)
+- Bundler: **2.6.5**
 
-* Rails version: 5.2.1
+## 🚀 Setup
 
-## Set up the app
+### Quick Installation with Docker
 
-After downloading the repository:
+This project uses Docker to run PostgreSQL, without the need for local database installation.
 
-    $ cd maria-bonita-cosmeticos
-    $ bundle install
-    $ rails db:create db:migrate db:seed
-    $ rails 'user:login[email, password, password_confirmation]'
-    $ rails s
+1. **Install project dependencies:**
+
+   ```bash
+   cd maria-bonita-cosmeticos
+   bundle install
+   ```
+
+2. **Start PostgreSQL via Docker:**
+
+   ```bash
+   # Make sure Docker is running
+   docker-compose up -d
+   ```
+
+3. **Setup the database:**
+
+   ```bash
+   bin/rails db:create db:migrate db:seed
+   ```
+
+4. **Create your user:**
+
+   ```bash
+   bin/rails 'user:login[email, password, password_confirmation]'
+   ```
+
+5. **Start the server:**
+
+   ```bash
+   bin/rails server
+   ```
+
+Access: http://localhost:3000
