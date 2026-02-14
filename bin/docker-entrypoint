@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+# Create db directory if it doesn't exist
+mkdir -p /rails/db
+
+# Run database migrations
+if ! bin/rails db:migrate:status > /dev/null 2>&1; then
+  echo "Database not initialized. Running db:setup..."
+  bin/rails db:setup
+else
+  echo "Database exists. Running db:migrate..."
+  bin/rails db:migrate
+fi
+
+# Execute the CMD
+exec "$@"

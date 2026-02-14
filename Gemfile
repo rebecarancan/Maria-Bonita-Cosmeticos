@@ -20,10 +20,13 @@ gem 'groupdate', '~> 6.5'
 gem 'chartkick', '~> 5.1'
 gem 'devise', '~> 4.7'
 gem 'devise-i18n'
+gem 'dotenv-rails'
 gem 'faker', '~> 2.16'
 gem 'rails-i18n', '~> 8.0.0'
 gem 'concurrent-ruby', '1.3.4'
 gem 'debug'
+gem 'kamal'
+gem 'thruster', require: false
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-typicons'
@@ -41,7 +44,6 @@ end
 group :development do
   gem 'web-console', '~> 4'
   gem 'listen', '~> 3.8'
-  gem 'dotenv-rails'
 end
 
 group :test do
