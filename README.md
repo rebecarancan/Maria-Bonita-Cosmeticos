@@ -28,14 +28,14 @@ Maria Bonita Cosméticos was developed to meet the needs of a small business, al
 
 - Ruby version: **3.3.7**
 - Rails version: **~> 8.0**
-- PostgreSQL: **16** (via Docker)
+- SQLite: **3.51+** (built-in with Rails 8)
 - Bundler: **2.6.5**
 
 ## 🚀 Setup
 
-### Quick Installation with Docker
+### Quick Installation
 
-This project uses Docker to run PostgreSQL, without the need for local database installation.
+This project uses SQLite, which comes built-in with Rails 8 - no external database installation needed.
 
 1. **Install project dependencies:**
 
@@ -44,26 +44,19 @@ This project uses Docker to run PostgreSQL, without the need for local database 
    bundle install
    ```
 
-2. **Start PostgreSQL via Docker:**
-
-   ```bash
-   # Make sure Docker is running
-   docker-compose up -d
-   ```
-
-3. **Setup the database:**
+2. **Setup database:**
 
    ```bash
    bin/rails db:create db:migrate db:seed
    ```
 
-4. **Create your user:**
+3. **Create your user:**
 
    ```bash
    bin/rails 'user:login[email, password, password_confirmation]'
    ```
 
-5. **Start the server:**
+4. **Start server:**
 
    ```bash
    bin/rails server

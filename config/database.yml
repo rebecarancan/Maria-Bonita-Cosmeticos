@@ -1,31 +1,16 @@
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
-  adapter: postgresql
-  encoding: utf8
-  database: mariabonita_development
-  host: localhost
-  pool: 5
-  username: <%= ENV["DATABASE_USER"] || "postgres" %>
-  password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
+  <<: *default
+  database: db/development.sqlite3
 
-test: &TEST
-  adapter: postgresql
-  encoding: utf8
-  database: mariabonita_test
-  pool: 5
-  host: localhost
-  username: <%= ENV["DATABASE_USER"] || "postgres" %>
-  password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
+test:
+  <<: *default
+  database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: mariabonita_production
-  pool: 5
-
-cucumber:
-  <<: *TEST
+  <<: *default
+  database: db/production.sqlite3
