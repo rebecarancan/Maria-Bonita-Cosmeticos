@@ -1,20 +1,19 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: %i[show edit update destroy]
 
   # GET /products
   # GET /products.json
   def index
-    if params[:term].present?
-      @products = Product.search_by_text(params[:term]).page(params[:page]).per(15)
-    else
-      @products = Product.all.order(:name).page(params[:page]).per(20)
-    end
+    @products = if params[:term].present?
+                  Product.full_search_prefix(params[:term]).page(params[:page]).per(15)
+                else
+                  Product.all.order(:name).page(params[:page]).per(20)
+                end
   end
 
   # GET /products/1
   # GET /products/1.json
-  def show
-  end
+  def show; end
 
   # GET /products/new
   def new
@@ -22,15 +21,14 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
 
-    #helpers.calculate_price(@product.cost, @product.price)
+    # helpers.calculate_price(@product.cost, @product.price)
     respond_to do |format|
       if @product.save
         format.html { redirect_to products_path, notice: "O produto '#{@product.name}' foi criado com sucesso!" }
@@ -67,13 +65,14 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:code, :name, :cost, :margin)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def product_params
+    params.require(:product).permit(:code, :name, :cost, :margin)
+  end
 end

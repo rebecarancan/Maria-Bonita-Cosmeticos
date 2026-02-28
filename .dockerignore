@@ -1,0 +1,17 @@
+.git
+.gitignore
+README.md
+docker-compose.yml
+log/*
+tmp/*
+test/*
+spec/*
+.rspec
+.rubocop.yml
+.ruby-lsp/
+.kamal/
+node_modules/
+.yarn/cache/
+storage/*
+.env.*
+*.sqlite3

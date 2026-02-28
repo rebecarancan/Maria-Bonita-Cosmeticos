@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_01_183743) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_catalog.plpgsql"
-
+ActiveRecord::Schema[8.0].define(version: 2026_02_14_145348) do
   create_table "banks", force: :cascade do |t|
     t.date "day"
     t.string "description"
@@ -167,4 +164,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_01_183743) do
   add_foreign_key "orders", "suppliers"
   add_foreign_key "sales", "income_types"
   add_foreign_key "sales", "master_sales"
+
+  # Virtual tables defined in this database.
+  # Note that virtual tables may not work with other database engines. Be careful if changing database.
+  create_virtual_table "fts_products", "fts5", ["code", "name", "product_id"]
 end

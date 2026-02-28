@@ -1,0 +1,47 @@
+<% require "dotenv"; Dotenv.load(".env") %>
+
+# Name of your application
+service: <%= ENV['DOCKER_CONTAINER'] %>
+
+# Name of the container image
+image: <%= ENV['DOCKER_IMAGE'] %>
+
+# Deploy to these servers
+servers:
+  web:
+    - <%= ENV['SERVER_WEB_IP'] %>
+
+# Enable SSL auto certification via Let's Encrypt
+proxy:
+  ssl: true
+  host: <%= ENV['PROXY_HOST'] %>
+
+# Credentials for your image host
+registry:
+  server: <%= ENV['DOCKER_SERVER'] %>
+
+# Inject ENV variables into containers
+env:
+  secret:
+    - RAILS_MASTER_KEY
+  clear:
+    WEB_CONCURRENCY: 2
+
+# Aliases for convenience
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+# Use persistent storage volumes for SQLite database and Active Storage
+volumes:
+  - "mariabonita_db:/rails/db"
+  - "mariabonita_storage:/rails/storage"
+
+# Bridge fingerprinted assets between versions
+asset_path: /rails/public/assets
+
+# Configure the image builder
+builder:
+  arch: amd64
